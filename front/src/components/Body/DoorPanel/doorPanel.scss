@@ -1,0 +1,31 @@
+@import '../../../app.scss';
+
+.doorPanel {
+    width: 100%;
+    background-color: $colorB;
+    padding: 12px 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    .btnDoorCont {
+        text-decoration: none;
+
+        .btnDoor {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
+
+;
+
+@media (max-width: 767px) {
+    .doorPanel {
+        
+        p {
+            font-size: 12px;
+        }
+    }
+}

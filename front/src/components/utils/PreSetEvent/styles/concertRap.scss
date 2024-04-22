@@ -1,0 +1,58 @@
+.concertRap {
+    width: 300px;
+    height: 300px;
+    background-image:  url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1713104342/events/lydkdd58zeanhctemzfs.png');
+    background-size: contain;
+    position: relative;
+    padding: 5px 0;
+    box-shadow: 5px 5px 15px black;
+    font-weight: 600 ;
+
+    .isMinors {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .cameraBody {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        h3 {
+            font-size: 1.6rem;
+            color: #fff;
+        }
+
+        .description {
+            background-color: rgba(240, 248, 255, 0.233);
+            padding: 2rem 0;
+        }
+
+        .date {
+            color: #fff;
+            background-color: black;
+            font-size: 12px;
+        }
+        
+        .cameraGuests {
+            width: 100%;
+            display: flex;
+            color: #fff;
+            justify-content: center;
+            gap: 10px;
+
+            p {
+                background-color: black;
+            }
+        }
+
+        .location {
+            margin-top: 2rem;
+            background-color: #ffffff96;
+        }
+    }
+}

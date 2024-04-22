@@ -1,0 +1,51 @@
+@import '../../../../../../app.scss';
+
+.oldAvatar {
+    margin: 2rem 0;
+    width: 80%;
+
+    .avtHist {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+
+        .avHistImg {
+            display: flex;
+            flex-direction: column;
+
+            .divImg {
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            
+            button {
+                width: 100px;
+                margin-top: 12px;
+                border-radius: 6px;
+                border: none;
+                background-color: $colorB;
+                height: 30px;
+                color: #fff;
+                box-shadow: 5px 5px 15px black;
+                transition: .3s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                    background-color: $colorD;
+                }
+                &:active {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

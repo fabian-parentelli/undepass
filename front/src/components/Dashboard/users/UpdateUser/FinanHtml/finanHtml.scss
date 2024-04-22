@@ -1,0 +1,65 @@
+@import '../../../../../app.scss';
+
+.finanHtml {
+    margin: 2rem 0;
+    width: 50%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+
+        .finDatCont {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+
+            .fiDaInp {
+                display: flex;
+                flex-direction: column;
+
+                .inputFD {
+                    height: 30px;
+                    width: 250px;
+                    border-radius: 6px;
+                    border: none;
+                    background-color: $colorD;
+                    color: #fff;
+                    padding-left: 5px;
+                }
+            }
+
+            .btnCont {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                padding-top: 1.2rem;
+
+                .btn {
+                    width: 100px;
+                    height: 30px;
+                    border: none;
+                    box-shadow: 5px 5px 15px black;
+                    color: #fff;
+                    transition: .3s ease-in-out;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $colorD;
+                    }
+                    &:active {
+                        box-shadow: none;
+                    }
+                }
+                .btnA {
+                    background-color: $colorB;
+                }
+                .btnB {
+                    background-color: $colorA;
+                }
+            }
+        }
+    }
+}

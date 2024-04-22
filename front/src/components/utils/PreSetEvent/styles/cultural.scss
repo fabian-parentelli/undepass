@@ -1,0 +1,37 @@
+.cultural {
+    width: 300px;
+    height: 300px;
+    background-image: url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1713102662/events/ybbgkorh8npij5etpdez.png');
+    background-size: contain;
+    box-shadow: 5px 5px 15px black;
+    position: relative;
+
+    .isMinors {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .cameraBody {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-end;
+        padding-top: 40%;
+
+        h3 {
+            background-color: rgba(0, 0, 0, 0.616);
+            color: #ffff;
+            padding: 5px;
+            border-radius: 6px;
+        }
+
+        .cameraGuests {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import '../../../../app.scss';
+
+/* Estilos para el select */
+.dayConf {
+    padding: 3px 3px;
+    border-radius: 12px;
+    background-color: $colorD;
+    border: none;
+    width: 60px;
+    color: #fff;
+}
+
+.dayConf option {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dayConf::-webkit-scrollbar {
+    width: 3px;
+}
+
+.dayConf::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+.dayConf::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}

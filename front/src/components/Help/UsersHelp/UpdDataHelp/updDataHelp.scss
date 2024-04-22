@@ -1,0 +1,188 @@
+@import '../../../../app.scss';
+
+.updDataHelp {
+    width: 100%;
+    min-height: 100vh;
+
+    .line {
+        width: 80%;
+        height: 1px;
+        background-color: $colorD;
+        margin: 6rem auto;
+    }
+
+    .registerHelpUp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+
+        h5 {
+            font-size: 4rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .registerHelpVideo {
+            text-decoration: none;
+            color: $colorA;
+            font-weight: 600;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: $colorB;
+            }
+        }
+    }
+
+    .registerHelpCont {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 4rem;
+        margin: 2rem 0;
+        padding: 0 2rem;
+
+        p {
+            width: 60%;
+            line-height: 1.8;
+
+            strong {
+                color: $colorB;
+            }
+        }
+
+        .registerHelpImg {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 70%;
+
+            .updDataImg1 {
+                width: 200px;
+                object-fit: contain;
+                box-shadow: 5px 5px 15px;
+            }
+
+            .updDataImg2 {
+                height: 150px;
+                object-fit: contain;
+                box-shadow: 5px 5px 15px;
+            }
+        }
+    }
+
+    .updDataHelpIN {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        width: 100%;
+        margin: 4rem 0;
+        padding: 0 20%;
+
+        p {
+            line-height: 1.8;
+
+            strong {
+                color: $colorB;
+            }
+        }
+
+        img {
+            width: 300px;
+            box-shadow: 5px 5px 15px;
+            object-fit: contain;
+        }
+    }
+
+    .financeData {
+        margin-top: 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+
+        h3 {
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-top: 12px;
+            line-height: 1.8;
+
+        }
+
+        ol {
+            width: 80%;
+            margin-top: 1rem;
+
+            li {
+                margin-top: 1.8px;
+
+                strong {
+                    color: $colorB;
+                }
+            }
+        }
+
+        .updDataImg1 {
+            height: 400px;
+            margin-top: 4rem;
+            border: solid black 2px;
+            box-shadow: 5px 5px 15px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .updDataHelp {
+        text-align: center;
+
+        .line {
+            width: 60%;
+        }
+
+        p {
+            margin: 1rem 0;
+        }
+
+        .registerHelpCont {
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            p {
+                width: 100%;
+            }
+
+            .registerHelpImg {
+                width: 100%;
+                gap: 2rem;
+
+                .updDataImg2 {
+                    height: 80px;
+                }
+            }
+        }
+
+        .updDataHelpIN {
+            flex-direction: column;
+            padding: 0 6px;
+        }
+
+        .financeData {
+            width: 95%;
+            margin: 0 auto;
+
+            .updDataImg1 {
+                height: 180px;
+                margin-top: 2rem;
+            }
+        }
+    }
+}

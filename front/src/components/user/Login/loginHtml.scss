@@ -1,0 +1,118 @@
+@import '../../../app.scss';
+
+.loginHtml {
+    margin-top: 70px;
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.884), rgba(0, 0, 0, 0.877)), url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1711754373/background/kpubwb09alralfjvk0dh.png');
+    background-size: cover;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+
+    .formLogin {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff1f;
+        padding: 2rem;
+        border-radius: 12px;
+        height: 70vh;
+
+        h2 {
+            color: #fff;
+            width: 100%;
+            text-align: center;
+
+            span {
+                color: $colorB;
+            }
+        }
+
+        .loginInputs {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            color: $colorA;
+
+            input {
+                width: 100%;
+                height: 30px;
+                padding-left: 6px;
+                border-radius: 6px;
+                border: 1px solid $colorA;
+            }
+        }
+
+        .btn {
+            height: 30px;
+            width: 200px;
+            border-radius: 12px;
+            border: none;
+            background-color: $colorB;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+
+        .butDivLogin {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            .btn-A {
+                color: #fff;
+                text-decoration: none;
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    color: $colorB;
+                }
+            }
+        }
+    }
+
+    .imgLogin {
+        width: 300px;
+        object-fit: contain;
+        border-radius: 12px;
+        box-shadow: 5px 5px 15px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+
+    .loginHtml {
+        text-align: center;
+
+        .formLogin {
+            text-align: center;
+            width: 90%;
+            height: 90vh;
+
+            .loginInputs {
+                align-items: center;
+
+                input {
+                    width: 80%;
+                }
+            }
+
+            .butDivLogin {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .imgLogin {
+        display: none;
+    }
+}

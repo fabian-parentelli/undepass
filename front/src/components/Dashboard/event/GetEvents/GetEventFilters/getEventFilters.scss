@@ -1,0 +1,41 @@
+@import '../../../../../app.scss';
+
+.getEventFilters {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    align-items: flex-end;
+
+    .getEventFilterDiv {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-left: 5px;
+        }
+
+        select {
+            width: 150px;
+            border-radius: 6px;
+            border: solid 1px rgba(128, 128, 128, 0.534);
+            height: 30px;
+            &:hover {
+                border-color: black;
+            }
+        }
+    }
+
+    .btn {
+        width: 150px;
+        height: 30px;
+        border: none;
+        background-color: $colorB;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        color: #ffff;
+        &:hover {
+            background-color: $colorD;
+        }
+    }
+}

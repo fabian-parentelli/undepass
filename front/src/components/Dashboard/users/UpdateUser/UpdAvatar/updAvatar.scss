@@ -1,0 +1,43 @@
+@import '../../../../../app.scss';
+
+.updAvatar {
+    margin: 2rem 0;
+    width: 80%;
+
+    .avatarImgDiv {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-top: 1rem;
+        .avatarImg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .updAvatarBtn {
+        width: 63%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+
+        .btn {
+            width: 150px;
+            border: none;
+            background-color: $colorD;
+            height: 30px;
+            color: #fff;
+            box-shadow: 5px 5px 15px black;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            &:hover {
+                background-color: $colorC;
+            }
+            &:active {
+                box-shadow: none;
+            }
+        }
+    }
+}

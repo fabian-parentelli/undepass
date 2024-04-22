@@ -1,0 +1,21 @@
+@import '../../../app.scss';
+
+.userHelp {
+    width: 100%;
+    height: 100%;
+    
+    .userHelpHeader {
+        min-height: 40vh;
+        background-color: $colorC;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h4 {
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+    }
+}

@@ -1,0 +1,139 @@
+@import '../../../../app.scss';
+
+.avatarHelp {
+    width: 100%;
+    min-height: 100vh;
+
+    .line {
+        width: 80%;
+        height: 1px;
+        background-color: $colorD;
+        margin: 6rem auto;
+    }
+
+    .registerHelpUp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+
+        h5 {
+            font-size: 4rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .registerHelpVideo {
+            text-decoration: none;
+            color: $colorA;
+            font-weight: 600;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: $colorB;
+            }
+        }
+    }
+
+    .avatHelpInfo {
+        margin-top: 2rem;
+        padding: 0 10%;
+        margin-bottom: 3rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            line-height: 1.8;
+
+            strong {
+                color: $colorB;
+            }
+        }
+
+        .avHeInImg {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 2rem;
+
+            .avHeInImgzz {
+                width: 200px;
+                object-fit: contain;
+                box-shadow: 5px 5px 15px;
+            }
+
+            .avHeInImgB {
+                height: 150px;
+                object-fit: contain;
+                box-shadow: 5px 5px 15px;
+            }
+        }
+
+        .avHeInImgPB {
+            margin-top: 2rem;
+            line-height: 1.8;
+        }
+
+        .avatSel {
+            width: 80%;
+            margin-top: 2rem;
+            box-shadow: 5px 5px 15px;
+        }
+
+        .avHeInContC {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-top: 4rem;
+            width: 80%;
+
+            p {
+                line-height: 1.8;
+            }
+
+            img {
+                height: 250px;
+                box-shadow: 5px 5px 15px;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    .avatarHelp {
+        text-align: center;
+
+        .avatHelpInfo {
+            margin-top: 2rem;
+            padding: 0 10%;
+            margin-bottom: 3rem;
+
+            .avHeInImg {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+
+                img {
+                    width: 200px;
+                    object-fit: contain;
+                }
+
+                .avHeInImgB {
+                    width: 300px;
+                }
+            }
+
+            .avHeInContC {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.SearchBanck {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media (max-width: 767px) {
+    .SearchBanck {
+        width: 100%;
+        flex-direction: column;
+    }
+}

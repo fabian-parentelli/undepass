@@ -1,0 +1,26 @@
+.updateUser {
+    margin-top: 70px;
+    padding: 2rem 0 0 1rem;
+    width: 80%;
+    min-height: 100vh;
+
+    .upUser {
+        display: flex;
+        align-items: center;
+
+        .upUT {
+            font-size: 4rem;
+        }
+
+        .uptitle {
+            width: 100%;
+
+            .line {
+                width: 100%;
+                height: 1px;
+                background-color: black;
+                margin-top: 2px;
+            }
+        }
+    }
+}

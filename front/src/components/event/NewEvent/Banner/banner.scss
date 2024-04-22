@@ -1,0 +1,57 @@
+@import '../../../../app.scss';
+
+.banner {
+    margin-bottom: 4rem;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .newEventHelp {
+        text-decoration: none;
+        color: $colorA;
+        font-size: 1.4rem;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            color: $colorD;
+        }
+    }
+
+    .btnsBanner {
+        margin-top: 1rem;
+        display: flex;
+        gap: 2rem;
+
+        button {
+            width: 150px;
+            height: 40px;
+            border-radius: 3px;
+            border: none;
+            background-color: $colorB;
+            box-shadow: 5px 5px 15px black;
+            color: #ffff;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+
+            &:active {
+                box-shadow: none;
+            }
+
+            &:hover {
+                background-color: $colorD;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .banner {
+        .btnsBanner {
+            margin-top: 1rem;
+            display: flex;
+            gap: 6px;
+        }
+    }
+}

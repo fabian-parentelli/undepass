@@ -1,0 +1,115 @@
+@import '../../../../../../app.scss';
+
+.searchAvatar {
+    margin-top: 2rem;
+
+    h3 {
+        margin-left: 8rem;
+    }
+
+    .vewAvatarCont {
+        width: 60%;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .vAavatar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #534949c9;
+            height: 60px;
+            border-radius: 12px;
+            transition: .3s ease-in-out;
+            position: relative;
+            padding: 0 12px;
+
+            &:hover {
+                background-color: #423838ef;
+            }
+
+            .contImg {
+                &:hover {
+                    .vAcontImg {
+                        clip-path: none;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+
+                .imgAvat {
+                    width: 50px;
+                }
+
+                .vAcontImg {
+                    position: absolute;
+                    bottom: 0;
+                    left: 20px;
+                    background-color: #fff;
+                    padding: 1rem;
+                    border-radius: 12px 12px 0 0;
+                    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: visibility 0s, opacity 0.5s linear;
+
+                    img {
+                        width: 200px;
+                    }
+                }
+            }
+
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                width: 100px;
+                height: 30px;
+                border-radius: 6px;
+                border: none;
+                background-color: $colorD;
+                color: #fff;
+                cursor: pointer;
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    background-color: $colorC;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .avatarSwhows {
+        h3 {
+            margin-left: 0;
+        }
+
+        .vewAvatarCont {
+            width: 95%;
+            .vAavatar {
+                .contImg {
+                    .vAcontImg {
+                        left: 2px;
+                        img {
+                            width: 150px;
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 16px;
+                }
+
+                .btn {
+                    width: 80px;
+                }
+            }
+        }
+    }
+}

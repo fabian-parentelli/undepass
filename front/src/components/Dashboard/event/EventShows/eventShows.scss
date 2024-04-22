@@ -1,0 +1,83 @@
+@import '../../../../app.scss';
+
+.eventShows {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .button {
+            width: 150px;
+            background-color: $colorB;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: $colorD;
+        }
+
+        .eventShowsInfo {
+            width: 100%;
+            background-color: #ddd;
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .eventShowsInfoIn {
+                display: flex;
+                gap: 2rem;
+            }
+        }
+
+        .eventShowsButton {
+            width: 90%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 3rem;
+
+            button {
+                width: 100px;
+                height: 30px;
+                border-radius: 3px;
+                border: solid 2px $colorA;
+                background-color: $colorA;
+                font-weight: 600;
+                transition: .3s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                    border: solid 2px $colorD;
+                }
+            }
+        }
+    }
+}
+
+span {
+    color: gray;
+}

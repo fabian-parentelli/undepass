@@ -1,0 +1,32 @@
+.stan {
+    width: 300px;
+    height: 300px;
+    background-image: linear-gradient(#000000be, #000000bb), url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1713104006/events/pgu6zvrelroarlxpx2pc.png');
+    background-size: contain;
+    position: relative;
+    color: #ffff;
+    padding: 5px 0;
+    box-shadow: 5px 5px 15px black;
+
+    .isMinors {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .cameraBody {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .cameraGuests {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+    }
+}

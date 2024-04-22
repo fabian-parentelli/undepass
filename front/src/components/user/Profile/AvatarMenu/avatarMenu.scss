@@ -1,0 +1,72 @@
+@import '../../../../app.scss';
+
+.avatarMenu {
+    padding: 2rem;
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(#000000c7, #000000c7), url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1711967285/background/dxswg8qjaffnmoblvtgj.png');
+
+    display: flex;
+    flex-direction: column;
+
+    .panProUser {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+        color: #ffff;
+
+        .dimg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            
+            .panProImg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .line {
+            height: 1px;
+            width: 100%;
+            background-color: #ffff;
+        }
+
+        .avatMenuButton {
+            width: 90%;
+            margin-top: 12px;
+            display: flex;
+            gap: 4rem;
+
+            button {
+                width: 100px;
+                height: 30px;
+                border-radius: 12px;
+                border: none;
+                font-weight: 600;
+                transition: .3s ease-in-out;
+                cursor: pointer;
+                box-shadow: 5px 5px 15px;
+                &:hover {
+                    background-color: $colorB;
+                }
+                &:active {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .avatarMenu {
+        padding: 12px;
+        height: 100%;
+        .panProUser {
+            flex-direction: column;
+        }
+    }
+}

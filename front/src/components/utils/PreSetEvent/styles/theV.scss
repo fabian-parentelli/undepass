@@ -1,0 +1,49 @@
+.theV {
+    width: 300px;
+    height: 300px;
+    background-image: linear-gradient(#00000069, #00000069), url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1713104198/events/nvxrtnm2unstoybv52uo.png');
+    background-size: contain;
+    position: relative;
+    padding: 5px 0;
+    color: #ffff;
+    box-shadow: 5px 5px 15px black;
+
+    .isMinors {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .cameraBody {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-weight: 600;
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        .description {
+            width: 50%;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .cameraGuests {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .date {
+            font-size: 14px;
+            background-color: black;
+        }
+    }
+}

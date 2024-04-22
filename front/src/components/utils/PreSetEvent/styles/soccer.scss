@@ -1,0 +1,36 @@
+.soccer {
+    width: 300px;
+    height: 300px;
+    background-image: url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1713101870/events/vyyyydo9ymvut00l7jdj.png');
+    background-size: contain;
+    position: relative;
+    color: #ffff;
+    padding: 5px 0;
+    box-shadow: 5px 5px 15px black;
+
+    .isMinors {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .cameraBody {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        p {
+            width: 80%;
+            margin-left: 1.4rem;
+        }
+
+        .cameraGuests {
+            width: 100%;
+            display: flex;
+        }
+    }
+}

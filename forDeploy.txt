@@ -1,0 +1,7 @@
+* Back
+    - services/user // recoverPassword 
+        Cambiar el localHost8082 x el dominio del servidor.
+    - services/user // interPass
+        Cambiar `http://localhost:5173/password/token=${tokenPass}` al dominio del front.
+
+            

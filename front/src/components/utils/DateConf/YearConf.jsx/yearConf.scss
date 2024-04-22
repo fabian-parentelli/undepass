@@ -1,0 +1,22 @@
+@import '../../../../app.scss';
+
+.yearConf {
+    padding: 3px 6px;
+    border-radius: 12px;
+    background-color: $colorD;
+    border: none;
+    color: #fff;
+}
+
+.yearConf::-webkit-scrollbar {
+    width: 3px;
+}
+
+.yearConf::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+.yearConf::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}

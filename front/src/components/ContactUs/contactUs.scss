@@ -1,0 +1,143 @@
+@import '../../app.scss';
+
+.contactUs {
+    margin-top: 70px;
+    min-height: 100vh;
+    background-image: url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1712351907/background/hzedfifiybubpcup9ck0.jpg');
+    background-size: cover;
+    padding-left: 5%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 1rem;
+
+        h2 {
+            margin-top: 2rem;
+            color: #fff;
+        }
+
+        .divContactUs {
+            display: flex;
+            gap: 2rem;
+
+            div {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    color: #fff;
+                }
+
+                .inpContUs {
+                    height: 30px;
+                    width: 200px;
+                    border-radius: 12px;
+                    border: none;
+                    padding-left: 5px;
+                }
+            }
+        }
+
+        .cuTextArea {
+            display: flex;
+            flex-direction: column;
+            width: 42%;
+
+            label {
+                color: #fff;
+            }
+
+            textarea {
+                border-radius: 12px;
+                padding: 6px;
+                resize: none;
+            }
+        }
+
+        .btn {
+            width: 200px;
+            height: 30px;
+            border-radius: 12px;
+            border: none;
+            background-color: $colorA;
+            font-weight: 600;
+            box-shadow: 5px 5px 15px;
+            transition: .3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $colorE;
+            }
+
+            &:active {
+                box-shadow: none;
+            }
+        }
+
+        .btnHelp {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: $colorB;
+            }
+        }
+
+        .pcont {
+            margin-bottom: 2rem;
+            width: 80%;
+            padding: 1rem;
+            border-radius: 12px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.507);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    .contactUs {
+        padding: 0 5%;
+        width: 100%;
+
+        form {
+            align-items: center;
+            width: 100%;
+
+            h2 {
+                text-align: center;
+            }
+
+            .divContactUs {
+                flex-direction: column;
+                align-items: center;
+                div {
+                    .inpContUs {
+                        width: 280px;
+                    }
+                }
+            }
+
+            .cuTextArea {
+                width: 280px;
+            }
+
+            .btn {
+                margin: 2rem;
+            }
+
+            .btnHelp {
+                margin: 1rem;
+            }
+
+            .pcont {
+                text-align: center;
+            }
+        }
+    }
+}

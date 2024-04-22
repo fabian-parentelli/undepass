@@ -1,0 +1,97 @@
+@import '../../../../app.scss';
+
+.whatEmail {
+    min-height: 100vh;
+    width: 100%;
+    margin-top: 70px;
+    background-image: url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1711798168/background/g2kgblwvv6esdjbhsqww.jpg');
+    background-size: cover;
+    background-position: top;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 0;
+
+    img {
+        width: 300px;
+        object-fit: contain;
+        border-radius: 12px;
+        box-shadow: 5px 5px 15px;
+    }
+
+    form {
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #ffffff11;
+        padding: 1rem;
+        border-radius: 12px;
+        text-align: center;
+
+        h2 {
+            color: #fff;
+            font-size: 2rem;
+        }
+
+        p {
+            color: #ffffff8a;
+        }
+
+        .divinput {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 5px;
+
+            label {
+                color: #fff;
+            }
+
+            input {
+                height: 30px;
+                width: 80%;
+                border-radius: 6px;
+                border: none;
+            }
+        }
+
+        .btn {
+            height: 30px;
+            width: 200px;
+            border-radius: 12px;
+            border: solid 1px $colorD;
+            background-color: $colorD;
+            color: #fff;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            box-shadow: 5px 5px 15px black;
+
+            &:hover {
+                border: solid 1px $colorA;
+            }
+
+            &:active {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .whatEmail {
+        form {
+            height: 80vh;
+            margin: 1rem;
+        }
+    }
+}
+
+.notUp {
+    margin-top: 0 !important;
+}

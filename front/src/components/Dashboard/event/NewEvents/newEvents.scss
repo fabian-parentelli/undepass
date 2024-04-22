@@ -1,0 +1,27 @@
+.newEventsDash {
+    margin-top: 70px;
+    padding: 1rem;
+    width: 80%;
+
+    .newEventsDashTitle {
+        display: flex;
+        align-items: center;
+    }
+
+    .newEventsDashLine {
+        width: 100%;
+        height: 1px;
+        background-color: gray;
+    }
+
+    .newEventsDashfinanceDate {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0;
+
+        p span {
+            color: gray;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+
+.panelProfile {
+    padding: 2rem;
+    width: 100%;
+    background-image: url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1712002082/background/jxr7asp4vfpleiifxowb.jpg');
+    background-size: cover;
+
+    .panProUser {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+
+        .dimg {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            
+            .panProImg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .line {
+            height: 1px;
+            width: 100%;
+            background-color: black;
+        }
+    }
+}

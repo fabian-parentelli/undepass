@@ -1,0 +1,14 @@
+@import '../../../../app.scss';
+
+.getAdminEvents {
+    margin-top: 70px;
+    padding: 2rem;
+    width: 90%;
+    
+    .getAdminEventsTitle {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

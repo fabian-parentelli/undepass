@@ -1,0 +1,77 @@
+@import '../../../../app.scss';
+
+.tikets {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    h4 {
+        margin-bottom: 1rem;
+        color: $colorA;
+    }
+
+    .ticketsContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5%;
+
+        .ticketVew {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .tikV {
+                padding-bottom: 12px;
+                border-bottom: 1px solid gray;
+
+                span {
+                    color: gray;
+                }
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 2rem;
+        width: 200px;
+        border-radius: 3px;
+        border: none;
+        background-color: $colorB;
+        height: 40px;
+        color: #ffff;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+        box-shadow: 5px 5px 15px black;
+        &:hover {
+            background-color: $colorD;
+        }
+        &:active {
+            box-shadow: none;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .tikets {
+        width: 100%;
+        .ticketsContainer {
+            width: 100%;
+            .ticketVew {
+                width: 90%;
+                margin-top: 2rem;
+                .tikV {
+                    padding-bottom: 12px;
+                    border-bottom: 1px solid gray;
+
+                    span {
+                        color: gray;
+                    }
+                }
+            }
+        }
+    }
+}

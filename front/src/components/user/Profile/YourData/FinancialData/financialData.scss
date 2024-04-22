@@ -1,0 +1,57 @@
+@import '../../../../../app.scss';
+
+.financialData {
+    margin-top: 2rem;
+    background-color: #242424cb;
+    padding: 12px;
+    color: #fff;
+
+    form {
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+
+        .finDatCont {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 2rem;
+
+            .fiDaInp {
+                display: flex;
+                flex-direction: column;
+
+                .inputFD {
+                    width: 250px;
+                    height: 40px;
+                    border-radius: 6px;
+                    border: none;
+                    padding: 0 5px;
+                    background-color: rgba(133, 130, 130, 0.308);
+                    font-weight: 600;
+
+                    &::placeholder {
+                        color: gray;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .financialData {
+        padding: 6px;
+        text-align: center;
+        form {
+            align-items: center;
+            .finDatCont {
+                flex-direction: column;
+            }
+        }
+    }
+}

@@ -1,0 +1,154 @@
+@import '../../../../app.scss';
+
+.newEventHelps {
+    display: flex;
+    flex-direction: column;
+    margin: 6rem auto;
+    width: 80%;
+
+    .registerHelpUp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+
+        h5 {
+            font-size: 4rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .registerHelpVideo {
+            text-decoration: none;
+            color: $colorA;
+            font-weight: 600;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: $colorB;
+            }
+        }
+    }
+
+    .newEventHelpsCont {
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        margin: 2rem 0;
+        padding: 0 2rem;
+
+        .newEventHelpsText {
+
+            p {
+                width: 100%;
+                line-height: 1.8;
+
+                strong {
+                    color: $colorB;
+                }
+            }
+
+            .pOrange {
+                color: $colorA;
+            }
+
+            ul li strong {
+                color: $colorB;
+            }
+        }
+
+        .registerHelpImg {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            img {
+                width: 300px;
+                box-shadow: 5px 5px 15px;
+            }
+        }
+    }
+
+    .newEventHelpsCont2 {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        margin: 2rem auto;
+
+        .newEventHelpsCont2B {
+            display: flex;
+            gap: 2rem;
+            .newEventHelpsText2 {
+                width: 100%;
+                p {
+                    width: 70%;
+                    line-height: 1.8;
+                    strong {
+                        color: $colorB;
+                    }
+                }
+                .pOrange {
+                    color: $colorA;
+                }
+            }
+            .imgVert {
+                width: 280px;
+                box-shadow: 5px 5px 15px;
+            }
+        }
+
+        .imgHor {
+            box-shadow: 5px 5px 15px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .newEventHelps {
+        width: 100%;
+        padding: 0 16px;
+        text-align: center;
+        .registerHelpUp {
+            h5 {
+                font-size: 2rem;
+            }
+            p {
+                margin: 12px 0;
+            }
+        }
+    
+        .newEventHelpsCont {
+            padding: 0 12px;
+            flex-direction: column;
+            .registerHelpImg {
+                align-items: center;
+                img {
+                    width: 280px;
+                    box-shadow: 5px 5px 15px;
+                }
+            }
+        }
+    
+        .newEventHelpsCont2 {
+            width: 100%;
+            .newEventHelpsCont2B {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                .newEventHelpsText2 {
+                    width: 100%;
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+    
+            .imgHor {
+                box-shadow: 5px 5px 15px;
+            }
+        }
+    }
+}

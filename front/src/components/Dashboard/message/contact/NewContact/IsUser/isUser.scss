@@ -1,0 +1,65 @@
+@import '../../../../../../app.scss';
+
+.isUser {
+
+    form {
+        margin-top: 1rem;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .data {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+
+            .dataIcon {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+
+        .divInp {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            gap: 3px;
+
+            input {
+                height: 30px;
+                border: none;
+                border-radius: 12px;
+                background-color: rgb(201, 198, 198);
+                padding-left: 5px;
+            }
+
+            textarea {
+                border: none;
+                resize: none;
+                background-color: rgb(201, 198, 198);
+                border-radius: 12px;
+                padding: 5px;
+            }
+        }
+
+        .btn {
+            width: 200px;
+            height: 30px;
+            border: none;
+            background-color: $colorD;
+            box-shadow: 5px 5px 15px black;
+            color: #fff;
+            transition: .3s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                background-color: $colorB;
+            }
+            &:active {
+                box-shadow: none;
+            }
+        }
+    }
+}
