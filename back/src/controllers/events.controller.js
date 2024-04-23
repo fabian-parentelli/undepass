@@ -1,11 +1,36 @@
 import * as evenetService from '../services/evenet.service.js';
 import { EventNotFound } from '../utils/custom-exceptions.utils.js';
+import schedule from 'node-schedule';
 
 const newEventInfo = async (req, res) => {
     try {
         const result = await evenetService.newEventInfo({ ...req.body });
         if (result) return res.sendSuccess(result);
     } catch (error) {
+        if (error instanceof EventNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
+const getCitys = async (req, res) => {
+    try {
+        const result = await evenetService.getCitys();
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof EventNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
+const searchEvent = async (req, res) => {
+    const { name } = req.params;
+    try {
+        const result = await evenetService.searchEvent(name);
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+
+        console.log(error); //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+
         if (error instanceof EventNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
@@ -28,9 +53,6 @@ const getAllEvents = async (req, res) => {
         const result = await evenetService.getAllEvents(limit, page, category, active, tickets, location);
         if (result) return res.sendSuccess(result);
     } catch (error) {
-
-        console.log(error); //Borrar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
         if (error instanceof EventNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
@@ -80,4 +102,26 @@ const checkOut = async (req, res) => {
     };
 };
 
-export { newEventInfo, getById, getAllEvents, updPreset, updFlyer, updTickes, checkOut };
+const active = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const result = await evenetService.active(id);
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof EventNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
+const intervalId = schedule.scheduleJob('0 22 * * *', async () => {
+    try {
+        await evenetService.singleUpdate();
+    } catch (error) {
+        console.error('Error al actualizar eventos:', error.message);
+    };
+});
+
+export {
+    newEventInfo, getCitys, getById, searchEvent, getAllEvents,
+    updPreset, updFlyer, updTickes, checkOut, active
+};

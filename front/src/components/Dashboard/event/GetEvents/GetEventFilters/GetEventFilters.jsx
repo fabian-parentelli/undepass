@@ -1,10 +1,19 @@
 import './getEventFilters.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAllEventsApi } from '../../../../../helpers/events/getAllEvents.api.js';
+import { getEventCitysApi } from '../../../../../helpers/events/getEventCitys.api.js';
 
 const GetEventFilters = ({ setEvents, setLoading }) => {
 
     const [filter, setFilter] = useState({ active: null, category: null, tickets: null, location: null });
+    const [cities, setCities] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await getEventCitysApi();
+            setCities(response);
+        }; fetchData();
+    }, []);
 
     const handleChange = (e) => setFilter({ ...filter, [e.target.name]: e.target.value });
 
@@ -55,9 +64,9 @@ const GetEventFilters = ({ setEvents, setLoading }) => {
                 <label>Locación</label>
                 <select name="location" onChange={handleChange}>
                     <option value=""></option>
-                    <option value="province">Provincia</option>
-                    <option value="municipality">Partido / comuna</option>
-                    <option value="city">Localidad / barrio</option>
+                    {cities && cities.map((cit, index) => (
+                        <option value={cit} key={index}>{cit}</option>
+                    ))}
                 </select>
             </div>
 

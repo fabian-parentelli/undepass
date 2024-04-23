@@ -10,12 +10,23 @@ export default class Event {
         return await eventModel.findById(id).lean();
     };
 
-    getAllEvents = async (query, sortOption, limit, page) => {
-        return await eventModel.paginate(query, { limit, page, sort: sortOption, lean: true });
+    searchEvent = async (name) => {
+        const query = {
+            $or: [{ name: { $regex: name, $options: 'i' } }, { guests: { $regex: name, $options: 'i' } }]
+        };
+        return await eventModel.paginate(query, { limit: 10, page: 1, lean: true });
+    };
+
+    getAllEvents = async (query, limit, page) => {
+        return await eventModel.paginate(query, { limit, page, lean: true });
     };
 
     update = async (event) => {
         return await eventModel.findByIdAndUpdate({ _id: event._id }, event);
+    };
+
+    getActive = async () => {
+        return await eventModel.find({ active: true }).lean();
     };
 
 };

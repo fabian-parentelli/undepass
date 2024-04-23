@@ -1,6 +1,7 @@
 import { eventRepository } from "../repositories/index.repositories.js";
 import { EventNotFound } from '../utils/custom-exceptions.utils.js';
 import { getProvince, getParties } from "./cities.service.js";
+import convertDate from '../utils/DateConvert.utils.js';
 
 const newEventInfo = async (event) => {
     event.guests = event.guests.trim().split(',');
@@ -8,6 +9,19 @@ const newEventInfo = async (event) => {
     event.location.municipality = await getParties(event.location.municipality);
     const result = await eventRepository.newEventInfo(event);
     if (!result) throw new EventNotFound('No se puede guaradar el evento');
+    return { status: 'success', result };
+};
+
+const getCitys = async () => {
+    const events = await eventRepository.getActive();
+    if (!events) throw new EventNotFound('No se encuentran los eventos');
+    const result = events.map((event) => event.location.city);
+    return { status: 'success', result };
+};
+
+const searchEvent = async (name) => {
+    const result = await eventRepository.searchEvent(name);
+    if (!result) throw new EventNotFound('No se encuentra el evento');
     return { status: 'success', result };
 };
 
@@ -22,12 +36,13 @@ const getAllEvents = async (limit, page, category, active, tickets, location) =>
     if (category) query.category = { $regex: category, $options: "i" };
     if (active !== undefined) query.active = active;
     if (tickets !== undefined) query.tickets = tickets;
-    const sortOption = {};
-    if (location) {
-        sortOption.location = 1;
-        sortOption.startEvent = 1;
-    } else sortOption.startEvent;
-    const result = await eventRepository.getAllEvents(query, sortOption, limit, page);
+    if (location) query["location.city"] = { $regex: location, $options: "i" };
+    const result = await eventRepository.getAllEvents(query, limit, page);
+    if (!location) {
+        result.docs.forEach((event) => event.startEvent = convertDate(event.startEvent));
+        result.docs.sort((a, b) => a.startEvent - b.startEvent);
+        result.docs.forEach((event) => event.startEvent = event.startEvent.toLocaleString());
+    };
     return { status: 'success', result };
 };
 
@@ -68,4 +83,29 @@ const checkOut = async (tickets, id) => {
     return { status: 'success' };
 };
 
-export { newEventInfo, getById, getAllEvents, updPreset, updFlyer, updTickes, checkOut };
+const active = async (id) => {
+    const event = await eventRepository.getById(id);
+    if (!event) throw new EventNotFound('No se encentra el evento');
+    event.active = !event.active;
+    await eventRepository.update(event);
+    return { status: 'success' };
+};
+
+const singleUpdate = async () => {
+    const events = await eventRepository.getActive();
+    if (events) {
+        events.forEach(async (even) => {
+            const inactiveEvent = convertDate(even.startEvent);
+            if (inactiveEvent < new Date()) {
+                even.active = false;
+                console.log(even);
+                await eventRepository.update(even);
+            };
+        });
+    } else console.log('No hay eventos para modoficar');
+};
+
+export {
+    newEventInfo, getCitys, searchEvent, getById, getAllEvents,
+    updPreset, updFlyer, updTickes, checkOut, singleUpdate, active
+};

@@ -1,4 +1,17 @@
 .body {
     min-height: 100vh;
     margin-top: 70px;
+    margin-bottom: 4rem;
+    
+    .bannerDiv {
+        position: relative;
+    }
+
+    .panelSearch {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 340px;
+    }
+
 }

@@ -1,14 +1,24 @@
 import './eventShows.scss';
 import { useState, Fragment } from 'react';
+import { updActiveEventApi } from '../../../../helpers/events/updateActiveEvent.api.js';
+import { getAllEventsApi } from '../../../../helpers/events/getAllEvents.api.js';
 
-const EventShows = ({ events }) => {
+const EventShows = ({ events, setEvents, setLoading }) => {
+
     const [showDetails, setShowDetails] = useState({});
 
     const toggleDetails = (eventId) => {
-        setShowDetails(prevState => ({
-            ...prevState,
-            [eventId]: !prevState[eventId]
-        }));
+        setShowDetails(prevState => ({ ...prevState, [eventId]: !prevState[eventId] }));
+    };
+
+    const handleActive = async (id) => {
+        setLoading(true);
+        const response = await updActiveEventApi(id);
+        if (response.status === 'success') {
+            const result = await getAllEventsApi({ active: null, category: null, tickets: null, location: null });
+            if (result.status === 'success') setEvents(result.result.docs);
+        };
+        setLoading(false);
     };
 
     return (
@@ -88,7 +98,9 @@ const EventShows = ({ events }) => {
                                             <div className='eventShowsButton'>
                                                 <button>Ver</button>
                                                 <button>Editar</button>
-                                                <button>Desactivar</button>
+                                                <button
+                                                    onClick={() => handleActive(event._id)}
+                                                >{event.active ? 'Desactivar' : 'Activar'}</button>
                                             </div>
                                         </div>
                                     </td>

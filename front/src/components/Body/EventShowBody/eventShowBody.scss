@@ -1,0 +1,49 @@
+@import '../../../app.scss';
+
+.eventShowBody {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem 0;
+    min-height: 50vh;
+
+    .cardEvent {
+        width: 300px;
+        background-color: rgb(211, 210, 210);
+
+        .cardInEvent {
+            padding: 1rem;
+            color: rgba(0, 0, 0, 0.815);
+
+            h4 {
+                margin-bottom: 2rem;
+                font-size: 1.4rem;
+            }
+
+            .textCardEvent {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .icon {
+                    color: $colorB;
+                }
+            }
+        }
+
+        .btnEventBody {
+            width: 100%;
+            border: none;
+            background-color: $colorA;
+            height: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            &:hover {
+                background-color: $colorE;
+            }
+        }
+    }
+}

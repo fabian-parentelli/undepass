@@ -25,4 +25,4 @@ dist-ssr
 package-lock.json
 /public
 .eslintrc.cjs
-vite.config.json
+vite.config.js
