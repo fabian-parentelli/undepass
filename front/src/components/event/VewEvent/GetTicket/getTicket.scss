@@ -1,0 +1,127 @@
+@import '../../../../app.scss';
+
+.getTicket {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 4rem;
+
+    .getTicketTitle {
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-around;
+        color: $colorD;
+
+        .getTicketTitleCont {
+            display: flex;
+            flex-direction: column;
+
+            .getTicketDiv {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+        }
+
+        .getTicketTitleContR {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    .getTicketLine {
+        width: 80%;
+        background-color: $colorA;
+        height: 2px;
+        margin: 2rem auto;
+    }
+
+    .tableForm {
+        width: 60%;
+        margin: 2rem auto;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+
+            th,
+            td {
+                padding: 10px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f0f0f0;
+            }
+
+            td {
+                border-top: 1px solid #ddd;
+            }
+
+            tbody td:first-child {
+                border-left: 1px solid #ddd;
+            }
+
+            tbody td:last-child {
+                border-right: 1px solid #ddd;
+            }
+
+            tbody .tickets th {
+                font-weight: normal;
+            }
+
+            .soldOut {
+                background: gray;
+                padding: 12px;
+                border-radius: 3px;
+            }
+
+            .getTicketSelect {
+                width: 100%;
+                height: 40px;
+                border: solid 1px rgba(128, 128, 128, 0.527);
+                border-radius: 3px;
+
+                &:hover {
+                    border-color: $colorD;
+                }
+            }
+        }
+
+        .getTicketButon {
+            width: 100%;
+            text-align: right;
+            
+            button {
+                padding: 10px 20px;
+                background-color: $colorA;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                font-size: 16px;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: $colorE;
+                }
+            }
+        }
+
+
+    }
+
+    .getTicketPictures {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 4rem;
+
+        .boxMap {
+            width: 300px;
+            height: 300px;
+            box-shadow: 5px 5px 15px;
+        }
+    }
+}

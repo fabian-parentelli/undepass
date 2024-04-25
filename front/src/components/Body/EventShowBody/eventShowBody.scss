@@ -12,6 +12,10 @@
     .cardEvent {
         width: 300px;
         background-color: rgb(211, 210, 210);
+        transition: .3s ease-in-out;
+        &:hover {
+            box-shadow: 5px 5px 15px;
+        }
 
         .cardInEvent {
             padding: 1rem;

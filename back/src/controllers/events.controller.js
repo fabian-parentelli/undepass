@@ -28,9 +28,6 @@ const searchEvent = async (req, res) => {
         const result = await evenetService.searchEvent(name);
         if (result) return res.sendSuccess(result);
     } catch (error) {
-
-        console.log(error); //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-
         if (error instanceof EventNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
@@ -48,7 +45,7 @@ const getById = async (req, res) => {
 };
 
 const getAllEvents = async (req, res) => {
-    const { limit = 20, page = 1, category, active, tickets, location } = req.query;
+    const { limit = 12, page = 1, category, active, tickets, location } = req.query;
     try {
         const result = await evenetService.getAllEvents(limit, page, category, active, tickets, location);
         if (result) return res.sendSuccess(result);

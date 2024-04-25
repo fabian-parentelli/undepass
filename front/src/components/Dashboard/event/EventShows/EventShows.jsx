@@ -2,8 +2,9 @@ import './eventShows.scss';
 import { useState, Fragment } from 'react';
 import { updActiveEventApi } from '../../../../helpers/events/updateActiveEvent.api.js';
 import { getAllEventsApi } from '../../../../helpers/events/getAllEvents.api.js';
+import Pager from '../../../utils/Pager/Pager.jsx';
 
-const EventShows = ({ events, setEvents, setLoading }) => {
+const EventShows = ({ events, setEvents, setLoading, thePage, setThePage }) => {
 
     const [showDetails, setShowDetails] = useState({});
 
@@ -11,12 +12,21 @@ const EventShows = ({ events, setEvents, setLoading }) => {
         setShowDetails(prevState => ({ ...prevState, [eventId]: !prevState[eventId] }));
     };
 
+    const handleChangePage = async (page) => {
+        const response = await getAllEventsApi({ page: page });
+        setEvents(response.result.docs);
+        setThePage(response.result);
+    };
+
     const handleActive = async (id) => {
         setLoading(true);
         const response = await updActiveEventApi(id);
         if (response.status === 'success') {
             const result = await getAllEventsApi({ active: null, category: null, tickets: null, location: null });
-            if (result.status === 'success') setEvents(result.result.docs);
+            if (result.status === 'success') {
+                setEvents(result.result.docs);
+                setThePage(response.result);
+            };
         };
         setLoading(false);
     };
@@ -38,7 +48,7 @@ const EventShows = ({ events, setEvents, setLoading }) => {
                     {events && events.map(event => (
                         <Fragment key={event._id}>
                             <tr>
-                                <td>{event.name}</td>
+                                {event.active ? <td>{event.name}</td> : <td style={{ color: 'red' }}>{event.name}</td>}
                                 <td>{event.startEvent}</td>
                                 <td>{event.location.city} - {event.location.province}</td>
                                 <td>{event.tickets ? 'Pagas' : 'Gratis'}</td>
@@ -110,6 +120,7 @@ const EventShows = ({ events, setEvents, setLoading }) => {
                     ))}
                 </tbody>
             </table>
+            <Pager users={thePage} HandleChangePage={handleChangePage} />
         </div>
     );
 };

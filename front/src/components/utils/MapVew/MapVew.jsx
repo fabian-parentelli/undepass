@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const MapView = ({ coordinates }) => {
+    
     const [position, setPosition] = useState([coordinates.lat, coordinates.lon]);
 
     useEffect(() => {

@@ -9,6 +9,8 @@ const GetEvents = () => {
 
     const [events, setEvents] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [thePage, setThePage] = useState(null);
+
 
     return (
         <div className='getAdminEvents'>
@@ -18,9 +20,16 @@ const GetEvents = () => {
             </div>
             <div className='line'></div>
 
-            <GetEventFilters setEvents={setEvents} setLoading={setLoading} />
-            {events && <EventShows events={events} setEvents={setEvents} setLoading={setLoading} />}
-
+            <GetEventFilters setEvents={setEvents} setLoading={setLoading} setThePage={setThePage} />
+            {events &&
+                <EventShows
+                    events={events}
+                    setEvents={setEvents}
+                    setLoading={setLoading}
+                    thePage={thePage}
+                    setThePage={setThePage}
+                />
+            }
             <Load loading={loading} />
         </div>
     );

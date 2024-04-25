@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { getAllEventsApi } from '../../../../../helpers/events/getAllEvents.api.js';
 import { getEventCitysApi } from '../../../../../helpers/events/getEventCitys.api.js';
 
-const GetEventFilters = ({ setEvents, setLoading }) => {
+const GetEventFilters = ({ setEvents, setLoading, setThePage }) => {
 
     const [filter, setFilter] = useState({ active: null, category: null, tickets: null, location: null });
     const [cities, setCities] = useState([]);
@@ -21,7 +21,10 @@ const GetEventFilters = ({ setEvents, setLoading }) => {
         e.preventDefault();
         setLoading(true);
         const response = await getAllEventsApi(filter);
-        if (response.status === 'success') setEvents(response.result.docs);
+        if (response.status === 'success') {
+            setEvents(response.result.docs);
+            setThePage(response.result);
+        };
         setLoading(false);
     };
 
