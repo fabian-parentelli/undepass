@@ -39,7 +39,8 @@ const eventSchema = new mongoose.Schema({
             quantity: { type: Number },
             hourEnd: { type: String },
         }
-    ]
+    ],
+    password: { type: String }
 });
 
 eventSchema.plugin(mongossePaginate);

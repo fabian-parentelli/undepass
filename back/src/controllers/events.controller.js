@@ -33,6 +33,17 @@ const searchEvent = async (req, res) => {
     };
 };
 
+const isPrivate = async (req, res) => {
+    const { id, pass } = req.params;
+    try {
+        const result = await evenetService.isPrivate(id, pass);
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof EventNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
 const getById = async (req, res) => {
     const { id } = req.params;
     try {
@@ -120,5 +131,5 @@ const intervalId = schedule.scheduleJob('0 22 * * *', async () => {
 
 export {
     newEventInfo, getCitys, getById, searchEvent, getAllEvents,
-    updPreset, updFlyer, updTickes, checkOut, active
+    updPreset, updFlyer, updTickes, checkOut, active, isPrivate
 };

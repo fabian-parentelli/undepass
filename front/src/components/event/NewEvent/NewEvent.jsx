@@ -17,7 +17,7 @@ const NewEvent = ({ user }) => {
         startEvent: '', endEvent: '',
         location: { province: '', locality: '', city: '', address: '', coordinates: '', place: '' },
         video: '', minors: '', guests: '',
-        tickets: '', userId: ''
+        tickets: '', userId: '', password: ''
     });
 
     useEffect(() => { setValues({ ...values, userId: user._id }) }, [user]);

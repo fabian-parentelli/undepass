@@ -1,0 +1,39 @@
+@import '../../../../app.scss';
+
+.eventMenu {
+    padding: 2rem;
+    width: 90%;
+
+    .eventMenuTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .pHelp {
+            color: $colorA;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            &:hover {
+                color: $colorE;
+            }
+        }
+    }
+
+    .eventMenuBtn {
+        width: 150px;
+        height: 30px;
+        background-color: $colorB;
+        color: #ffff;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 5px 5px 15px black;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            background-color: $colorD;
+        }
+        &:active {
+            box-shadow: none;
+        }
+    }
+}

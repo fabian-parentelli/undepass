@@ -10,8 +10,6 @@ const VewEvent = () => {
     const [loading, setLoading] = useState(false);
     const [interval, setInterval] = useState('getTicket');
 
-
-
     return (
         <div className='vewEvent'>
             {interval === 'getTicket' &&

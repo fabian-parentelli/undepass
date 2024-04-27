@@ -2,11 +2,13 @@ import { eventRepository } from "../repositories/index.repositories.js";
 import { EventNotFound } from '../utils/custom-exceptions.utils.js';
 import { getProvince, getParties } from "./cities.service.js";
 import convertDate from '../utils/DateConvert.utils.js';
+import { createHash, isValidPassword } from '../utils/hashedPassword.utils.js';
 
 const newEventInfo = async (event) => {
     event.guests = event.guests.trim().split(',');
     event.location.province = await getProvince(event.location.province);
     event.location.municipality = await getParties(event.location.municipality);
+    if (event.password) event.password = createHash(event.password);
     const result = await eventRepository.newEventInfo(event);
     if (!result) throw new EventNotFound('No se puede guaradar el evento');
     return { status: 'success', result };
@@ -17,6 +19,14 @@ const getCitys = async () => {
     if (!events) throw new EventNotFound('No se encuentran los eventos');
     const result = events.map((event) => event.location.city);
     return { status: 'success', result };
+};
+
+const isPrivate = async (id, pass) => {
+    const event = await eventRepository.getById(id);
+    if (!event) throw new EventNotFound('No se encuentra el evento');
+    const comparePassword = isValidPassword(event, pass);
+    if (!comparePassword) throw new EventNotFound('La contraseña es incorrecta');
+    return { status: 'success' };
 };
 
 const searchEvent = async (name) => {
@@ -107,5 +117,5 @@ const singleUpdate = async () => {
 
 export {
     newEventInfo, getCitys, searchEvent, getById, getAllEvents,
-    updPreset, updFlyer, updTickes, checkOut, singleUpdate, active
+    updPreset, updFlyer, updTickes, checkOut, singleUpdate, active, isPrivate
 };

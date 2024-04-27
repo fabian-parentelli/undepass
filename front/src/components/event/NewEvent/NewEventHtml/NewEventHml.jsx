@@ -4,13 +4,14 @@ import CityConf from '../../../utils/CityConf/CityConf';
 import DateHourConf from '../../../utils/DateHourConf/DateHourConf';
 import MapVew from '../../../utils/MapVew/MapVew';
 import Dialog from '@mui/material/Dialog';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CancelIcon from '@mui/icons-material/Cancel';
 
 const NewEventHtml = ({ handleChange, setValues, handleSubmit, handleCoord, values, user }) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [isButton, setIsButton] = useState(false);
+    const [showPasswordInput, setShowPasswordInput] = useState(false);
 
     const handleIeisOpen = () => {
         setIsOpen(!isOpen);
@@ -21,6 +22,11 @@ const NewEventHtml = ({ handleChange, setValues, handleSubmit, handleCoord, valu
         if (e.target.value !== '') setIsButton(true);
         else setIsButton(false);
     };
+
+    useEffect(() => {
+        if (values.type === 'private') setShowPasswordInput(true);
+        else setShowPasswordInput(false);
+    }, [values.type]);
 
     return (
         <div className='newEventHtml'>
@@ -51,10 +57,19 @@ const NewEventHtml = ({ handleChange, setValues, handleSubmit, handleCoord, valu
                         </div>
                     </div>
 
+                    {showPasswordInput &&
+                        <div className='divBetNewEvent'>
+                            <div className='divInEvent'>
+                                <label>Contraseña del evento</label>
+                                <input className='inpSel' type="text" name='password' placeholder='ej. amigos1234' onChange={handleChange} required />
+                            </div>
+                        </div>
+                    }
+
                     <div className='divBetNewEvent'>
                         <div className='divInEvent'>
                             <label>Nombre del evento</label>
-                            <input className='inpSel' type="text" name='name' placeholder='ej. Con amigos' onChange={handleChange} required/>
+                            <input className='inpSel' type="text" name='name' placeholder='ej. Con amigos' onChange={handleChange} required />
                         </div>
                         <div className='divInEvent'>
                             <label>Menores de 18 años</label>
@@ -154,7 +169,7 @@ const NewEventHtml = ({ handleChange, setValues, handleSubmit, handleCoord, valu
                         <button className='btnEvent' disabled={!user._id}>Continuar</button>
                     </div>
                 </form>
-                
+
                 {user && user.role !== 'admin' &&
                     <img className='imgEvenet' src={'https://res.cloudinary.com/dtjzfz2ex/image/upload/v1712788088/background/wy4cjxchevbax4tbuoyt.png'} alt="event" />
                 }

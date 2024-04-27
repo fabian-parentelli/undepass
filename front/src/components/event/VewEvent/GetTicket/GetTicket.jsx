@@ -5,10 +5,13 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ChekPhoto from '../../NewEvent/ChekOut/CheckPhoto/CheckPhoto.jsx';
 import MapView from '../../../utils/MapVew/MapVew.jsx';
+import GetTicketForm from './GetTicketForm.jsx';
+import GetTicketPrivate from './GetTicketPrivate.jsx';
 
 const GetTicket = ({ id, setLoading }) => {
 
     const [events, setEvents] = useState(null);
+    const [isPublic, setIsPublic] = useState(true);
 
     useEffect(() => {
         const fetchData = async (id) => {
@@ -18,6 +21,8 @@ const GetTicket = ({ id, setLoading }) => {
             setLoading(false);
         }; fetchData(id);
     }, []);
+
+    useEffect(() => { if (events && events.type === 'private') setIsPublic(false) }, [events]);
 
     return (
         <div className='getTicket'>
@@ -42,43 +47,10 @@ const GetTicket = ({ id, setLoading }) => {
 
                     <div className='getTicketLine'></div>
 
-                    <form className='tableForm'>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Tipo de entrada</th>
-                                    <th>Valor</th>
-                                    <th>Cantidad</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {events.ticketInfo.map((tick) => (
-                                    <tr key={tick._id} className='tickets'>
-                                        <th>{tick.type} <br /> <span>{tick.description}</span></th>
-                                        <th>{tick.price}</th>
-                                        <th>
-                                            {tick.quantity > 0 ?
-                                                <select name="" className='getTicketSelect'>
-                                                    <option value=""></option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                </select>
-                                                : <p className='soldOut'>Agotadas</p>
-                                            }
-                                        </th>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-
-                        <div className='getTicketButon'>
-                            <button>Comprar</button>
-                        </div>
-                    </form>
+                    {isPublic
+                        ? <GetTicketForm events={events} />
+                        : <GetTicketPrivate events={events} setIsPublic={setIsPublic} setLoading={setLoading} />
+                    }
 
                     <div className='getTicketPictures'>
                         <div className='boxMap'>
@@ -88,9 +60,30 @@ const GetTicket = ({ id, setLoading }) => {
                             <MapView coordinates={events.location.coordinates} />
                         </div>
                     </div>
+
+                    <div className='getTicketLine'></div>
+
+                    {events.guests[0] &&
+                        <div className='guestsCont'>
+                            <p><strong>Invitados:</strong></p>
+                            <div className='guests'>
+                                {events.guests.map((guest, index) => (
+                                    <p key={index}>{guest}</p>
+                                ))}
+                            </div>
+                        </div>
+                    }
+
+                    <div className='guestsCont' style={{ marginTop: '2rem' }}>
+                        <p className='guestsContP'>{events.description}</p>
+                    </div>
+
+                    <div className='guestsCont' style={{ marginTop: '2rem' }}>
+                        <p><strong>{events.minors ? 'Apto todo público.' : 'Solo apto mayores de 18 años.'}</strong></p>
+                    </div>
                 </>
             }
-        </div>
+        </div >
     );
 };
 

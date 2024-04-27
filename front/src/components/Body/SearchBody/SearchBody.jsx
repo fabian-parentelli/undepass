@@ -5,7 +5,7 @@ import { getEventCitysApi } from '../../../helpers/events/getEventCitys.api.js';
 import { getAllEventsApi } from '../../../helpers/events/getAllEvents.api.js';
 
 
-const SearchBody = ({ setEvents, setLoading }) => {
+const SearchBody = ({ setEvents, setLoading, handleClosedAccordion }) => {
 
     const [filter, setFilter] = useState({ active: true, category: null, tickets: null, location: null });
     const [cities, setCities] = useState([]);
@@ -70,7 +70,7 @@ const SearchBody = ({ setEvents, setLoading }) => {
                     </select>
                 </div>
 
-                <button className='btnBody'>Buscar</button>
+                <button className='btnBody' onClick={handleClosedAccordion}>Buscar</button>
             </form>
         </div>
     );
