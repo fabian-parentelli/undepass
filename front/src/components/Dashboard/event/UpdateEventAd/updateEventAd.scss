@@ -1,7 +1,27 @@
+@import '../../../../app.scss';
 
 .updateEventAd {
     min-height: 80vh;
     margin-top: 70px;
     padding: 2rem;
     width: 80%;
+
+    .updateEventAdBtn {
+        margin: 1rem 0 2rem 0;
+        width: 150px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        background-color: $colorA;
+        color: #ffff;
+        box-shadow: 5px 5px 15px black;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        &:hover {
+            background-color: $colorD;
+        }
+        &:active {
+            box-shadow: none;
+        }
+    }
 }

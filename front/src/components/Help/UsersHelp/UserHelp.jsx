@@ -8,6 +8,7 @@ import UpdDataHelp from './UpdDataHelp/UpdDataHelp';
 import AvatarHelp from './AvatarHelp/AvatarHelp';
 import SearchHelp from '../SearchHelp/SearchHelp';
 import EventProfilHelp from './EventProfilHelp/EventProfilHelp';
+import DeleteEventHelp from './DeleteEventHelp/DeleteEvenetHelp';
 
 const UserHelp = () => {
 
@@ -37,6 +38,7 @@ const UserHelp = () => {
             <UpdDataHelp />
             <AvatarHelp />
             <EventProfilHelp />
+            <DeleteEventHelp />
         </div>
     );
 };

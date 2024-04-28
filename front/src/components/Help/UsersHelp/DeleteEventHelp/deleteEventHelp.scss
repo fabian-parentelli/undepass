@@ -1,0 +1,86 @@
+@import '../../../../app.scss';
+
+.deleteEventHelp {
+    width: 80%;
+    margin: 10rem auto;
+
+    .eventProfilHelpUp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 6rem;
+
+        h5 {
+            font-size: 4rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .registerHelpVideo {
+            text-decoration: none;
+            color: $colorA;
+            font-weight: 600;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: $colorB;
+            }
+        }
+    }
+
+    .eventProfilHelpText {
+        width: 90%;
+        margin: 6rem auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            line-height: 1.8;
+            width: 85%;
+            margin: 0 auto;
+
+            a {
+                text-decoration: none;
+            }
+
+            strong {
+                color: $colorB;
+            }
+        }
+
+        .deleteEventHelpImg {
+            height: 300px;
+            margin-top: 4rem;
+            box-shadow: 5px 5px 15px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    .deleteEventHelp {
+        width: 95%;
+        margin: 0 auto;
+        text-align: center;
+    
+        .eventProfilHelpUp {
+            h5 {
+                font-size: 3rem;
+            }
+        }
+    
+        .eventProfilHelpText {
+            width: 100%;
+            p {
+                width: 100%;
+            }
+    
+            .deleteEventHelpImg {
+                height: 170px;
+            }
+        }
+    }
+}

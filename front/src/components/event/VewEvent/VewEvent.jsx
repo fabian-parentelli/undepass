@@ -18,7 +18,6 @@ const VewEvent = () => {
                     setLoading={setLoading}
                 />
             }
-
             <Load loading={loading} />
         </div>
     );

@@ -6,6 +6,7 @@ import ListEventMenu from './ListEventMenu/ListEventMenu.jsx';
 import ChekOut from '../../../event/NewEvent/ChekOut/ChekOut.jsx';
 import { useLoginContext } from '../../../../context/LoginContext';
 import { getAllEventsApi } from '../../../../helpers/events/getAllEvents.api.js';
+import UpdateTickets from '../../../event/UpdateTicket/UpdateTicket.jsx';
 
 const EventMenu = () => {
 
@@ -52,6 +53,7 @@ const EventMenu = () => {
                 />
             }
             {vew === 'checkOut' && values && <ChekOut events={thisEvent} setLoading={setLoading} />  }
+            {vew === 'tickets' && thisEvent && <UpdateTickets events={{ _id: thisEvent }} setLoading={setLoading}  /> }
 
             <Load loading={loading} />
         </div>

@@ -11,7 +11,7 @@ const GetTicketForm = ({ events }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {events.ticketInfo.map((tick) => (
+                    {events && events.ticketInfo &&  events.ticketInfo.map((tick) => (
                         <tr key={tick._id} className='tickets'>
                             <th>{tick.type} <br /> <span>{tick.description}</span></th>
                             <th>{tick.price}</th>

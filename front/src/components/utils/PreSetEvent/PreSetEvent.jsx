@@ -16,7 +16,6 @@ const PreSetEvent = ({ comp, data }) => {
                                 <p key={index}>{gue}</p>
                             ))}
                         </div>
-                        <p className='description'>{data.description}</p>
                         <p className='date'>{data.startEvent} - {data.location.place}</p>
                         <p className='location'>{data.location.city} - {data.location.province}</p>
                     </div>

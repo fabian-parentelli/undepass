@@ -16,6 +16,11 @@ const ListEventMenu = ({ values, setValues, setVew, setThisEvent, setLoading }) 
         setVew('checkOut');
     };
 
+    const handleSetTick = (index) => {
+        setThisEvent(values.docs[index]._id);
+        setVew('tickets');
+    };
+
     const handleActive = async (id) => {
         setLoading(true);
         const response = await updActiveEventApi(id);
@@ -39,6 +44,7 @@ const ListEventMenu = ({ values, setValues, setVew, setThisEvent, setLoading }) 
                         <th></th>
                         <th></th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -57,6 +63,9 @@ const ListEventMenu = ({ values, setValues, setVew, setThisEvent, setLoading }) 
                                     <button onClick={() => handleSetEvent(index)}>
                                         Modificar
                                     </button>
+                                </th>
+                                <th>
+                                    <button onClick={()=> handleSetTick(index)}>Entradas</button>
                                 </th>
                                 <th>
                                     <Link to={`/vewevent/${event._id}`}>
