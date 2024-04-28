@@ -5,6 +5,7 @@ import CheckMap from './CheckMap/CheckMap.jsx';
 import ChekPhoto from "./CheckPhoto/CheckPhoto.jsx";
 import MapVew from '../../../utils/MapVew/MapVew.jsx';
 import SnackbarAlert from '../../../utils/SnackbarAlert.jsx';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { getEventByIdApi } from '../../../../helpers/events/getEventById.api.js';
 import { checkOutEventApi } from '../../../../helpers/events/checkOutEvent.api.js';
 
@@ -13,9 +14,9 @@ const ChekOut = ({ events, setLoading }) => {
     const [values, setValues] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
     const [coorMap, setCoorMap] = useState(null);
-    const navigate = useNavigate();
-    const [message, setMessage] = useState({ status: '', mess: '' });
     const [open, setOpen] = useState(false);
+    const [message, setMessage] = useState({ status: '', mess: '' });
+    const navigate = useNavigate();
 
     const handleIsOpen = () => setIsOpen(!isOpen);
 
@@ -27,7 +28,7 @@ const ChekOut = ({ events, setLoading }) => {
             setCoorMap(response.location.coordinates);
             setLoading(false);
         }; fetchData(events._id);
-    }, [events]);
+    }, []);
 
     useEffect(() => {
         if (values?.location?.coordinates) {
@@ -73,6 +74,12 @@ const ChekOut = ({ events, setLoading }) => {
                 navigate('/');
             }, 2000);
         };
+    };
+
+    const deleteTicket = (index) => {
+        const newTicketInfo = [...values.ticketInfo];
+        newTicketInfo.splice(index, 1);
+        setValues({ ...values, ticketInfo: newTicketInfo });
     };
 
     return (
@@ -209,9 +216,11 @@ const ChekOut = ({ events, setLoading }) => {
                         </div>
 
                         {values.tickets && values.ticketInfo &&
+
                             values.ticketInfo.map((tik, index) => (
                                 <div key={index}>
                                     <div className='line'></div>
+                                    <DeleteOutlineIcon onClick={() => deleteTicket(index)} />
 
                                     <div className='divBetNewEvent'>
                                         <div className='divInEvent'>

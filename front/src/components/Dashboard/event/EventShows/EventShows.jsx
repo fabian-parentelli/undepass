@@ -1,8 +1,9 @@
 import './eventShows.scss';
 import { useState, Fragment } from 'react';
-import { updActiveEventApi } from '../../../../helpers/events/updateActiveEvent.api.js';
-import { getAllEventsApi } from '../../../../helpers/events/getAllEvents.api.js';
 import Pager from '../../../utils/Pager/Pager.jsx';
+import { getAllEventsApi } from '../../../../helpers/events/getAllEvents.api.js';
+import { updActiveEventApi } from '../../../../helpers/events/updateActiveEvent.api.js';
+import { Link } from 'react-router-dom';
 
 const EventShows = ({ events, setEvents, setLoading, thePage, setThePage }) => {
 
@@ -106,8 +107,8 @@ const EventShows = ({ events, setEvents, setLoading, thePage, setThePage }) => {
                                             ))}
 
                                             <div className='eventShowsButton'>
-                                                <button>Ver</button>
-                                                <button>Editar</button>
+                                                <Link to={`/vewevent/${event._id}`}><button>Ver</button></Link>
+                                                <Link to={`/dashboard/updevent/${event._id}`}><button>Editar</button></Link>
                                                 <button
                                                     onClick={() => handleActive(event._id)}
                                                 >{event.active ? 'Desactivar' : 'Activar'}</button>

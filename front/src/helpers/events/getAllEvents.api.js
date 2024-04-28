@@ -9,6 +9,7 @@ const getAllEventsApi = async (obj) => {
     if (obj.active) urlData += `active=${obj.active}&`;
     if (obj.tickets) urlData += `tickets=${obj.tickets}&`;
     if (obj.location) urlData += `location=${obj.location}&`;
+    if (obj.userId) urlData += `userid=${obj.userId}&`;
 
     const response = await fetch(urlData, {
         method: 'GET',

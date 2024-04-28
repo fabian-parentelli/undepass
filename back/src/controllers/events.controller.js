@@ -56,9 +56,9 @@ const getById = async (req, res) => {
 };
 
 const getAllEvents = async (req, res) => {
-    const { limit = 12, page = 1, category, active, tickets, location } = req.query;
+    const { limit = 12, page = 1, category, active, tickets, location, userid } = req.query;
     try {
-        const result = await evenetService.getAllEvents(limit, page, category, active, tickets, location);
+        const result = await evenetService.getAllEvents(limit, page, category, active, tickets, location, userid);
         if (result) return res.sendSuccess(result);
     } catch (error) {
         if (error instanceof EventNotFound) return res.sendClientError(error.message);

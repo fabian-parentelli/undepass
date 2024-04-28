@@ -12,6 +12,7 @@ import UpdateUser from './users/UpdateUser/UpdateUser';
 import NewImEvent from './avatar/NewImgEvent/NewImgEvent';
 import GetEvents from './event/GetEvents/GetEvents';
 import NewEvents from './event/NewEvents/NewEvents';
+import UpdateEventAd from './event/UpdateEventAd/UpdateEventAd';
 
 const Dashboard = () => {
 
@@ -39,8 +40,9 @@ const Dashboard = () => {
                 <Route path='/vewcontact' element={<VewContact />} />
                 <Route path='/newcontact/:id?' element={<Newcontact />} />
 
-                <Route path='getevent' element={<GetEvents />} />
+                <Route path='/getevent' element={<GetEvents />} />
                 <Route path='/newevent' element={<NewEvents />} />
+                <Route path='/updevent/:id' element={<UpdateEventAd />}/>
             </Routes>
         </div>
     );

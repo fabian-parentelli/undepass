@@ -45,5 +45,6 @@ const data = [
     { label: 'Modificar datos personales', data: 'updDataHelp' },
     { label: 'Foto de perfil o avatar', data: 'avatarHelp' },
     { label: 'Datos financieros', data: 'finaceDate' },
-    { label: 'Crear Evento', data: 'newEventHelp' }
+    { label: 'Crear eventos', data: 'newEventHelp' },
+    { label: 'Configurar eventos', data: 'eventProfilHelp' }
 ];

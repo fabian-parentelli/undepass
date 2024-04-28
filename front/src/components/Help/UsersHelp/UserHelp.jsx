@@ -7,6 +7,7 @@ import RecoverPassHelp from './RecoverPassHelp/RecoverPass';
 import UpdDataHelp from './UpdDataHelp/UpdDataHelp';
 import AvatarHelp from './AvatarHelp/AvatarHelp';
 import SearchHelp from '../SearchHelp/SearchHelp';
+import EventProfilHelp from './EventProfilHelp/EventProfilHelp';
 
 const UserHelp = () => {
 
@@ -35,6 +36,7 @@ const UserHelp = () => {
             <RecoverPassHelp />
             <UpdDataHelp />
             <AvatarHelp />
+            <EventProfilHelp />
         </div>
     );
 };

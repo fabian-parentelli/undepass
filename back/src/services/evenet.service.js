@@ -41,9 +41,10 @@ const getById = async (id) => {
     return { status: 'success', result };
 };
 
-const getAllEvents = async (limit, page, category, active, tickets, location) => {
+const getAllEvents = async (limit, page, category, active, tickets, location, userId) => {
     const query = {};
     if (category) query.category = { $regex: category, $options: "i" };
+    if (userId) query.userId = { $regex: userId, $options: "i" };
     if (active !== undefined) query.active = active;
     if (tickets !== undefined) query.tickets = tickets;
     if (location) query["location.city"] = { $regex: location, $options: "i" };

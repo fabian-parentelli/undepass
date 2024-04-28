@@ -13,27 +13,66 @@
             color: $colorA;
             cursor: pointer;
             transition: .3s ease-in-out;
+
             &:hover {
                 color: $colorE;
             }
         }
     }
 
-    .eventMenuBtn {
-        width: 150px;
-        height: 30px;
-        background-color: $colorB;
-        color: #ffff;
-        border: none;
-        border-radius: 3px;
-        box-shadow: 5px 5px 15px black;
-        transition: .3s ease-in-out;
-        cursor: pointer;
-        &:hover {
-            background-color: $colorD;
+    .eventMenuButton {
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 4rem;
+        flex-wrap: wrap;
+
+        .eventMenuBtn {
+            width: 150px;
+            height: 30px;
+            background-color: $colorB;
+            color: #ffff;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 5px 5px 15px black;
+            transition: .3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $colorD;
+            }
+
+            &:active {
+                box-shadow: none;
+            }
         }
-        &:active {
-            box-shadow: none;
+    }
+}
+
+@media (max-width: 769px) {
+
+    .eventMenu {
+        padding: 1rem;
+
+        .eventMenuTitle {
+            align-items: flex-start;
+            flex-direction: column;
+
+            .pHelp {
+                color: $colorA;
+                cursor: pointer;
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    color: $colorE;
+                }
+            }
+        }
+
+        .eventMenuButton {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
     }
 }

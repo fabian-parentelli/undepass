@@ -1,0 +1,146 @@
+@import '../../../../app.scss';
+
+.eventProfilHelp {
+    width: 80%;
+    margin: 10rem auto;
+
+    .eventProfilHelpUp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 6rem;
+
+        h5 {
+            font-size: 4rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .registerHelpVideo {
+            text-decoration: none;
+            color: $colorA;
+            font-weight: 600;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: $colorB;
+            }
+        }
+    }
+
+    .eventProfilHelpCont {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 4rem;
+        margin: 2rem 0;
+        padding: 0 2rem;
+
+        p {
+            width: 60%;
+            line-height: 1.8;
+
+            strong {
+                color: $colorB;
+            }
+        }
+
+        .registerHelpImg {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 90%;
+
+            .updDataImg1 {
+                width: 200px;
+                object-fit: contain;
+                box-shadow: 5px 5px 15px;
+            }
+
+            .updDataImg2 {
+                height: 150px;
+                object-fit: contain;
+                box-shadow: 5px 5px 15px;
+            }
+        }
+    }
+
+    .eventProfilHelpText {
+        width: 90%;
+        margin: 6rem auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            line-height: 1.8;
+            width: 85%;
+            margin: 0 auto;
+
+            a {
+                text-decoration: none;
+            }
+
+            strong {
+                color: $colorB;
+            }
+        }
+
+        .evProImg {
+            height: 300px;
+            margin-top: 4rem;
+            box-shadow: 5px 5px 15px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    .eventProfilHelp {
+        width: 90%;
+    
+        .eventProfilHelpUp {
+            padding: 5px;
+            h5 {
+                text-align: center;
+                font-size: 3rem;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    
+        .eventProfilHelpCont {    
+            padding: 5px;
+            p {
+                width: 100%;
+                text-align: center;
+                strong {
+                    color: $colorB;
+                }
+            }
+    
+            .registerHelpImg {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                width: 100%;
+    
+                .updDataImg2 {
+                    height: 80px;
+                }
+            }
+        }
+    
+        .eventProfilHelpText {
+            width: 100%;
+    
+            .evProImg {
+                height: 100px;
+            }
+        }
+    }
+}
