@@ -22,6 +22,16 @@ const getCitys = async (req, res) => {
     };
 };
 
+const getQuantity = async (req, res) => {
+    try {
+        const result = await evenetService.getQuantity();
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof EventNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
 const searchEvent = async (req, res) => {
     const { name } = req.params;
     try {
@@ -131,5 +141,6 @@ const intervalId = schedule.scheduleJob('0 22 * * *', async () => {
 
 export {
     newEventInfo, getCitys, getById, searchEvent, getAllEvents,
-    updPreset, updFlyer, updTickes, checkOut, active, isPrivate
+    updPreset, updFlyer, updTickes, checkOut, active, isPrivate,
+    getQuantity
 };

@@ -13,6 +13,7 @@ import NewImEvent from './avatar/NewImgEvent/NewImgEvent';
 import GetEvents from './event/GetEvents/GetEvents';
 import NewEvents from './event/NewEvents/NewEvents';
 import UpdateEventAd from './event/UpdateEventAd/UpdateEventAd';
+import NewSiteDas from './sites/NewSiteDas/NewSiteDas';
 
 const Dashboard = () => {
 
@@ -25,8 +26,8 @@ const Dashboard = () => {
                 <Fields title={'Usuarios'} category={[{ name: 'Ver', path: 'vewuser' }, { name: 'Modificar', path: 'upadUser' }, { name: 'x', path: '' }]} />
                 <Fields title={'Mensajes'} category={[{ name: 'Contactos sin ver', path: 'vewcontact' }, { name: 'Enviar email', path: 'newcontact' }]} />
                 <Fields title={'Eventos'} category={[{ name: 'Ver eventos', path: 'getevent' }, { name: 'Crear evento', path: 'newevent' }]} />
-                <Fields title={'x'} category={[{ name: 'sin ver', path: 'unseenorders' }, { name: 'historicos', path: '' }]} />
-                <Fields title={'x'} category={[{ name: 'mensajes', path: 'newsMessage' }, { name: 'ofertas', path: '' }]} />
+                <Fields title={'Sitios'} category={[{ name: 'Nuevo sitio', path: 'newsite' }, { name: 'x', path: '' }]} />
+                <Fields title={'x'} category={[{ name: 'x', path: 'newsMessage' }, { name: 'x', path: '' }]} />
             </div>
             <Routes>
                 <Route path='/' element={<Panel />} />
@@ -43,6 +44,8 @@ const Dashboard = () => {
                 <Route path='/getevent' element={<GetEvents />} />
                 <Route path='/newevent' element={<NewEvents />} />
                 <Route path='/updevent/:id' element={<UpdateEventAd />}/>
+
+                <Route path='/newsite' element={<NewSiteDas />} />
             </Routes>
         </div>
     );

@@ -1,0 +1,162 @@
+@import '../../../app.scss';
+
+.newSite {
+    width: 100%;
+    min-height: 150vh;
+
+    .newSiteBanner {
+        width: 70%;
+        height: 300px;
+        margin: 0 auto;
+        border: solid 1px gray;
+        object-fit: contain;
+        position: relative;
+    }
+
+    .newSiteLogoBorder {
+        border: solid 1px black;
+        background-color: white;
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 140px;
+        left: 240px;
+
+        .newSiteLogo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: contain;
+            overflow: hidden;
+
+        }
+    }
+
+    .newSiteTitle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        .btnDark {
+            height: 40px;
+            width: 40px;
+            border-radius: 3px;
+            border: none;
+            box-shadow: 5px 5px 15px;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                background-color: rgb(175, 175, 175);
+            }
+
+            &:active {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .newSiteCompA {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 70%;
+        height: 410px;
+        margin: 0 auto;
+        margin-top: 4rem;
+
+        .newSiteCompAdiv {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            display: 50%;
+
+            .newSiteTxt {
+                width: 100%;
+
+                .txtArea {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+
+                    textArea {
+                        width: 100%;
+                        resize: none;
+                        padding: 6px;
+                    }
+                }
+
+                .btnTextArea {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 20px;
+                    padding: 6px;
+                    border-radius: 3px;
+                    border: none;
+                    background-color: rgba(128, 128, 128, 0.767);
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: .3s ease-in-out;
+
+                    &:hover {
+                        background-color: rgb(128, 128, 128);
+                    }
+                }
+            }
+
+            .newSiteImgA {
+                width: 400px;
+                height: 200px;
+                border: 1px solid gray;
+            }
+        }
+
+        .newSiteImgB {
+            width: 300px;
+            height: 100%;
+            height: 100%;
+            border: solid 1px gray;
+        }
+    }
+}
+
+.newSiteDark {
+    background-color: black;
+
+    .newSiteBanner {
+        border-color: gray;
+    }
+
+    .newSiteLogoBorder {
+        background-color: rgb(39, 39, 39);
+    }
+
+    .newSiteTitle {
+        h2 {
+            color: #fff;
+        }
+
+        .btnDark {
+            box-shadow: 5px 5px 15px rgb(46, 46, 46);
+
+            &:hover {
+                background-color: rgb(175, 175, 175);
+            }
+        }
+    }
+
+    .newSiteCompA .newSiteCompAdiv .newSiteTxt .txtArea textArea {
+        background-color: black;
+        color: #fff;
+    }
+}

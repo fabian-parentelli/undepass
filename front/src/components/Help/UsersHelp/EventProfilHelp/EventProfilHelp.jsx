@@ -3,11 +3,11 @@ import './eventProfilHelp.scss';
 const EventProfilHelp = () => {
 
     return (
-        <div className='eventProfilHelp' id='eventProfilHelp'>
+        <div className='eventProfilHelp'>
 
             <div className='line'></div>
 
-            <div className='eventProfilHelpUp'>
+            <div className='eventProfilHelpUp' id='eventProfilHelp'>
                 <h5>Configurar tus eventos</h5>
                 <p>Ver, modificar y activar eventos</p>
                 <a className='registerHelpVideo' href="">Video tutorial</a>

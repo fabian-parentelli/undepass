@@ -33,9 +33,9 @@ const eventSchema = new mongoose.Schema({
     active: { type: Boolean, default: false },
     ticketInfo: [
         {
-            type: { type: String },
-            description: { type: String },
-            price: { type: Number },
+            type: { type: String, default: 'free' },
+            description: { type: String, default: 'entradas sin cargo' },
+            price: { type: Number, default: 0 },
             quantity: { type: Number },
             hourEnd: { type: String },
         }

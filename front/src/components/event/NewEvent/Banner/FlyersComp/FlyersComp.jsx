@@ -14,7 +14,7 @@ const FlyersComp = ({ setIsWindox, events, setLoading }) => {
             const response = await updFlyerApi(formData, events._id);
             if(response.status === 'success') {
                 if(events.tickets) setIsWindox('tickets');
-                // else setIsWindox(''); // Si tickets es false directo al confirm .. .. .. .. .. .. ..
+                else setIsWindox('chekOut');
             };
         };
         setLoading(false);

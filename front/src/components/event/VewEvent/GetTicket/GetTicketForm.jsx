@@ -10,28 +10,50 @@ const GetTicketForm = ({ events }) => {
                         <th>Cantidad</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {events && events.ticketInfo &&  events.ticketInfo.map((tick) => (
-                        <tr key={tick._id} className='tickets'>
-                            <th>{tick.type} <br /> <span>{tick.description}</span></th>
-                            <th>{tick.price}</th>
+
+                {events.tickets ? (
+                    <tbody>
+                        {events.ticketInfo && events.ticketInfo.map((tick) => (
+                            <tr key={tick._id} className='tickets'>
+                                <th>{tick.type} <br /> <span>{tick.description}</span></th>
+                                <th>{tick.price}</th>
+                                <th>
+                                    {tick.quantity > 0 ?
+                                        <select name="" className='getTicketSelect'>
+                                            <option value=""></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
+                                        : <p className='soldOut'>Agotadas</p>
+                                    }
+                                </th>
+                            </tr>
+                        ))}
+                    </tbody>
+                ) : (
+                    <tbody>
+                        <tr className='tickets'>
+                            <th>Entrada libre<br /> <span>Entrada sin cargo</span></th>
+                            <th>$ 0</th>
                             <th>
-                                {tick.quantity > 0 ?
-                                    <select name="" className='getTicketSelect'>
-                                        <option value=""></option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                    </select>
-                                    : <p className='soldOut'>Agotadas</p>
-                                }
+                                <select name="" className='getTicketSelect'>
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
                             </th>
                         </tr>
-                    ))}
-                </tbody>
+                    </tbody>
+                )}
+
             </table>
 
             <div className='getTicketButon'>

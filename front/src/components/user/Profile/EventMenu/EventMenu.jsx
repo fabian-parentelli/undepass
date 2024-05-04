@@ -40,7 +40,6 @@ const EventMenu = () => {
             <div className='eventMenuButton'>
                 <Link to={'/newevent_user'}><button className='eventMenuBtn'>Crear</button></Link>
                 <button className='eventMenuBtn' onClick={()=> setVew('vewEvent')}>Ver</button>
-                <button className='eventMenuBtn' onClick={()=> setVew('')}>Ventas</button>
             </div>
 
             {vew === 'vewEvent' && values && 

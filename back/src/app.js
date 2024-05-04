@@ -6,7 +6,7 @@ import cors from 'cors';
 import env from './config/dotEnv.config.js'
 
 import { 
-    userRouter, citiesRouter, avatarRouter, userFinanRouter, contactRouter, eventRouter
+    userRouter, citiesRouter, avatarRouter, userFinanRouter, contactRouter, eventRouter, sitesRouter
 } from './routes/index.router.js';
 
 const app = express();
@@ -25,5 +25,6 @@ app.use('/api/avatar', avatarRouter);
 app.use('/api/finan', userFinanRouter);
 app.use('/api/contact', contactRouter);
 app.use('/api/event', eventRouter);
+app.use('/api/site', sitesRouter);
 
 app.listen(env.port, () => console.log('Server conected'));

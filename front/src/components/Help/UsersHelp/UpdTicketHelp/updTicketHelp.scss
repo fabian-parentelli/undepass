@@ -1,0 +1,130 @@
+@import '../../../../app.scss';
+
+.updTicketHelp {
+    width: 80%;
+    margin: 4rem auto;
+
+    strong {
+        color: $colorB;
+    }
+
+    .updTicketHelpCont {
+        width: 100%;
+
+        .line {
+            margin: 8rem 0;
+        }
+
+        .updTicketHelpTitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h5 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .updTicketHelpVideo {
+            text-decoration: none;
+            color: $colorA;
+            font-weight: 600;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: $colorB;
+            }
+        }
+    }
+
+    .updTicketHelpOne {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 6rem;
+
+        div {
+            width: 60%;
+
+            p {
+                line-height: 1.8;
+            }
+
+            ol li {
+                margin-top: 10px;
+            }
+        }
+
+        img {
+            width: 250px;
+            box-shadow: 5px 5px 15px;
+        }
+    }
+
+    .updTicketHelpTwo {
+        width: 70%;
+        margin: 6rem auto;
+
+        img {
+            width: 100%;
+            box-shadow: 5px 5px 15px;
+        }
+    }
+
+    .updTicketHelpThree {
+
+        p,
+        ol {
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media (max-width: 769px) {
+
+    .updTicketHelp {
+        width: 95%;
+        margin: 4rem auto;
+        .updTicketHelpCont {
+            .updTicketHelpTitle {
+                text-align: center;
+                h5 {
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        .updTicketHelpOne {
+            flex-direction: column;
+            align-items: center;
+            gap: 4rem;
+            div {
+                width: 90%;
+            }
+        }
+
+        .updTicketHelpTwo {
+            width: 90%;
+            margin: 4rem auto;
+        }
+
+        .updTicketHelpThree {
+
+            p,
+            ol {
+                margin-bottom: 20px;
+            }
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

@@ -29,4 +29,8 @@ export default class Event {
         return await eventModel.find({ active: true }).lean();
     };
 
+    getQuantity = async () => {
+        return await eventModel.countDocuments({ active: true });
+    };
+
 };

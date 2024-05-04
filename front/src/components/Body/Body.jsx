@@ -18,7 +18,12 @@ const Body = () => {
             {user && user.data && user.data.role === 'admin' && <DoorPanel />}
             <div className='bannerDiv'><Banners /> </div>
             <div className='panelSearch'><PnaelSearch setEvents={setEvents} setLoading={setLoading} /> </div>
-            {events ? <EventShowBody events={events} setEvents={setEvents} setLoading={setLoading} /> : '' }
+            
+            {events ? <EventShowBody events={events} setEvents={setEvents} setLoading={setLoading} /> : ''}
+
+            <div className='bannerOne'>
+                <img src='newLog.png' alt='Pasarela' />
+            </div>
 
             <Load loading={loading} />
         </div>

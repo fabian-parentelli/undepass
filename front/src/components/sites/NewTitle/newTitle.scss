@@ -1,0 +1,56 @@
+@import '../../../app.scss';
+
+.newTitle {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h2 {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+    }
+
+    .tileSiteForm {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        margin-bottom: 1rem;
+
+        input {
+            height: 30px;
+            width: 300px;
+            border-radius: 3px;
+            border: 1px gray solid;
+            padding-left: 3px;
+            &:hover {
+                border-color: black;
+            }
+        }
+    }
+
+    .divBtnsite {
+        width: 22%;
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            width: 150px;
+            height: 30px;
+            background-color: $colorA;
+            border: none;
+            transition: .3s ease-in-out;
+            cursor: pointer;
+            box-shadow: 5px 5px 15px;
+            font-weight: 600;
+            border-radius: 3px;
+            &:hover {
+                background-color: $colorE;
+            }
+            &:active {
+                box-shadow: none;
+            } 
+        }
+    }
+}

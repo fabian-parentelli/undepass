@@ -14,6 +14,7 @@ import ContactUs from "../components/ContactUs/ContactUs";
 import NewEventUser from "../components/event/NewEventUser/NewEventUser";
 import VewEvent from "../components/event/VewEvent/VewEvent";
 import ScrollToTop from '../components/utils/ScrollToTo/ScrollToTop';
+import NewSiteUser from "../components/sites/NewSiteUser/NewSiteUser";
 
 const RoutesComp = () => {
 
@@ -38,6 +39,7 @@ const RoutesComp = () => {
                     {user.logged &&
                         <>
                             <Route path="/profile/*" element={<Profile />} />
+                            <Route path="/newsite" element={<NewSiteUser />} />
                         </>
                     }
                     {user.logged && user.data && user.data.role === 'admin' &&

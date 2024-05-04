@@ -9,6 +9,7 @@ import AvatarHelp from './AvatarHelp/AvatarHelp';
 import SearchHelp from '../SearchHelp/SearchHelp';
 import EventProfilHelp from './EventProfilHelp/EventProfilHelp';
 import DeleteEventHelp from './DeleteEventHelp/DeleteEvenetHelp';
+import UpdTicketHelp from './UpdTicketHelp/UpdTicketHelp';
 
 const UserHelp = () => {
 
@@ -39,6 +40,7 @@ const UserHelp = () => {
             <AvatarHelp />
             <EventProfilHelp />
             <DeleteEventHelp />
+            <UpdTicketHelp />
         </div>
     );
 };

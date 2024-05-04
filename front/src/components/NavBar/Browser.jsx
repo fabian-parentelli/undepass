@@ -31,7 +31,7 @@ const Browser = ({ handleMenuClick, menuVisible, listElementsRef, setMenuVisible
     return (
         <div className="browser">
             <div className='prentation'>
-                <Link to={'/'}><img src='underPassNT.png' alt='Pasarela' /></Link>
+                <Link to={'/'}><img src='newLog.png' alt='Pasarela' /></Link>
                 <p>UnderPass</p>
             </div>
             <ul className={`menu_links ${menuVisible ? 'menu_links--show' : ''}`} ref={listElementsRef}>
@@ -68,7 +68,7 @@ const Browser = ({ handleMenuClick, menuVisible, listElementsRef, setMenuVisible
                         {user.logged &&
                             <>
                                 <li className='menu_inside updateUserDiv' onClick={handleInsideClick}><Link to={'/profile'} className='menu_link menu_link--inside'>Tu Perfil</Link></li>
-                                <li className='menu_inside' onClick={handleInsideClick}><a className='menu_link menu_link--inside' href='#'>Tu Página</a></li>
+                                <li className='menu_inside' onClick={handleInsideClick}><Link to={'/newsite'} className='menu_link menu_link--inside' href='#'>Tu Página</Link></li>
                                 <li className='menu_inside' onClick={handleInsideClick}><Link onClick={handleLogout} to={('/')} className='menu_link menu_link--inside' >Cerrar sesión</Link></li>
                             </>
                         }

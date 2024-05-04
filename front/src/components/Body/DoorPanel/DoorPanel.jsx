@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ContactAmount from './ContactAmount/ContactAmount.jsx';
 import UsersAmount from './UsersAmount/UsersAmount.jsx';
+import EventQuantity from './EventQuantity/EventQuantity.jsx';
 
 const DoorPanel = () => {
 
@@ -10,7 +11,7 @@ const DoorPanel = () => {
 
     return (
         <div className='doorPanel'>
-            <p>Eventos: 10</p>
+            <EventQuantity />
             <p>Entradas Vendidas: 20</p>
             <p>Saldos Pendientes: 8</p>
             <UsersAmount />

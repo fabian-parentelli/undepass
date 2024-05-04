@@ -21,6 +21,11 @@ const getCitys = async () => {
     return { status: 'success', result };
 };
 
+const getQuantity = async () => {
+    const result = await eventRepository.getQuantity();
+    return { status: 'success', result };
+};
+
 const isPrivate = async (id, pass) => {
     const event = await eventRepository.getById(id);
     if (!event) throw new EventNotFound('No se encuentra el evento');
@@ -118,5 +123,6 @@ const singleUpdate = async () => {
 
 export {
     newEventInfo, getCitys, searchEvent, getById, getAllEvents,
-    updPreset, updFlyer, updTickes, checkOut, singleUpdate, active, isPrivate
+    updPreset, updFlyer, updTickes, checkOut, singleUpdate, active, 
+    isPrivate, getQuantity
 };

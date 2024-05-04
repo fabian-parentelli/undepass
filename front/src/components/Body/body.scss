@@ -15,4 +15,21 @@
         top: 340px;
         z-index: 2;
     }
+
+    .bannerOne {
+        width: 100%;
+        height: 50vh;
+        background-image: url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1714520177/background/ri62ppymgerybzy2kaf9.png');
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 300px;
+        }
+    }
 }

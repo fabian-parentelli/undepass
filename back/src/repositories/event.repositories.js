@@ -31,5 +31,10 @@ export default class EventRepository {
         const result = await eventManager.getActive();
         return result;
     };
+    
+    getQuantity = async () => {
+        const result = await eventManager.getQuantity();
+        return result;
+    };
 
 };

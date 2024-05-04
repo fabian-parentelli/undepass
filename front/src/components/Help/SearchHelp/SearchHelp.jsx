@@ -47,5 +47,6 @@ const data = [
     { label: 'Datos financieros', data: 'finaceDate' },
     { label: 'Crear eventos', data: 'newEventHelp' },
     { label: 'Configurar eventos', data: 'eventProfilHelp' },
-    { label: 'Eliminar entradas', data: 'deleteEventHelp' }
+    { label: 'Eliminar entradas', data: 'deleteEventHelp' },
+    { label: 'Modificar entradas', data: 'updTicketHelp' },
 ];
