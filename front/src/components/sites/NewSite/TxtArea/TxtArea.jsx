@@ -1,11 +1,15 @@
+import './txtArea.scss';
 import { useState } from "react";
 import { updateSiteApi } from '../../../../helpers/sites/updateSite.api.js';
 
 const TxtArea = ({ site, nameTxt, placeholder, setLoading }) => {
 
+    if (!site) return null;
+    
     const texts = site.info.find(tx => tx.text === nameTxt);
+    const content = texts ? texts.content : '';
 
-    const [values, setValues] = useState({ _id: site._id, text: nameTxt, content: texts.content || '' });
+    const [values, setValues] = useState({ _id: site._id, text: nameTxt, content });
 
     const handleChange = (e) => {
         setValues({ ...values, content: e.target.value });

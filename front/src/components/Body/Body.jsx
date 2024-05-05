@@ -6,6 +6,7 @@ import DoorPanel from './DoorPanel/DoorPanel';
 import PnaelSearch from './PanelSearch/PanelSearch';
 import { useLoginContext } from '../../context/LoginContext';
 import EventShowBody from './EventShowBody/EventShowBody';
+import SitesBody from './SitesBody/SitesBody';
 
 const Body = () => {
 
@@ -24,6 +25,8 @@ const Body = () => {
             <div className='bannerOne'>
                 <img src='newLog.png' alt='Pasarela' />
             </div>
+
+            <SitesBody />
 
             <Load loading={loading} />
         </div>

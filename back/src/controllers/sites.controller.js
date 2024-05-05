@@ -18,9 +18,6 @@ const postImg = async (req, res) => {
         const result = await siteService.postImg(images, imagesUrl, { ...req.body });
         if (result) return res.sendSuccess(result);
     } catch (error) {
-
-        console.log(error);
-
         if (error instanceof SiteNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
@@ -37,6 +34,20 @@ const getByUserId = async (req, res) => {
     };
 };
 
+const getAll = async (req, res) => {
+    const { limit = 2, page = 1, random} = req.query;
+    try {
+        const result = await siteService.getAll(limit, page, random);
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+
+        console.log(error);//-------------------------------------------------------------
+
+        if (error instanceof SiteNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
 const update = async (req, res) => {
     try {
         const result = await siteService.update({ ...req.body });
@@ -47,4 +58,15 @@ const update = async (req, res) => {
     };
 };
 
-export { newSite, postImg, getByUserId, update };
+const addVideo = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const result = await siteService.addVideo(id, { ...req.body });
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof SiteNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
+export { newSite, postImg, getByUserId, getAll, update, addVideo };

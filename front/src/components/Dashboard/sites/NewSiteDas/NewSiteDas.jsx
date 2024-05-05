@@ -14,12 +14,10 @@ const NewSiteDas = () => {
     const [loading, setLoading] = useState(false);
     const [newSites, setNewSites] = useState(false);
 
-    console.log(user);
-
     useEffect(() => {
         if (user) {
             const fetchData = async (id) => {
-                const response = await getSiteByUserId(id)
+                const response = await getSiteByUserId(id);
                 if (response.status === 'success') {
                     setSite(response.result);
                     setNewSites(true);

@@ -22,4 +22,18 @@ export default class Site {
         return await siteModel.findByIdAndUpdate({ _id: site._id }, site);
     };
 
+    count = async () => {
+        return await siteModel.countDocuments();
+    };
+
+    getRandom = async (limit) => {
+        return await siteModel.aggregate([
+            { $sample: { size: limit } },
+        ]);
+    };
+
+    getAll = async (limit, page) => {
+        return await siteModel.paginate({}, { limit, page, lean: true });
+    };
+
 };

@@ -1,0 +1,28 @@
+.txtArea {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    textArea {
+        width: 100%;
+        resize: none;
+        padding: 6px;
+    }
+}
+
+.btnTextArea {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 6px;
+    border-radius: 3px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.767);
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+
+    &:hover {
+        background-color: rgb(128, 128, 128);
+    }
+}

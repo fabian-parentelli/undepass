@@ -1,0 +1,72 @@
+@import '../../../../app.scss';
+
+.addVideo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+
+    .AddVideoDiv {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        input {
+            height: 30px;
+            width: 300px;
+            border-radius: 3px;
+            border: 1px solid gray;
+            padding-left: 5px;
+
+            &:hover {
+                border-color: black;
+            }
+        }
+
+        .icon {
+            height: 30px;
+            font-size: 2rem;
+            background-color: gray;
+            padding: 3px;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                background-color: $colorE;
+            }
+        }
+    }
+
+    .addVideoBtn {
+        width: 150px;
+        height: 30px;
+        background-color: $colorA;
+        font-weight: 600;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        box-shadow: 5px 5px 15px;
+
+        &:hover {
+            background-color: $colorE;
+        }
+
+        &:active {
+            box-shadow: none;
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    .addVideo {
+        padding-bottom: 4rem;
+        .AddVideoDiv {
+            input {
+                width: 200px;
+            }
+        }
+    }
+}

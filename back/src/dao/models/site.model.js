@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 const siteCollection = 'sites';
 
@@ -19,7 +20,11 @@ const siteSchema = new mongoose.Schema({
             text: { type: String },
             content: { type: String },
         }
-    ]
+    ],
+    videos: [{ type: String }],
+    events: [{ type: String }]
 });
+
+siteSchema.plugin(mongoosePaginate);
 
 export const siteModel = mongoose.model(siteCollection, siteSchema);

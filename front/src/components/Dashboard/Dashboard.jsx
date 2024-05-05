@@ -14,6 +14,7 @@ import GetEvents from './event/GetEvents/GetEvents';
 import NewEvents from './event/NewEvents/NewEvents';
 import UpdateEventAd from './event/UpdateEventAd/UpdateEventAd';
 import NewSiteDas from './sites/NewSiteDas/NewSiteDas';
+import VewSitesDas from './sites/VewSitesDas/VewSitesDas';
 
 const Dashboard = () => {
 
@@ -26,7 +27,7 @@ const Dashboard = () => {
                 <Fields title={'Usuarios'} category={[{ name: 'Ver', path: 'vewuser' }, { name: 'Modificar', path: 'upadUser' }, { name: 'x', path: '' }]} />
                 <Fields title={'Mensajes'} category={[{ name: 'Contactos sin ver', path: 'vewcontact' }, { name: 'Enviar email', path: 'newcontact' }]} />
                 <Fields title={'Eventos'} category={[{ name: 'Ver eventos', path: 'getevent' }, { name: 'Crear evento', path: 'newevent' }]} />
-                <Fields title={'Sitios'} category={[{ name: 'Nuevo sitio', path: 'newsite' }, { name: 'x', path: '' }]} />
+                <Fields title={'Sitios'} category={[{ name: 'Nuevo sitio', path: 'newsite' }, { name: 'Ver sitios', path: 'vewsite' }]} />
                 <Fields title={'x'} category={[{ name: 'x', path: 'newsMessage' }, { name: 'x', path: '' }]} />
             </div>
             <Routes>
@@ -46,6 +47,7 @@ const Dashboard = () => {
                 <Route path='/updevent/:id' element={<UpdateEventAd />}/>
 
                 <Route path='/newsite' element={<NewSiteDas />} />
+                <Route path='/vewsite' element={<VewSitesDas />} />
             </Routes>
         </div>
     );

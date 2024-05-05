@@ -1,5 +1,6 @@
 import { siteRepository } from "../repositories/index.repositories.js";
 import { SiteNotFound } from '../utils/custom-exceptions.utils.js';
+import * as utilsFunction from '../utils/functions/services.utils.js';
 
 const newSite = async (site) => {
     const userIs = await siteRepository.getByUser(site.userId);
@@ -35,10 +36,30 @@ const getByUserId = async (id) => {
     return { status: 'success', result };
 };
 
+let cachedProducts = null;
+
+const getAll = async (limit, page, random) => {
+    if (random === '1') {
+        const { count, startIdx, endIdx } = await utilsFunction.getRandomProductInfo(+limit, +page);
+        const randomProducts = await siteRepository.getRandom(count);
+        const paginatedProducts = randomProducts.slice(startIdx, endIdx);
+        cachedProducts = randomProducts;
+        return utilsFunction.buildResponse(paginatedProducts, cachedProducts.length, +limit, +page);
+    };
+    if (random === '2') {
+        const { startIdx, endIdx } = utilsFunction.getPaginatedIndices(+limit, +page);
+        const paginatedProducts = cachedProducts.slice(startIdx, endIdx);
+        return utilsFunction.buildResponse(paginatedProducts, cachedProducts.length, +limit, +page);
+    };
+    const result = await siteRepository.getAll(limit, page);
+    if (!result) throw new SiteNotFound('No se encuentran sitios');
+    return { status: 'success', result };
+};
+
 const update = async (site) => {
     const siteDb = await siteRepository.getById(site._id);
     if (!siteDb) throw new SiteNotFound('No se encuentra el sitio');
-    let newSite
+    let newSite;
     if (site.text) {
         delete site._id;
         const exists = siteDb.info.findIndex(index => index.text === site.text);
@@ -51,4 +72,15 @@ const update = async (site) => {
     return { status: 'success' };
 };
 
-export { newSite, postImg, getByUserId, update };
+const addVideo = async (id, { videos }) => {
+
+    const siteDb = await siteRepository.getById(id);
+    if (!siteDb) throw new SiteNotFound('No se encuentra el sitio');
+    siteDb.videos = videos;
+    console.log(videos);
+    const result = await siteRepository.update(siteDb);
+    if (!result) throw new SiteNotFound('No se puede guardar la imagen');
+    return { status: 'success' };
+};
+
+export { newSite, postImg, getByUserId, getAll, update, addVideo };

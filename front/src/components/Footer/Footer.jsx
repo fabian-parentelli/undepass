@@ -53,14 +53,14 @@ const Footer = () => {
                         <h2>Usuarios</h2>
                         <ul>
                             <li className="loginDiv">
-                                {!user.logged ? <Link to={'/login'}>Inisiar Sesión</Link> : 'Sesión iniciada' }
+                                {!user.logged ? <Link to={'/login'}>Inisiar Sesión</Link> : 'Sesión iniciada'}
                             </li>
                             <li className="registerId">
                                 {!user.registered ? <Link to={'/register'} href='#'>Registrarte</Link> : 'Registrado'}
                             </li>
                             <li className="updateUserDiv"><Link to={'/profile'}>Tu Perfil</Link></li>
                             <li><Link to={'/newevent_user'}>Crear un evento</Link></li>
-                            <li><a href='#'>Tu Página</a></li>
+                            {user.logged ? <li><Link to={'/newsite'}>Tu Página</Link> </li> : ''}
                             <li><a href='#'>Contacto</a></li>
                         </ul>
                     </div>

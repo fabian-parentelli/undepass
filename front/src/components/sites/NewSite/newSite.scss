@@ -3,11 +3,12 @@
 .newSite {
     width: 100%;
     min-height: 150vh;
+    margin: 0 auto;
 
     .newSiteBanner {
         width: 70%;
-        height: 300px;
         margin: 0 auto;
+        height: 300px;
         border: solid 1px gray;
         object-fit: contain;
         position: relative;
@@ -32,12 +33,12 @@
             border-radius: 50%;
             object-fit: contain;
             overflow: hidden;
-
         }
     }
 
     .newSiteTitle {
-        width: 100%;
+        width: 70%;
+        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -66,67 +67,124 @@
         }
     }
 
+    .newSiteHelpssButton {
+        width: 70%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        .newSiteHelpssEvents {
+            text-decoration: none;
+            color: $colorB;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: gray;
+            }
+        }
+
+        .newSiteHelpss {
+            text-decoration: none;
+            color: $colorA;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: gray;
+            }
+        }
+    }
+
     .newSiteCompA {
+        width: 70%;
+        margin: 3rem auto;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 70%;
         height: 410px;
-        margin: 0 auto;
-        margin-top: 4rem;
+        gap: 3rem;
 
         .newSiteCompAdiv {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            display: 50%;
+            width: 50%;
+            height: 100%;
 
             .newSiteTxt {
                 width: 100%;
-
-                .txtArea {
-                    width: 100%;
-                    height: 100%;
-                    position: relative;
-
-                    textArea {
-                        width: 100%;
-                        resize: none;
-                        padding: 6px;
-                    }
-                }
-
-                .btnTextArea {
-                    position: absolute;
-                    bottom: 20px;
-                    right: 20px;
-                    padding: 6px;
-                    border-radius: 3px;
-                    border: none;
-                    background-color: rgba(128, 128, 128, 0.767);
-                    font-weight: 600;
-                    cursor: pointer;
-                    transition: .3s ease-in-out;
-
-                    &:hover {
-                        background-color: rgb(128, 128, 128);
-                    }
-                }
             }
 
             .newSiteImgA {
-                width: 400px;
-                height: 200px;
+                width: 100%;
+                height: 300px;
                 border: 1px solid gray;
+                overflow: hidden;
             }
         }
 
         .newSiteImgB {
-            width: 300px;
-            height: 100%;
+            width: 50%;
             height: 100%;
             border: solid 1px gray;
+            overflow: hidden;
         }
+    }
+
+    .newSiteOrigin {
+        width: 70%;
+        margin: 0 auto;
+        padding-bottom: 2rem;
+    }
+
+    .newSiteCarousel {
+        width: 70%;
+        margin: auto;
+        padding-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1rem;
+
+        .newSiteCarouselImg {
+            width: 200px;
+            height: 200px;
+            border: solid gray 1px;
+        }
+    }
+
+    .newSiteCards {
+        width: 70%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+
+        .newSiteCard {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .newSiteCardImg {
+                width: 280px;
+                height: 400px;
+                border: gray solid 1px;
+            }
+
+            .newSiteCardText {
+                width: 100%;
+                height: 100px;
+                overflow: hidden;
+                border-bottom: solid gray 1px;
+            }
+        }
+    }
+
+    .newSiteAddVideo {
+        width: 70%;
+        margin: auto;
     }
 }
 
@@ -155,8 +213,124 @@
         }
     }
 
+    .newSiteHelpssButton p {
+        color: #fff;
+    }
+
     .newSiteCompA .newSiteCompAdiv .newSiteTxt .txtArea textArea {
         background-color: black;
         color: #fff;
+    }
+
+    .newSiteOrigin .txtArea textArea {
+        background-color: black;
+        color: #fff;
+    }
+
+    .newSiteCards .newSiteCard .newSiteCardText .txtArea textArea {
+        background-color: black;
+        color: #fff;
+    }
+
+    .addVideo .AddVideoDiv input {
+        background-color: black;
+        color: #fff;
+
+        &:hover {
+            border-color: #fff;
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    .newSite {
+        .newSiteBanner {
+            width: 100%;
+        }
+        .newSiteLogoBorder {
+            width: 140px;
+            height: 140px;
+
+            bottom: 160px;
+            left: 20px;
+
+            .newSiteLogo {
+                width: 130px;
+                height: 130px;
+            }
+        }
+
+        .newSiteTitle {
+            width: 100%;
+            gap: 1rem;
+            margin-top: 1rem;
+
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        .newSiteCompA {
+            width: 100%;
+            height: 100%;
+            margin: 2rem auto;
+            gap: 1rem;
+            flex-direction: column;
+
+            .newSiteCompAdiv {
+                width: 90%;
+                height: 100%;
+            }
+
+            .newSiteImgB {
+                width: 90%;
+                height: 400px;
+            }
+        }
+
+        .newSiteOrigin {
+            width: 90%;
+        }
+
+        .newSiteCarousel {
+            width: 90%;
+            flex-wrap: wrap;
+
+            .newSiteCarouselImg {
+                width: 100%;
+                height: 400px;
+                border: solid gray 1px;
+            }
+        }
+
+        .newSiteCards {
+            width: 90%;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .newSiteCard {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .newSiteCardImg {
+                    width: 280px;
+                    height: 400px;
+                    border: gray solid 1px;
+                }
+
+                .newSiteCardText {
+                    width: 100%;
+                    height: 100px;
+                    overflow: hidden;
+                    border-bottom: solid gray 1px;
+                }
+            }
+        }
+
+        .newSiteAddVideo {
+            width: 100%;
+            margin: auto;
+        }
     }
 }
