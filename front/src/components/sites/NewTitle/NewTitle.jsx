@@ -3,21 +3,28 @@ import { useState } from 'react';
 import Load from '../../utils/Load.jsx';
 import SnackbarAlert from '../../utils/SnackbarAlert.jsx';
 import { newSiteTitleApi } from '../../../helpers/sites/newSiteTitle.api.js';
+import NewTitleHtml from './NewTitleHtml.jsx';
 
 const NewTitle = ({ setNewSites, id }) => {
 
-    const [siteTitle, setSiteTitle] = useState('');
+    const [values, setValues] = useState({
+        userId: id, title: '', category: '', phone: '', email: '',
+        location: { province: '', municipality: '', city: '' },
+        socialNetworks: {
+            facebook: '', instagram: '', youtube: '', spotify: '', twitter: '', tiktok: ''
+        }
+    });
+
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState({ status: '', mess: '' });
     const [loading, setLoading] = useState(false);
 
-    const handleChange = (e) => setSiteTitle(e.target.value);
+    const handleChange = (e) => setValues({ ...values, [e.target.name]: e.target.value });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        const obj = { title: siteTitle, userId: id };
-        const response = await newSiteTitleApi(obj);
+        const response = await newSiteTitleApi(values);
         if (response.status === 'success') {
             setMessage({ status: 'success', mess: 'Titulo creado correctamente' });
             setOpen(true);
@@ -32,19 +39,12 @@ const NewTitle = ({ setNewSites, id }) => {
 
     return (
         <>
-            <form className='newTitle' onSubmit={handleSubmit}>
-                <h2>Crear tu sitio</h2>
-                <div className='tileSiteForm'>
-                    <label>Nombre de tu sitio</label>
-                    <input
-                        type="text"
-                        name='title'
-                        value={siteTitle}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className='divBtnsite'><button>Crear</button></div>
-            </form>
+            <NewTitleHtml
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                setValues={setValues}
+            />
+
             <SnackbarAlert message={message} open={open} />
             <Load loading={loading} />
         </>

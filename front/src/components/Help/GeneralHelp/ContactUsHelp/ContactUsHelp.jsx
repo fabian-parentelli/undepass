@@ -5,7 +5,7 @@ const ContactUsHelp = () => {
     return (
         <div className='contactUsHelp'>
             <div className='registerHelpUp'>
-                <h5 id='registerHelp'>Contáctanos</h5>
+                <h5 id='contactUs'>Contáctanos</h5>
                 <p>Como puedes comunicarte con nosotros.</p>
                 <a className='registerHelpVideo' href="">Video tutorial</a>
             </div>

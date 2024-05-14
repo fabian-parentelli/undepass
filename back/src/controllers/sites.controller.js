@@ -23,6 +23,16 @@ const postImg = async (req, res) => {
     };
 };
 
+const countSites = async (req, res) => {
+    try {
+        const result = await siteService.countSites();
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof SiteNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
 const getByUserId = async (req, res) => {
     const { id } = req.params;
     try {
@@ -35,7 +45,7 @@ const getByUserId = async (req, res) => {
 };
 
 const getAll = async (req, res) => {
-    const { limit = 2, page = 1, random} = req.query;
+    const { limit = 2, page = 1, random } = req.query;
     try {
         const result = await siteService.getAll(limit, page, random);
         if (result) return res.sendSuccess(result);
@@ -69,4 +79,4 @@ const addVideo = async (req, res) => {
     };
 };
 
-export { newSite, postImg, getByUserId, getAll, update, addVideo };
+export { newSite, postImg, countSites, getByUserId, getAll, update, addVideo };

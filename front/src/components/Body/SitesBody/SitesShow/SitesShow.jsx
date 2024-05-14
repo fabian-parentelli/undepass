@@ -23,6 +23,9 @@ const SitesShow = ({ sites, setSites, setLoading }) => {
                                     return <img key={imgIndex} src={img.url} alt="Logo" />;
                                 }
                             })}
+                            {sit.img && !sit.img.some(img => img.name === "logo") &&
+                                <img style={{backgroundColor: 'black'}} key={2} src='newLog.png' alt="Logo" />
+                            }
                         </div>
                         <Link className='sitesShowTxt'>{sit.title}</Link>
                     </div>

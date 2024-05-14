@@ -1,12 +1,15 @@
 import { siteRepository } from "../repositories/index.repositories.js";
 import { SiteNotFound } from '../utils/custom-exceptions.utils.js';
 import * as utilsFunction from '../utils/functions/services.utils.js';
+import { getProvince, getParties } from "./cities.service.js";
 
 const newSite = async (site) => {
     const userIs = await siteRepository.getByUser(site.userId);
     if (userIs) throw new SiteNotFound('No puedes tener mas de un sitio');
     const isTitle = await siteRepository.getByTitle(site.title);
     if (isTitle) throw new SiteNotFound('Ya existe un sitio con ese nombre');
+    site.location.province = await getProvince(site.location.province);
+    site.location.municipality = await getParties(site.location.municipality);
     site.url = site.title.toLowerCase().replace(/\s/g, '');
     site.img = [];
     const result = await siteRepository.newSite(site);
@@ -28,6 +31,11 @@ const postImg = async (images, imagesUrl, info) => {
     const result = await siteRepository.update(siteDb);
     if (!result) throw new SiteNotFound('No se puede guardar la imagen');
     return { status: 'success' };
+};
+
+const countSites = async () => {
+    const result = await siteRepository.count();
+    return { status: 'success', result };
 };
 
 const getByUserId = async (id) => {
@@ -83,4 +91,4 @@ const addVideo = async (id, { videos }) => {
     return { status: 'success' };
 };
 
-export { newSite, postImg, getByUserId, getAll, update, addVideo };
+export { newSite, postImg, countSites, getByUserId, getAll, update, addVideo };

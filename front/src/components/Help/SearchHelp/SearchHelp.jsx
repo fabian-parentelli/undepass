@@ -39,6 +39,7 @@ const SearchHelp = () => {
 export default SearchHelp;
 
 const data = [
+    { label: 'Contacto', data: 'contactUs' }, 
     { label: 'Registrarte', data: 'registerHelp' }, 
     { label: 'Iniciar sesión', data: 'loginHelp' },
     { label: 'Recuperar contraseña', data: 'recoverPassHelp' },
@@ -49,4 +50,5 @@ const data = [
     { label: 'Configurar eventos', data: 'eventProfilHelp' },
     { label: 'Eliminar entradas', data: 'deleteEventHelp' },
     { label: 'Modificar entradas', data: 'updTicketHelp' },
+    { label: 'Crear sitio', data: 'newSiteHelp' },
 ];

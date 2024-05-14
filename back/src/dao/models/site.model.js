@@ -22,7 +22,24 @@ const siteSchema = new mongoose.Schema({
         }
     ],
     videos: [{ type: String }],
-    events: [{ type: String }]
+    events: [{ type: String }],
+    active: { type: Boolean, default: true },
+    category: { type: String },
+    email: { type: String },
+    location: {
+        city: { type: String },
+        municipality: { type: String },
+        province: { type: String },
+    },
+    phone: { type: String },
+    socialNetworks: {
+        facebook: { type: String },
+        instagram: { type: String },
+        spotify: { type: String },
+        tiktok: { type: String },
+        twitter: { type: String },
+        youtube: { type: String },
+    }
 });
 
 siteSchema.plugin(mongoosePaginate);

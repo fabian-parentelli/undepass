@@ -1,0 +1,99 @@
+@import '../../../../app.scss';
+
+.newHelpSite {
+    width: 80%;
+    margin: 4rem auto;
+
+    strong {
+        color: $colorB;
+    }
+
+    .updTicketHelpCont {
+        width: 100%;
+
+        .line {
+            margin: 8rem 0;
+        }
+
+        .updTicketHelpTitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h5 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .updTicketHelpVideo {
+            text-decoration: none;
+            color: $colorA;
+            font-weight: 600;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: $colorB;
+            }
+        }
+    }
+
+    .newHelpSiteContA {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 4rem;
+
+        p {
+            width: 50%;
+            line-height: 2rem;
+        }
+
+        img {
+            width: 300px;
+            box-shadow: 5px 5px 15px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .newHelpSite {
+        .updTicketHelpCont {
+            .updTicketHelpTitle {
+                text-align: center;
+                h5 {
+                    font-size: 2.6rem;
+                }
+            }
+        }
+
+        .updTicketHelpVideo {
+            text-decoration: none;
+            color: $colorA;
+            font-weight: 600;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: $colorB;
+            }
+        }
+
+        .newHelpSiteContA {
+            gap: 2rem;
+            flex-direction: column;
+            align-items: center;
+
+            p {
+                width: 100%;
+                text-align: center;
+            }
+
+            img {
+                width: 300px;
+                box-shadow: 5px 5px 15px;
+            }
+        }
+    }
+}
