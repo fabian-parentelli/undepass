@@ -1,6 +1,7 @@
 import './showSitesDas.scss';
 import Pager from '../../../../utils/Pager/Pager';
 import { getAllSitesApi } from '../../../../../helpers/sites/getAllSites.api.js';
+import { Link } from 'react-router-dom';
 
 const ShowSitesDas = ({ sites, setSites, setLoading }) => {
 
@@ -18,16 +19,16 @@ const ShowSitesDas = ({ sites, setSites, setLoading }) => {
                 {sites && sites.docs.map((sit, index) => (
                     <div key={index} className='showSitesDasDiv'>
                         <div className='sitesShowDivImg'>
-                            {sit.img && sit.img.map((img, imgIndex) => {
-                                if (img.name === "logo") {
-                                    return <img key={imgIndex} src={img.url} alt="Logo" />;
-                                }
-                            })}
+                            {sit.img && sit.img[1] && sit.img[1].url ? (
+                                <img src={sit.img[1].url} alt="Logo" />
+                            ) : (
+                                <img className='imgLogo' src='/newLog.png' alt="Logo" />
+                            )}
                         </div>
                         <p>{sit.title}</p>
                         <p><strong>Url:</strong> {sit.url}</p>
                         <p><strong>Usuario:</strong> {sit.userId}</p>
-                        <button className='showSitesDasBtn'>Ver</button>
+                        <Link to={`/site/${sit.url}`}><button className='showSitesDasBtn'>Ver</button></Link>
                     </div>
                 ))}
             </div>

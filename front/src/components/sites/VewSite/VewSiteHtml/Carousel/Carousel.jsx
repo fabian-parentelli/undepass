@@ -2,6 +2,8 @@ import './carousel.scss';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Carousel = ({ values }) => {
 
@@ -15,10 +17,20 @@ const Carousel = ({ values }) => {
         arrows: false,
     };
 
+    const [screen, setScreen] = useState(settings);
+    
+    useEffect(() => {
+        if (window.innerWidth < 426) {
+            setScreen({...screen, slidesToShow: 1})
+        } else {
+            setScreen({...screen, slidesToShow: 3})
+        }
+    }, [window.innerWidth]);
+
     return (
         <>
-            {values &&
-                <Slider {...settings} className='sliderComp'>
+            {values && screen &&
+                <Slider {...screen} className='sliderComp'>
                     <div>
                         <img className='imgCarousel' src={values.img[4].url} alt="Imagen 1" />
                     </div>

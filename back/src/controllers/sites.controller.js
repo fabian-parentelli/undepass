@@ -56,7 +56,7 @@ const getByUserId = async (req, res) => {
 };
 
 const getAll = async (req, res) => {
-    const { limit = 2, page = 1, random } = req.query;
+    const { limit = 8, page = 1, random } = req.query;
     try {
         const result = await siteService.getAll(limit, page, random);
         if (result) return res.sendSuccess(result);

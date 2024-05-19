@@ -6,6 +6,7 @@
 .imgCarousel {
     width: 80%;
     height: 200px;
-    object-fit: contain;
-    margin-left: 15%;
+    object-fit: cover;
+    margin: 0 auto;
+    box-shadow: 5px 5px 15px rgb(51, 51, 51);
 }

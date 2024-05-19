@@ -23,7 +23,7 @@ const NewEventHelp = () => {
                         <li><strong>Tipo:</strong> Puede ser público, para que cualquier persona pueda adquirir entradas, o privado, restringido a un grupo de usuarios con una contraseña.</li>
                         <li><strong>Categoría:</strong> Elige una categoría para mejorar los filtros de búsqueda, como conciertos, teatro, deportes, etc.</li>
                         <li><strong>Nombre del evento:</strong> Describe el nombre del evento, ya sea el nombre de la obra de teatro, la banda principal, o el equipo que participa.</li>
-                        <li><strong>Menores de 18 años:</strong> Indica si el evento es apto para menores de edad o es para todo público.</li>
+                        <li><strong>Menores de 18 años:</strong> Indica si el evento es restringido para menores de edad o es para todo público.</li>
                         <li><strong>Descripción:</strong> Proporciona información detallada sobre el evento, su contenido y cualquier otro detalle relevante.</li>
                         <li><strong>Inicio del evento:</strong> Indica la fecha y hora de inicio del evento para que los usuarios puedan visualizarlo.</li>
                         <li><strong>Fin del evento:</strong> Esta fecha es crucial para dar de baja el evento. Se utilizará para calcular el pago al usuario creador del evento, que se realizará dentro de 5 días hábiles.</li>
@@ -76,8 +76,8 @@ const NewEventHelp = () => {
 
             <div className='newEventHelpsCont'>
                 <div className='newEventHelpsText'>
+                <p className='pOrange'>ChekOut:</p>
                     <p>En esta etapa final, revisaremos los detalles de tu evento y confirmaremos la información proporcionada. Aquí está lo que verás:</p>
-
                     <ul>
                         <li><strong>Flyer o Imagen del Evento:</strong> Verás la imagen que has subido o seleccionado como preset para tu evento.</li>
                         <li><strong>Información del Evento:</strong> Revisarás todos los detalles proporcionados anteriormente. Si hay algo que no coincida o desees cambiar, podrás hacerlo en esta etapa.</li>

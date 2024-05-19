@@ -1,8 +1,16 @@
 import './vewSiteHtml.scss';
 import Carousel from './Carousel/Carousel';
+import VideosVew from '../../../utils/VideosVew/VideosVew';
+import VewSiteNotFound from '../VewSiteNotFound/VewSiteNotFound';
+import SocialMedia from './SocialMedia/SocialMedia';
 
 const VewSiteHtml = ({ values }) => {
-    if (values && !values.active) return <h2>El sitio no esta activo</h2>
+
+    const isValid = values && values.info && values.info.length >= 6 && values.img && values.img.length >= 12;
+    
+    if (!isValid) {
+        return <VewSiteNotFound values={values} />
+    }
 
     return (
         <div className={`vewSiteHtml ${values && values.dark && 'vewSiteHtmlDark'}`}>
@@ -30,6 +38,34 @@ const VewSiteHtml = ({ values }) => {
                         <Carousel values={values} />
                     </div>
 
+                    <p className='vewSitText'>{values.info[2].content}</p>
+
+                    <div className='vewSitCards'>
+                        <div className='vewSitCard'>
+                            <img src={values.img[9].url} alt="aaa" />
+                            <p>{values.info[3].content}</p>
+                        </div>
+                        <div className='vewSitCard'>
+                            <img src={values.img[10].url} alt="aaa" />
+                            <p>{values.info[4].content}</p>
+                        </div>
+                        <div className='vewSitCard'>
+                            <img src={values.img[11].url} alt="aaa" />
+                            <p>{values.info[5].content}</p>
+                        </div>
+                    </div>
+
+                    {/* Eventos - acá va el mercado */}
+
+                    <div className='videoSites'>
+                        {values.videos && values.videos.map((vid, index) => (
+                            <div key={index} className='videoSite'>
+                                <VideosVew url={vid} />
+                            </div>
+                        ))}
+                    </div>
+
+                    <SocialMedia values={values} />
                 </>
             }
         </div>

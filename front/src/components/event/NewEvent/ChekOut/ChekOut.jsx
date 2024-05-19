@@ -1,6 +1,6 @@
 import './chekOut.scss';
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CheckMap from './CheckMap/CheckMap.jsx';
 import ChekPhoto from "./CheckPhoto/CheckPhoto.jsx";
 import MapVew from '../../../utils/MapVew/MapVew.jsx';
@@ -90,6 +90,8 @@ const ChekOut = ({ events, setLoading }) => {
 
                     <div className='divImages'>
                         <ChekPhoto values={values} />
+                        <Link className='updImg' to={`/profile/updbanner/${values._id}`}><p>Modificar Imagen</p></Link>
+
                         <div className='boxMap' id='imgMap'>
                             {coorMap && <MapVew coordinates={coorMap} />}
                         </div>

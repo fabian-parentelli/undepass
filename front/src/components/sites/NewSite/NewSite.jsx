@@ -3,9 +3,8 @@ import Banner from './Banner/Banner';
 import { Link } from 'react-router-dom';
 import TxtArea from './TxtArea/TxtArea';
 import AddVideo from './AddVideo/AddVideo';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import TitleNewSite from './TitleNewSite/TitleNewSite';
-import { getSiteByUserId } from '../../../helpers/sites/getSiteByUserId.api.js';
 
 const NewSite = ({ site, setLoading }) => {
     

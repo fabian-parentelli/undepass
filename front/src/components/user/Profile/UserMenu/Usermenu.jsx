@@ -5,6 +5,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 import HomeIcon from '@mui/icons-material/Home';
+import LanguageIcon from '@mui/icons-material/Language';
 
 const UserMenu = () => {
 
@@ -29,6 +30,11 @@ const UserMenu = () => {
             <Link to={'/profile/eventmenu'} className='userMen'>
                 <TheaterComedyIcon className='icon' />
                 <p>Eventos</p>
+            </Link>
+
+            <Link to={'/profile/sitemenu'} className='userMen'>
+                <LanguageIcon className='icon' />
+                <p>Sitio</p>
             </Link>
 
             <Link to={'/profile/whatyouremail'} className='userMen'>

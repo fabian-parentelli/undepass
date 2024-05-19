@@ -53,7 +53,14 @@ const YourData = ({ user }) => {
         };
     }, [okUpdate]);
 
-    const handleIsVew = () => setIsVew(!isVew);
+    const handleIsVew = () => {
+        const age = calculateAge(values.birthday);
+        if (age >= 18) {
+            setIsVew(!isVew);
+        } else {
+            alert("Debes ser mayor de edad para acceder a los datos financieros.");
+        }
+    };
 
     return (
         <div className='yourData'>
@@ -137,4 +144,17 @@ const message = {
     isButton: true,
     buttonYes: 'modificar',
     buttonNo: 'volver'
+};
+
+const calculateAge = (birthday) => {
+    const birthDate = new Date(birthday);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    const dayDifference = today.getDate() - birthDate.getDate();
+
+    if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+        age--;
+    }
+    return age;
 };

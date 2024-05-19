@@ -34,9 +34,9 @@
     }
 
     .vewSiteHtmlA {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 80%;
         margin: 0 auto;
         padding-bottom: 4rem;
@@ -52,9 +52,9 @@
             }
 
             .vewSitImgAA {
-               width: 400px;
-               object-fit: cover;
-               box-shadow: 5px 5px 15px rgb(29, 29, 29);
+                width: 400px;
+                object-fit: cover;
+                box-shadow: 5px 5px 15px rgb(29, 29, 29);
             }
         }
 
@@ -74,11 +74,139 @@
 
     .carousel {
         width: 75%;
-        margin: 0 auto
+        margin: 0 auto;
     }
-};
+
+    .vewSitCards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 4rem;
+
+        .vewSitCard {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 1rem;
+            border-radius: 4px;
+
+            img {
+                width: 300px;
+                height: 400px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .videoSites {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin: 0 auto;
+        width: 86%;
+        padding-bottom: 6rem;
+
+        .videoSite {
+            width: 560px;
+            height: 315px;
+        }
+    }
+}
 
 .vewSiteHtmlDark {
     background-color: black;
     color: #fff;
+}
+
+@media (max-width: 1025px) {
+
+    .vewSiteHtml {
+        padding: 0;
+        .bannerSite {
+            padding: 0;
+            .imgBanner {
+                width: 100%;
+                height: 250px;
+                background-position: center;
+            }
+            .logo {
+                width: 70px;
+                padding: 2px;
+                left: 10px;
+                bottom: 10%;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .vewSiteHtmlA {
+            width: 100%;
+
+            .vewSitImgAa {
+                flex-direction: column;
+                align-items: center;
+                width: 95%;
+                margin-top: 2rem;
+                p {
+                    text-align: center;
+                }
+                .vewSitImgAA {
+                    width: 280px;
+                }
+            }
+            .vewSitImgA {
+                margin-top: 2rem;
+                width: 90%;
+            }
+        }
+        .vewSitText {
+            width: 95%;
+        }
+
+        .carousel {
+            width: 100%;
+        }
+
+        .vewSitCards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 80%;
+            margin: 0 auto;
+            padding-bottom: 4rem;
+
+            .vewSitCard {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding: 1rem;
+                border-radius: 4px;
+
+                img {
+                    width: 200px;
+                    height: 300px;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .videoSites {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 0 auto;
+            width: 86%;
+            padding-bottom: 6rem;
+
+            .videoSite {
+                width: 560px;
+                height: 315px;
+            }
+        }
+    }
 }

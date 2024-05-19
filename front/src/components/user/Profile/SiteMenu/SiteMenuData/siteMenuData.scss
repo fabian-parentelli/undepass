@@ -1,0 +1,68 @@
+@import '../../../../../app.scss';
+
+.siteMenuData {
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+    width: 100%;
+
+    h6 {
+        font-size: 1.2rem;
+    }
+
+    form {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        .formDiv {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .divInputs {
+                display: flex;
+                flex-direction: column;
+                width: 260px;
+
+                input {
+                    height: 30px;
+                    border-radius: 4px;
+                    border: solid gray 1px;
+                    padding-left: 5px;
+
+                    &:hover {
+                        border-color: black;
+                    }
+                }
+
+                .inputSel {
+                    height: 30px;
+                    border-radius: 4px;
+                    border: solid gray 1px;
+                    padding-left: 5px;
+
+                    &:hover {
+                        border-color: black;
+                    }
+                }
+
+                button {
+                    height: 30px;
+                    border-radius: 4px;
+                    border: none;
+                    background-color: $colorA;
+                    cursor: pointer;
+                    transition: .3s ease-in-out;
+                    box-shadow: 5px 5px 15px;
+                    &:hover {
+                        background-color: $colorE;
+                    }
+                    &:active {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}

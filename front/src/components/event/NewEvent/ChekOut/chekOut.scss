@@ -21,6 +21,28 @@
             align-items: center;
             gap: 2rem;
 
+            .updImg {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 150px;
+                height: 30px;
+                border: none;
+                background-color: $colorA;
+                border-radius: 4px;
+                box-shadow: 5px 5px 15px;
+                transition: .3s ease-in-out;
+                cursor: pointer;
+                text-decoration: none;
+                color: black;
+                &:hover {
+                    background-color: $colorE;
+                }
+                &:active {
+                    box-shadow: none;
+                }
+            }
+
             .boxMap {
                 width: 260px;
                 height: 260px;

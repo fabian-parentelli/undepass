@@ -1,6 +1,5 @@
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import { updateSiteApi } from '../../../../helpers/sites/updateSite.api.js';
-import { useEffect } from 'react';
 
 const TitleNewSite = ({ site, dark, setDark }) => {
 

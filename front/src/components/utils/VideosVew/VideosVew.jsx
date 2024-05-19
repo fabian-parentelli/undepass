@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 
 const VideosVew = ({ url }) => {
 
-    console.log(url);
-
     const [embedCode, setEmbedCode] = useState('');
 
     useEffect(() => {

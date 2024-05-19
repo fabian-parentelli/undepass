@@ -31,8 +31,6 @@ const ListEventMenu = ({ values, setValues, setVew, setThisEvent, setLoading }) 
         setLoading(false);
     };
 
-    console.log(values.docs);
-
     return (
         <div className='listEventMenu'>
             <table className='table'>

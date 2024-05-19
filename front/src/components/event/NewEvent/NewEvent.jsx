@@ -93,6 +93,7 @@ const NewEvent = ({ user }) => {
                 <ChekOut 
                     events={events}
                     setLoading={setLoading}
+                    setIsWindox={setIsWindox}
                 />
             }
             <Load loading={loading} />
