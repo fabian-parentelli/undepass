@@ -27,6 +27,11 @@
             p {
                 font-size: 1.2rem;
             }
+
+            .registerHelpVideo {
+                text-decoration: none;
+                color: $colorA;
+            }
         }
 
         .updTicketHelpVideo {
@@ -56,10 +61,69 @@
             box-shadow: 5px 5px 15px;
         }
     }
+
+    .newHelpSiteContD {
+        margin: 0 auto;
+        margin-top: 6rem;
+        width: 80%;
+        line-height: 2rem;
+
+        h5 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        div h6 {
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+
+        .divImgShifts {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                margin-top: 4rem;
+            }
+        }
+    }
+
+    .newHelpSiteContB {
+        margin-top: 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            line-height: 2rem;
+        }
+
+        img {
+            margin: 2rem 0 6rem 0;
+            width: 60%;
+            box-shadow: 5px 5px 15px;
+        }
+    }
+
+    .newHelpSiteContC {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 4rem;
+
+        .newHelpImgA {
+            width: 30%;
+        }
+        .newHelpImgC {
+            width: 50%;
+        }
+    }
 }
 
 @media (max-width: 767px) {
     .newHelpSite {
+        padding: 1px;
         .updTicketHelpCont {
             .updTicketHelpTitle {
                 text-align: center;
@@ -80,6 +144,21 @@
             }
         }
 
+        .newHelpSiteContD {
+            text-align: center;
+            width: 94%;
+    
+            .divImgShifts {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+    
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
         .newHelpSiteContA {
             gap: 2rem;
             flex-direction: column;
@@ -91,8 +170,28 @@
             }
 
             img {
-                width: 300px;
+                width: 280px;
                 box-shadow: 5px 5px 15px;
+            }
+        }
+
+        .newHelpSiteContB {
+            text-align: center;
+            img {
+                width: 100%;
+            }
+        }
+    
+        .newHelpSiteContC {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+    
+            .newHelpImgA {
+                width: 100%;
+            }
+            .newHelpImgC {
+                width: 100%;
             }
         }
     }

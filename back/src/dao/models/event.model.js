@@ -38,6 +38,7 @@ const eventSchema = new mongoose.Schema({
             price: { type: Number, default: 0 },
             quantity: { type: Number },
             hourEnd: { type: String },
+            active: { type: Boolean, default: true }
         }
     ],
     password: { type: String }

@@ -2,10 +2,15 @@ import { avatarManager } from '../dao/manager/index.manager.js';
 
 export default class AvatarRepository {
 
+    newVideoTut = async (video) => {
+        const result = await avatarManager.newVideoTut(video);
+        return result;
+    };
+
     newEvent = async (event) => {
         const result = await avatarManager.newEvent(event);
         return result;
-    }
+    };
 
     newAvatar = async (avatar) => {
         const result = await avatarManager.newAvatar(avatar);
@@ -14,6 +19,16 @@ export default class AvatarRepository {
 
     getEvents = async () => {
         const result = await avatarManager.getEvents();
+        return result;
+    };
+    
+    getVideoTutByName = async (name) => {
+        const result = await avatarManager.getVideoTutByName(name);
+        return result;
+    };
+    
+    getVideoTut = async () => {
+        const result = await avatarManager.getVideoTut();
         return result;
     };
 

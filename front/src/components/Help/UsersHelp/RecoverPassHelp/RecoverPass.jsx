@@ -1,5 +1,6 @@
 import './recoverPass.scss';
 import ForwardIcon from '@mui/icons-material/Forward';
+import { Link } from 'react-router-dom';
 
 const RecoverPassHelp = () => {
 
@@ -9,7 +10,7 @@ const RecoverPassHelp = () => {
             <div className='registerHelpUp'>
                 <h5 id='recoverPassHelp'>Recuperar contraseña</h5>
                 <p>Pasos a seguir para recuperar tu contraseña</p>
-                <a className='registerHelpVideo' href="">Video tutorial</a>
+                <Link to={'/videohelp/recoverPassHelp'} className='registerHelpVideo'>Video tutorial</Link>
             </div>
 
             <div className='recoverPassCont'>

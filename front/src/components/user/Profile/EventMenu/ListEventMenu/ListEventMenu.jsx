@@ -24,12 +24,14 @@ const ListEventMenu = ({ values, setValues, setVew, setThisEvent, setLoading }) 
     const handleActive = async (id) => {
         setLoading(true);
         const response = await updActiveEventApi(id);
-        if(response.status === 'success') {
+        if (response.status === 'success') {
             const response = await getAllEventsApi({ active: true, userId: values.docs[0].userId });
             setValues(response.result);
         };
         setLoading(false);
     };
+
+    console.log(values.docs);
 
     return (
         <div className='listEventMenu'>
@@ -57,16 +59,20 @@ const ListEventMenu = ({ values, setValues, setVew, setThisEvent, setLoading }) 
                                 <th>{event.location.city} - {event.location.province}</th>
                                 <th>{event.tickets ? 'Pago' : 'Gratis'}</th>
                                 <th>
-                                    <button onClick={()=> handleActive(event._id)}>Desactivar</button>
+                                    <button onClick={() => handleActive(event._id)}>Desactivar</button>
                                 </th>
                                 <th>
                                     <button onClick={() => handleSetEvent(index)}>
                                         Modificar
                                     </button>
                                 </th>
-                                <th>
-                                    <button onClick={()=> handleSetTick(index)}>Entradas</button>
-                                </th>
+
+                                {event.tickets ?
+                                    <th>
+                                        <button onClick={() => handleSetTick(index)}>Entradas</button>
+                                    </th>
+                                    : <th><button >Entradas</button></th>
+                                }
                                 <th>
                                     <Link to={`/vewevent/${event._id}`}>
                                         <button>Ver</button>
@@ -78,7 +84,7 @@ const ListEventMenu = ({ values, setValues, setVew, setThisEvent, setLoading }) 
                 }
             </table>
             <Pager users={values} HandleChangePage={handleChangePage} />
-        </div>
+        </div >
     );
 };
 

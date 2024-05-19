@@ -7,6 +7,7 @@ import ChekPhoto from '../../NewEvent/ChekOut/CheckPhoto/CheckPhoto.jsx';
 import MapView from '../../../utils/MapVew/MapVew.jsx';
 import GetTicketForm from './GetTicketForm.jsx';
 import GetTicketPrivate from './GetTicketPrivate.jsx';
+import VideosVew from '../../../utils/VideosVew/VideosVew.jsx';
 
 const GetTicket = ({ id, setLoading }) => {
 
@@ -81,6 +82,12 @@ const GetTicket = ({ id, setLoading }) => {
                     <div className='guestsCont' style={{ marginTop: '2rem' }}>
                         <p><strong>{events.minors ? 'Apto todo público.' : 'Solo apto mayores de 18 años.'}</strong></p>
                     </div>
+
+                    {events.video &&
+                        <div className='videoCont'>
+                            <VideosVew url={events.video} />
+                        </div>
+                    }
                 </>
             }
         </div >

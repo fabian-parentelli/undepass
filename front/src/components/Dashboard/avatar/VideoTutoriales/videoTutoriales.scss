@@ -1,0 +1,25 @@
+@import '../../../../app.scss';
+
+.videoTutoriales {
+    margin-top: 70px;
+    padding: 2rem;
+    width: 80%;
+
+    .btnVideoT {
+        width: 150px;
+        height: 30px;
+        background-color: $colorA;
+        border: none;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+        box-shadow: 5px 5px 15px; 
+        &:hover {
+            background-color: $colorE;
+        }
+        &:active {
+            box-shadow: none;
+        }
+    }
+}

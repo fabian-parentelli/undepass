@@ -1,4 +1,5 @@
 import './eventProfilHelp.scss';
+import { Link } from 'react-router-dom';
 
 const EventProfilHelp = () => {
 
@@ -10,7 +11,7 @@ const EventProfilHelp = () => {
             <div className='eventProfilHelpUp' id='eventProfilHelp'>
                 <h5>Configurar tus eventos</h5>
                 <p>Ver, modificar y activar eventos</p>
-                <a className='registerHelpVideo' href="">Video tutorial</a>
+                <Link to={'/videohelp/eventProfilHelp'} className='registerHelpVideo'>Video tutorial</Link>
             </div>
 
             <div className='eventProfilHelpCont'>
@@ -27,17 +28,18 @@ const EventProfilHelp = () => {
                 <p>
                     Dentro de esta sección, encontrarás varios elementos que te permitirán gestionar tus eventos de manera eficiente. Aquí te explicamos cada uno de ellos:<br />
                     <strong>Crear:</strong><br />
-                    Al seleccionar esta opción, serás dirigido al menú de creación de eventos. 
+                    Al seleccionar esta opción, serás dirigido al menú de creación de eventos.
                     <a href="#newEventHelp"><strong> Aquí</strong></a> encontrarás toda la información necesaria para crear un nuevo evento de manera sencilla y rápida.<br />
                     <strong>Ver:</strong><br />
                     En esta sección podrás visualizar todos tus eventos activos.<br /> Te proporcionaremos una previsualización del nombre del evento, la fecha de inicio, la ciudad y la provincia donde se llevará a cabo. Además, tendrás la posibilidad de realizar varias acciones:<br />
                     <strong>Desactivar:</strong> Si por algún motivo deseas dar de baja un evento, simplemente haz clic en "Desactivar". Es importante destacar que al desactivar un evento, cualquier pago realizado por entradas hasta ese momento será reembolsado a los clientes.<br />
                     <strong>Modificar:</strong> Esta opción te llevará a un menú donde podrás realizar modificaciones en todos los datos ingresados para el evento.<br />
-                    <strong>Ver:</strong> Utiliza este botón para visualizar el evento tal como lo ven los usuarios.
+                    <strong>Ver:</strong> Utiliza este botón para visualizar el evento tal como lo ven los usuarios.<br/>
+                    <strong>Entradas:</strong> Si deseas modificar algún tipo de dato de las entradas, aquí puedes hacerlo. Puedes eliminar algún tipo de entrada, pero recuerda que si ya se han realizado ventas, esto no devolverá el dinero a tus clientes automáticamente. Deberás reubicar a los usuarios o devolverles el valor de sus entradas.<br/>
+                    Para desactivar una entrada y que no se vendan más, solo necesitas llevar el valor de "cantidad" a 0. De esta manera, no se podrán vender más entradas. También puedes agregar más entradas, por ejemplo, un remanente.
                 </p>
                 <img className='evProImg' src="https://res.cloudinary.com/dtjzfz2ex/image/upload/v1714229789/helps/cdxjteba97eovmk2iupy.png" alt="help1" />
             </div>
-
         </div>
     );
 };

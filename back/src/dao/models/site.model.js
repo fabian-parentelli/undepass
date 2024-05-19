@@ -22,7 +22,12 @@ const siteSchema = new mongoose.Schema({
         }
     ],
     videos: [{ type: String }],
-    events: [{ type: String }],
+    events: [
+        {
+            eventId: { type: String },
+            active: { type: Boolean, default: true },
+        }
+    ],
     active: { type: Boolean, default: true },
     category: { type: String },
     email: { type: String },
@@ -39,6 +44,10 @@ const siteSchema = new mongoose.Schema({
         tiktok: { type: String },
         twitter: { type: String },
         youtube: { type: String },
+    },
+    shift: {
+        active: { type: Boolean, default: false },
+        shiftId: { type: String },
     }
 });
 

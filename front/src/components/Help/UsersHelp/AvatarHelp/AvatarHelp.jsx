@@ -1,4 +1,5 @@
 import './avatarHelp.scss';
+import { Link } from 'react-router-dom';
 
 const AvatarHelp = () => {
 
@@ -9,7 +10,7 @@ const AvatarHelp = () => {
                 <div className='registerHelpUp'>
                     <h5 id='avatarHelp'>Avatar</h5>
                     <p>Puedes elegir una foto de pefil o un Avatar</p>
-                    <a className='registerHelpVideo' href="">Video tutorial</a>
+                    <Link to={'/videohelp/avatarHelp'} className='registerHelpVideo'>Video tutorial</Link>
                 </div>
             </div>
             <div className='avatHelpInfo'>

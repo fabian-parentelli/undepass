@@ -19,6 +19,13 @@
         margin-bottom: 2rem;
     }
 
+    .isShiftT {
+        width: 50%;
+        text-align: center;
+        color: gray;
+        font-size: 12px;
+    }
+
     .tileSiteForm {
         display: flex;
         flex-direction: column;
@@ -62,6 +69,10 @@
 
     .tileSiteFormCity {
         width: 300px;
+    }
+
+    .isShiftT {
+        width: 90%;
     }
 
     .divBtnsite {

@@ -27,6 +27,16 @@
             p {
                 font-size: 1.2rem;
             }
+
+            .registerHelpVideo {
+                text-decoration: none;
+                color: $colorA;
+                font-weight: 600;
+                transition: .3s ease-in-out;
+                &:hover {
+                    color: $colorE;
+                }
+            }
         }
 
         .updTicketHelpVideo {

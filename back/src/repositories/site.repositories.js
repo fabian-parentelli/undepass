@@ -16,6 +16,11 @@ export default class SiteRepository {
         const result = await siteManager.getByTitle(title);
         return result;
     };
+    
+    getByUrl = async (url) => {
+        const result = await siteManager.getByUrl(url);
+        return result;
+    };
 
     getById = async (id) => {
         const result = await siteManager.getById(id);

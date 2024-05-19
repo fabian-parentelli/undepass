@@ -1,15 +1,18 @@
 import './loginHelp.scss';
+import { Link } from 'react-router-dom';
 
 const LoginHelp = () => {
 
     return (
         <div className='loginHelp'>
             <div className='line'></div>
+
             <div className='registerHelpUp'>
                 <h5 id='loginHelp'>Iniciar sesión</h5>
                 <p>Pasos a seguir para iniciar sesión</p>
-                <a className='registerHelpVideo' href="">Video tutorial</a>
+                <Link to={'/videohelp/loginHelp'} className='registerHelpVideo'>Video tutorial</Link>
             </div>
+
             <div className='registerHelpCont'>
                 <p>En la barra de navegación en la parte superior, vas a encontrar un menú desplegable llamado <strong>Usuario</strong>, ahí vas a encontrar la opción <strong>Iniciar sesión</strong>. Esto te dirigirá a la página de login.<br />
                     En esta página vas a encontrar un formulario en el cual vas a tener que completar. El primer campo es <strong>email</strong>, en este deberás completar tu email tal cual lo registraste.<br />

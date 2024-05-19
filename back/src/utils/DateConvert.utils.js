@@ -1,8 +1,11 @@
 function convertDate(dateString) {
+    const [datePart, timePart] = dateString.split(' ');
+    const [day, month, year] = datePart.split('-');
+    const [hours, minutes] = timePart.split(':');
 
-    const part = dateString.split(/[- :]/);
-    const dates = new Date(part[2], part[1] - 1, part[0], part[3], part[4]);
-    return dates;
-};
+    const dateUTC = new Date(Date.UTC(year, month - 1, day, hours, minutes));
+
+    return dateUTC;
+}
 
 export default convertDate;

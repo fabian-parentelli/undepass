@@ -1,15 +1,17 @@
 import './updTicketHelp.scss';
+import { Link } from 'react-router-dom';
 
 const UpdTicketHelp = () => {
 
     return (
-        <div className='updTicketHelp' id='updTicketHelp'>
+        <div className='updTicketHelp'>
+            
             <div className='updTicketHelpCont'>
                 <div className='line'></div>
                 <div className='updTicketHelpTitle'>
-                    <h5 id='avatarHelp'>Modificar entradas</h5>
+                    <h5 id='updTicketHelp'>Modificar entradas</h5>
                     <p>Modificar, crear o eliminar entradas.</p>
-                    <a className='updTicketHelpVideo' href="">Video tutorial</a>
+                    <Link to={'/videohelp/updTicketHelp'} className='registerHelpVideo'>Video tutorial</Link>
                 </div>
             </div>
 

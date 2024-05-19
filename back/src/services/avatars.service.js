@@ -1,6 +1,12 @@
 import { avatarRepository } from "../repositories/index.repositories.js";
 import { AvatarNotFound } from '../utils/custom-exceptions.utils.js';
 
+const newVideoTut = async (body) => {
+    const result = await avatarRepository.newVideoTut(body);
+    if (!result) throw new AvatarNotFound('No se puede guaradra el video tutorial');
+    return { status: 'success', result };
+};
+
 const newEvent = async (images, imagesUrl, body) => {
     const event = {
         component: body.component,
@@ -35,6 +41,18 @@ const getEvents = async () => {
     return { status: 'success', result };
 };
 
+const getVideoTutByName = async (name) => {
+    const result = await avatarRepository.getVideoTutByName(name);
+    if (!result) throw new AvatarNotFound('No se encuentra el video seleccionado');
+    return { status: 'success', result };
+};
+
+const getVideoTut = async () => {
+    const result = await avatarRepository.getVideoTut();
+    if (!result) throw new AvatarNotFound('No se encuentran los videos');
+    return { status: 'success', result };
+};
+
 const vewAvatar = async () => {
     const result = await avatarRepository.vewAvatar();
     if (!result) throw new AvatarNotFound('No se puede obtener los avatares');
@@ -50,4 +68,4 @@ const updateActive = async (id) => {
     return { status: 'success' };
 };
 
-export { newEvent, newAvatar, getEvents, vewAvatar, updateActive };
+export { newVideoTut, newEvent, newAvatar, getEvents, getVideoTut, getVideoTutByName, vewAvatar, updateActive };

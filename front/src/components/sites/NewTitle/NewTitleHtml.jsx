@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CityConf from '../../utils/CityConf/CityConf.jsx'
 import SocialNetworks from './SocialNetworks/SocialNetworks.jsx';
+import IsShift from '../IsShift/IsShift.jsx';
 
 const NewTitleHtml = ({ handleChange, handleSubmit, setValues }) => {
 
@@ -11,7 +12,7 @@ const NewTitleHtml = ({ handleChange, handleSubmit, setValues }) => {
     return (
         <form className='newTitle' onSubmit={handleSubmit}>
             <h2>Crear tu sitio</h2>
-            <p>Los datos que te pedimos son para crear tu página web y van a estar a la vista de tus usuraios. Te recomendamos no subir información confidencial o de indole no público. Algúnos de estos son opcionales, como teléfono, email y ubicación</p>
+            <p>Los datos que te pedimos son para crear tu página web y van a estar a la vista de tus usuraios. Te recomendamos no subir información confidencial o de indole no público. Algúnos de estos son opcionales, como teléfono y email</p>
 
             <div className='tileSiteForm'>
                 <label>Nombre de tu sitio</label>
@@ -36,6 +37,9 @@ const NewTitleHtml = ({ handleChange, handleSubmit, setValues }) => {
                     <option value="art">Arte</option>
                 </select>
             </div>
+
+            <IsShift setValues={setValues} />
+            <p className='isShiftT'>Si eres un tipo de negocio que en ves de vender entradas, alquilas horarios, ejemplo sala de ensayo, estudio de danza, teatro, etc.</p>
 
             {!optPhone ?
                 <p className='btnOption' onClick={() => setOptPhone(!optPhone)}>Telefono</p>

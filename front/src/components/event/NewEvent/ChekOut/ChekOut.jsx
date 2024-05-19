@@ -215,6 +215,24 @@ const ChekOut = ({ events, setLoading }) => {
                             ))}
                         </div>
 
+                        <div className='divBetNewEvent'>
+                            <div className='divInEvent'>
+                                <label>Video de Yotube</label>
+                                <input
+                                    className='inpSel'
+                                    name='video'
+                                    placeholder='https://www.youtube.com/watch?v=VxIdnivOrlU'
+                                    type="text"
+                                    value={values.video}
+                                    onChange={handleFormChange}
+                                />
+                            </div>
+                            <div className='divInEvent'>
+                                <label>Identificador de Usuario</label>
+                                <p className='inpSel tex'>{values.userId}</p>
+                            </div>
+                        </div>
+
                         {values.tickets && values.ticketInfo &&
 
                             values.ticketInfo.map((tik, index) => (

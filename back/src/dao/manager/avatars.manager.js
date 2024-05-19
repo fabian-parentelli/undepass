@@ -1,5 +1,6 @@
 import { avatarModel } from '../models/avatars.model.js';
 import { imgEventModel } from '../models/imgEvent.model.js';
+import { videoTutModel } from '../models/videoTut.model.js';
 
 export default class Avatar {
 
@@ -29,4 +30,17 @@ export default class Avatar {
         return await avatarModel.findByIdAndUpdate({ _id: avatar._id }, avatar);
     };
 
+    // Videos...
+
+    newVideoTut = async (video) => {
+        return await videoTutModel.create(video);
+    };
+
+    getVideoTutByName = async (name) => {
+        return await videoTutModel.findOne({ name: name }).lean();
+    };
+
+    getVideoTut = async () => {
+        return await videoTutModel.find().lean();
+    };
 };

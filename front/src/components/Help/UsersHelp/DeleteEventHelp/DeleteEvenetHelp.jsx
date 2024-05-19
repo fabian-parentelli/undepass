@@ -1,4 +1,5 @@
 import './deleteEventHelp.scss';
+import { Link } from 'react-router-dom';
 
 const DeleteEventHelp = () => {
 
@@ -9,7 +10,7 @@ const DeleteEventHelp = () => {
             <div className='eventProfilHelpUp'>
                 <h5>Eliminar entradas</h5>
                 <p>Pasos para eliminar un tipo o varios de entrada</p>
-                <a className='registerHelpVideo' href="">Video tutorial</a>
+                <Link to={'/videohelp/deleteEventHelp'} className='registerHelpVideo'>Video tutorial</Link>
             </div>
 
             <div className='eventProfilHelpText'>

@@ -1,4 +1,5 @@
 import './contactUsHelp.scss';
+import { Link } from 'react-router-dom';
 
 const ContactUsHelp = () => {
 
@@ -7,8 +8,9 @@ const ContactUsHelp = () => {
             <div className='registerHelpUp'>
                 <h5 id='contactUs'>Contáctanos</h5>
                 <p>Como puedes comunicarte con nosotros.</p>
-                <a className='registerHelpVideo' href="">Video tutorial</a>
+                <Link to={'/videohelp/contactUs'} className='registerHelpVideo'>Video tutorial</Link>
             </div>
+
             <div className='registerHelpCont'>
                 <p>En la barra de navegación en la parte superior, vas a encontrar un menú desplegable llamado <strong>Usuario</strong>, ahí vas a encontrar la opción <strong>Contacto</strong>. Esto te dirigirá a la página de Contáctanos.
                     <br />

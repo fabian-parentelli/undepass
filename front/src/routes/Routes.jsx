@@ -15,6 +15,8 @@ import NewEventUser from "../components/event/NewEventUser/NewEventUser";
 import VewEvent from "../components/event/VewEvent/VewEvent";
 import ScrollToTop from '../components/utils/ScrollToTo/ScrollToTop';
 import NewSiteUser from "../components/sites/NewSiteUser/NewSiteUser";
+import VideoHelp from "../components/Help/VideoHelp/VideoHelp";
+import VewSite from "../components/sites/VewSite/VewSite";
 
 const RoutesComp = () => {
 
@@ -23,7 +25,7 @@ const RoutesComp = () => {
     return (
         <BrowserRouter>
             <ScrollToTop>
-                
+
                 <NavBar />
                 <Routes>
                     <Route path="/" element={<Body />} />
@@ -35,6 +37,8 @@ const RoutesComp = () => {
                     <Route path="/contactus" element={<ContactUs />} />
                     <Route path="/newevent_user" element={<NewEventUser />} />
                     <Route path="/vewevent/:id" element={<VewEvent />} />
+                    <Route path="/videohelp/:tutorial" element={<VideoHelp />} />
+                    <Route path="/site/:id" element={<VewSite />} />
 
                     {user.logged &&
                         <>

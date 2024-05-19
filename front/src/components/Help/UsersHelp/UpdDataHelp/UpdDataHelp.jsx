@@ -1,4 +1,5 @@
 import './updDataHelp.scss';
+import { Link } from 'react-router-dom';
 
 const UpdDataHelp = () => {
 
@@ -9,7 +10,7 @@ const UpdDataHelp = () => {
             <div className='registerHelpUp'>
                 <h5 id='updDataHelp'>Modifíca tus datos</h5>
                 <p>Datos del registro</p>
-                <a className='registerHelpVideo' href="">Video tutorial</a>
+                <Link to={'/videohelp/updDataHelp'} className='registerHelpVideo'>Video tutorial</Link>
             </div>
 
             <div className='registerHelpCont'>

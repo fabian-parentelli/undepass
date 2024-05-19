@@ -1,4 +1,4 @@
-import { siteRepository } from "../repositories/index.repositories.js";
+import { siteRepository, shiftRepository } from "../repositories/index.repositories.js";
 import { SiteNotFound } from '../utils/custom-exceptions.utils.js';
 import * as utilsFunction from '../utils/functions/services.utils.js';
 import { getProvince, getParties } from "./cities.service.js";
@@ -8,10 +8,17 @@ const newSite = async (site) => {
     if (userIs) throw new SiteNotFound('No puedes tener mas de un sitio');
     const isTitle = await siteRepository.getByTitle(site.title);
     if (isTitle) throw new SiteNotFound('Ya existe un sitio con ese nombre');
+    if (!site.location.province || !site.location.municipality || !site.location.province) {
+        throw new SiteNotFound('Debes agregar la ubicación');
+    };
     site.location.province = await getProvince(site.location.province);
     site.location.municipality = await getParties(site.location.municipality);
     site.url = site.title.toLowerCase().replace(/\s/g, '');
     site.img = [];
+    if (site.shift.active) {
+        const shiftDb = await shiftRepository.newShift({ userId: site.userId });
+        site.shift.shiftId = shiftDb._id.toHexString();
+    };
     const result = await siteRepository.newSite(site);
     if (!result) throw new SiteNotFound('No se puede crear el sitio');
     return { status: 'success', result };
@@ -35,6 +42,12 @@ const postImg = async (images, imagesUrl, info) => {
 
 const countSites = async () => {
     const result = await siteRepository.count();
+    return { status: 'success', result };
+};
+
+const getByUrl = async (url) => {
+    const result = await siteRepository.getByUrl(url);
+    if (!result) throw new SiteNotFound('No se encuentra el sitio');
     return { status: 'success', result };
 };
 
@@ -81,14 +94,12 @@ const update = async (site) => {
 };
 
 const addVideo = async (id, { videos }) => {
-
     const siteDb = await siteRepository.getById(id);
     if (!siteDb) throw new SiteNotFound('No se encuentra el sitio');
     siteDb.videos = videos;
-    console.log(videos);
     const result = await siteRepository.update(siteDb);
     if (!result) throw new SiteNotFound('No se puede guardar la imagen');
     return { status: 'success' };
 };
 
-export { newSite, postImg, countSites, getByUserId, getAll, update, addVideo };
+export { newSite, postImg, countSites, getByUrl, getByUserId, getAll, update, addVideo };

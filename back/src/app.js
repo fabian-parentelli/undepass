@@ -5,8 +5,9 @@ import mongoDB from './dao/mongo.js';
 import cors from 'cors';
 import env from './config/dotEnv.config.js'
 
-import { 
-    userRouter, citiesRouter, avatarRouter, userFinanRouter, contactRouter, eventRouter, sitesRouter
+import {
+    userRouter, citiesRouter, avatarRouter, userFinanRouter, 
+    contactRouter, eventRouter, sitesRouter, shiftRouter
 } from './routes/index.router.js';
 
 const app = express();

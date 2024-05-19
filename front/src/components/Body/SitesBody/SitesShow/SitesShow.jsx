@@ -27,7 +27,7 @@ const SitesShow = ({ sites, setSites, setLoading }) => {
                                 <img style={{backgroundColor: 'black'}} key={2} src='newLog.png' alt="Logo" />
                             }
                         </div>
-                        <Link className='sitesShowTxt'>{sit.title}</Link>
+                        <Link to={`/site/${sit.url}`} className='sitesShowTxt'>{sit.title}</Link>
                     </div>
                 ))}
             </div>

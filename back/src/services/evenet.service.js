@@ -1,8 +1,9 @@
-import { eventRepository } from "../repositories/index.repositories.js";
+import { eventRepository, siteRepository } from "../repositories/index.repositories.js";
 import { EventNotFound } from '../utils/custom-exceptions.utils.js';
 import { getProvince, getParties } from "./cities.service.js";
 import convertDate from '../utils/DateConvert.utils.js';
 import { createHash, isValidPassword } from '../utils/hashedPassword.utils.js';
+import moment from 'moment';
 
 const newEventInfo = async (event) => {
     event.guests = event.guests.trim().split(',');
@@ -11,6 +12,11 @@ const newEventInfo = async (event) => {
     if (event.password) event.password = createHash(event.password);
     const result = await eventRepository.newEventInfo(event);
     if (!result) throw new EventNotFound('No se puede guaradar el evento');
+    const site = await siteRepository.getByUser(event.userId);
+    if (site) {
+        site.events.push({ eventId: result._id.toHexString() });
+        siteRepository.update(site);
+    };
     return { status: 'success', result };
 };
 
@@ -43,6 +49,12 @@ const searchEvent = async (name) => {
 const getById = async (id) => {
     const result = await eventRepository.getById(id);
     if (!result) throw new EventNotFound('No se encuentra el evento');
+    result.ticketInfo.forEach((tick) => {
+        const utcDate = convertDate(tick.hourEnd);
+        utcDate.setHours(utcDate.getHours() + 3);
+        if (utcDate < new Date()) tick.quantity = 0;
+    });
+    await eventRepository.update(result);
     return { status: 'success', result };
 };
 
@@ -114,7 +126,6 @@ const singleUpdate = async () => {
             const inactiveEvent = convertDate(even.startEvent);
             if (inactiveEvent < new Date()) {
                 even.active = false;
-                console.log(even);
                 await eventRepository.update(even);
             };
         });
@@ -123,6 +134,6 @@ const singleUpdate = async () => {
 
 export {
     newEventInfo, getCitys, searchEvent, getById, getAllEvents,
-    updPreset, updFlyer, updTickes, checkOut, singleUpdate, active, 
+    updPreset, updFlyer, updTickes, checkOut, singleUpdate, active,
     isPrivate, getQuantity
 };

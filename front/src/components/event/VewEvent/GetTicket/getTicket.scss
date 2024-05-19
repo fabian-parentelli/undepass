@@ -170,6 +170,13 @@
             line-height: 3rem;
         }
     }
+
+    .videoCont {
+        margin: 4rem auto;
+        width: 560px;
+        height: 315px;
+        box-shadow: 5px 5px 15px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -179,9 +186,11 @@
             align-items: center;
             gap: 2rem;
         }
+
         .getTicketLine {
             width: 90%;
         }
+
         .getTicketPrivate {
             flex-direction: column;
         }
@@ -194,6 +203,11 @@
 
         .guestsCont {
             width: 100%;
+        }
+
+        .videoCont {
+            width: 290px;
+            height: 163px;
         }
     }
 }

@@ -12,7 +12,8 @@ const NewTitle = ({ setNewSites, id }) => {
         location: { province: '', municipality: '', city: '' },
         socialNetworks: {
             facebook: '', instagram: '', youtube: '', spotify: '', twitter: '', tiktok: ''
-        }
+        },
+        shift: { active: false }
     });
 
     const [open, setOpen] = useState(false);

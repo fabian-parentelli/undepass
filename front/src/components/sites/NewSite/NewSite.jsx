@@ -79,7 +79,7 @@ const NewSite = ({ site, setLoading }) => {
                         {site && <Banner folderName={`sites/${site.url}`} nameImg={'cardImgA'} site={site} setLoading={setLoading} />}
                     </div>
                     <div className='newSiteCardText'>
-                        <TxtArea site={site} nameTxt={'cardTextA'} placeholder={'Habla de los objetivos... ( 1.835 caracteres)'} setLoading={setLoading} />
+                        <TxtArea site={site} nameTxt={'cardTextA'} placeholder={'Habla de los objetivos... ( 100 caracteres)'} setLoading={setLoading} />
                     </div>
                 </div>
 
@@ -88,7 +88,7 @@ const NewSite = ({ site, setLoading }) => {
                         {site && <Banner folderName={`sites/${site.url}`} nameImg={'cardImgB'} site={site} setLoading={setLoading} />}
                     </div>
                     <div className='newSiteCardText'>
-                        <TxtArea site={site} nameTxt={'cardTextB'} placeholder={'Habla de los objetivos... ( 1.835 caracteres)'} setLoading={setLoading} />
+                        <TxtArea site={site} nameTxt={'cardTextB'} placeholder={'Habla de los objetivos... ( 100 caracteres)'} setLoading={setLoading} />
                     </div>
                 </div>
 
@@ -97,7 +97,7 @@ const NewSite = ({ site, setLoading }) => {
                         {site && <Banner folderName={`sites/${site.url}`} nameImg={'cardImgC'} site={site} setLoading={setLoading} />}
                     </div>
                     <div className='newSiteCardText'>
-                        <TxtArea site={site} nameTxt={'cardTextC'} placeholder={'Habla de los objetivos... ( 1.835 caracteres)'} setLoading={setLoading} />
+                        <TxtArea site={site} nameTxt={'cardTextC'} placeholder={'Habla de los objetivos... ( 100 caracteres)'} setLoading={setLoading} />
                     </div>
                 </div>
             </div>

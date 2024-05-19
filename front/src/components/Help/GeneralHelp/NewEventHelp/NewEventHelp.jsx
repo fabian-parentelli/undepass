@@ -1,4 +1,5 @@
 import './newEventHelp.scss';
+import { Link } from 'react-router-dom';
 
 const NewEventHelp = () => {
 
@@ -8,7 +9,7 @@ const NewEventHelp = () => {
             <div className='registerHelpUp'>
                 <h5 id='newEventHelp'>Crear un Evento</h5>
                 <p>Los eventos pueden ser públicos o privados.</p>
-                <a className='registerHelpVideo' href="">Video tutorial</a>
+                <Link to={'/videohelp/newEventHelp'} className='registerHelpVideo'>Video tutorial</Link>
             </div>
 
             <div className='newEventHelpsCont'>

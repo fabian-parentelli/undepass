@@ -1,4 +1,5 @@
 import './registerHelp.scss';
+import { Link } from 'react-router-dom';
 
 const RegisterHelp = () => {
 
@@ -7,7 +8,7 @@ const RegisterHelp = () => {
             <div className='registerHelpUp'>
                 <h5 id='registerHelp'>Registro</h5>
                 <p>A continuación te mostraremos como puedes registrarte.</p>
-                <a className='registerHelpVideo' href="">Video tutorial</a>
+                <Link to={'/videohelp/registerHelp'} className='registerHelpVideo'>Video tutorial</Link>
             </div>
             <div className='registerHelpCont'>
                 <p>En la barra de navegación en la parte superior, vas a encontrar un menú desplegable llamado <strong>Usuario</strong>, ahí vas a encontrar la opción <strong>Registrarte</strong>. Esto te dirigirá a la página de registros.

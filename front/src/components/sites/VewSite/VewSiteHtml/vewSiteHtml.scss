@@ -1,0 +1,84 @@
+@import '../../../../app.scss';
+
+.vewSiteHtml {
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+
+    .bannerSite {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        .imgBanner {
+            width: 70%;
+            height: 400px;
+            background-size: cover;
+        }
+
+        .logo {
+            width: 200px;
+            background-color: #fff;
+            padding: 6px;
+            border-radius: 50%;
+            position: absolute;
+            left: 18%;
+            bottom: 5%;
+            border: solid 1px black;
+        }
+
+        h2 {
+            font-size: 4rem;
+        }
+    }
+
+    .vewSiteHtmlA {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 4rem;
+
+        .vewSitImgAa {
+            display: flex;
+            gap: 2rem;
+            width: 80%;
+            margin-top: 4rem;
+
+            p {
+                line-height: 2rem;
+            }
+
+            .vewSitImgAA {
+               width: 400px;
+               object-fit: cover;
+               box-shadow: 5px 5px 15px rgb(29, 29, 29);
+            }
+        }
+
+        .vewSitImgA {
+            margin-top: 4rem;
+            width: 80%;
+            box-shadow: 5px 5px 15px rgb(29, 29, 29);
+        }
+    }
+
+    .vewSitText {
+        width: 65%;
+        margin: 0 auto;
+        padding-bottom: 4rem;
+        line-height: 2rem;
+    }
+
+    .carousel {
+        width: 75%;
+        margin: 0 auto
+    }
+};
+
+.vewSiteHtmlDark {
+    background-color: black;
+    color: #fff;
+}

@@ -33,6 +33,17 @@ const countSites = async (req, res) => {
     };
 };
 
+const getByUrl = async (req, res) => {
+    const { url } = req.params;
+    try {
+        const result = await siteService.getByUrl(url);
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof SiteNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
 const getByUserId = async (req, res) => {
     const { id } = req.params;
     try {
@@ -50,9 +61,6 @@ const getAll = async (req, res) => {
         const result = await siteService.getAll(limit, page, random);
         if (result) return res.sendSuccess(result);
     } catch (error) {
-
-        console.log(error);//-------------------------------------------------------------
-
         if (error instanceof SiteNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
@@ -79,4 +87,4 @@ const addVideo = async (req, res) => {
     };
 };
 
-export { newSite, postImg, countSites, getByUserId, getAll, update, addVideo };
+export { newSite, postImg, countSites, getByUrl, getByUserId, getAll, update, addVideo };

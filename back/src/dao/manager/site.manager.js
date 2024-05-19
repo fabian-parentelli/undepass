@@ -7,11 +7,15 @@ export default class Site {
     };
 
     getByUser = async (id) => {
-        return await siteModel.findOne({ userId: id });
+        return await siteModel.findOne({ userId: id }).lean();
     };
 
     getByTitle = async (title) => {
-        return await siteModel.findOne({ title: title });
+        return await siteModel.findOne({ title: title }).lean();
+    };
+    
+    getByUrl = async (url) => {
+        return await siteModel.findOne({ url: url }).lean();
     };
 
     getById = async (id) => {

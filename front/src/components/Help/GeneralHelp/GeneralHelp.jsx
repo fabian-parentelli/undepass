@@ -1,6 +1,6 @@
-import ContactUsHelp from './ContactUsHelp/ContactUsHelp';
-import NewEventHelp from './NewEventHelp/NewEventHelp';
 import './generalHelp.scss';
+import NewEventHelp from './NewEventHelp/NewEventHelp';
+import ContactUsHelp from './ContactUsHelp/ContactUsHelp';
 
 const GeneralHelp = () => {
 
