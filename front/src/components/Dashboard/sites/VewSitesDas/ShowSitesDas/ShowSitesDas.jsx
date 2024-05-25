@@ -28,7 +28,10 @@ const ShowSitesDas = ({ sites, setSites, setLoading }) => {
                         <p>{sit.title}</p>
                         <p><strong>Url:</strong> {sit.url}</p>
                         <p><strong>Usuario:</strong> {sit.userId}</p>
-                        <Link to={`/site/${sit.url}`}><button className='showSitesDasBtn'>Ver</button></Link>
+                        <div className='divButton'>
+                            <Link to={`/site/${sit.url}`}><button className='showSitesDasBtn'>Ver</button></Link>
+                            <Link to={`/dashboard/updsite/${sit.userId}`}><button className='showSitesDasBtn'>Upd</button></Link>
+                        </div>
                     </div>
                 ))}
             </div>

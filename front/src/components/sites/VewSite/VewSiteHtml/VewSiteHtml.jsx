@@ -1,16 +1,16 @@
 import './vewSiteHtml.scss';
 import Carousel from './Carousel/Carousel';
+import SocialMedia from './SocialMedia/SocialMedia';
+import VewEventSite from '../VewEventSite/VewEventSite';
 import VideosVew from '../../../utils/VideosVew/VideosVew';
 import VewSiteNotFound from '../VewSiteNotFound/VewSiteNotFound';
-import SocialMedia from './SocialMedia/SocialMedia';
+import VewUserProducts from '../../../market/vewProducts/VewUserProducts/VewUserProducts';
 
 const VewSiteHtml = ({ values }) => {
 
     const isValid = values && values.info && values.info.length >= 6 && values.img && values.img.length >= 12;
-    
-    if (!isValid) {
-        return <VewSiteNotFound values={values} />
-    }
+
+    if (!isValid) return <VewSiteNotFound values={values} />
 
     return (
         <div className={`vewSiteHtml ${values && values.dark && 'vewSiteHtmlDark'}`}>
@@ -22,7 +22,7 @@ const VewSiteHtml = ({ values }) => {
                         <h2>{values.title}</h2>
                     </div>
 
-                    {/* Eventos - acá van los eventos */}
+                    {values.events && values.events.length > 0 && <VewEventSite siteEvents={values.events} />}
 
                     <div className='vewSiteHtmlA'>
                         <div className='vewSitImgAa'>
@@ -55,7 +55,7 @@ const VewSiteHtml = ({ values }) => {
                         </div>
                     </div>
 
-                    {/* Eventos - acá va el mercado */}
+                    <VewUserProducts userId={values.userId} />
 
                     <div className='videoSites'>
                         {values.videos && values.videos.map((vid, index) => (

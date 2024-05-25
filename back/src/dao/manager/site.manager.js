@@ -13,7 +13,7 @@ export default class Site {
     getByTitle = async (title) => {
         return await siteModel.findOne({ title: title }).lean();
     };
-    
+
     getByUrl = async (url) => {
         return await siteModel.findOne({ url: url }).lean();
     };
@@ -23,7 +23,7 @@ export default class Site {
     };
 
     update = async (site) => {
-        return await siteModel.findByIdAndUpdate({ _id: site._id }, site);
+        return await siteModel.findByIdAndUpdate({ _id: site._id }, site, { new: true });
     };
 
     count = async () => {

@@ -87,4 +87,14 @@ const addVideo = async (req, res) => {
     };
 };
 
-export { newSite, postImg, countSites, getByUrl, getByUserId, getAll, update, addVideo };
+const updVewSite = async (req, res) => {
+    try {
+        const result = await siteService.updVewSite({...req.body});
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof SiteNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
+export { newSite, postImg, countSites, getByUrl, getByUserId, getAll, update, addVideo, updVewSite };

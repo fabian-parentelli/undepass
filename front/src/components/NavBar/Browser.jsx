@@ -50,7 +50,9 @@ const Browser = ({ handleMenuClick, menuVisible, listElementsRef, setMenuVisible
                     <a href='#' className='menu_link'>Mercado <img src="arrow.png" className="menu_arrow" /></a>
                     <ul className={`menu_nesting`}>
                         <li className='menu_inside' onClick={handleInsideClick}><a className='menu_link menu_link--inside' href='#'>Ver Mercado</a></li>
-                        <li className='menu_inside' onClick={handleInsideClick}><a className='menu_link menu_link--inside' href='#'>Publicar</a></li>
+                        {user.logged &&
+                            <li className='menu_inside' onClick={handleInsideClick}><Link to={'/newproduct'} className='menu_link menu_link--inside'>Publicar</Link></li>
+                        }
                         <li className='menu_inside' onClick={handleInsideClick}><a className='menu_link menu_link--inside' href='#'>Información</a></li>
                     </ul>
                 </li>
@@ -75,11 +77,11 @@ const Browser = ({ handleMenuClick, menuVisible, listElementsRef, setMenuVisible
                         <li className='menu_inside' onClick={handleInsideClick}><Link to={('/contactus')} className='menu_link menu_link--inside' >Contacto</Link></li>
                     </ul>
                 </li>
-            </ul>
-            <div className="menu_hamburguer" onClick={handleMenuClick}>
-                <MenuIcon className="menu_img" fontSize='large' />
-            </div>
-        </div>
+            </ul >
+    <div className="menu_hamburguer" onClick={handleMenuClick}>
+        <MenuIcon className="menu_img" fontSize='large' />
+    </div>
+        </div >
     );
 };
 

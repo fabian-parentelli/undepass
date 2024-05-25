@@ -1,0 +1,148 @@
+.viewMyProducts {
+    width: 100%;
+    margin-top: 2rem;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: left;
+
+        thead {
+            background-color: #f4f4f4;
+
+            th {
+                padding: 12px;
+                border-bottom: 2px solid #dddddd;
+            }
+        }
+
+        tbody {
+            tr {
+                &:nth-of-type(even) {
+                    background-color: #f9f9f9;
+                }
+
+                &:hover {
+                    background-color: #f1f1f1;
+                }
+
+                td {
+                    padding: 12px;
+                    border-bottom: 1px solid #dddddd;
+
+                    .contImg {
+                        position: relative;
+                        display: inline-block;
+
+                        .imgAvat {
+                            width: 50px;
+                            height: 50px;
+                            object-fit: cover;
+                            border-radius: 50%;
+                        }
+
+                        .vAcontImg {
+                            position: absolute;
+                            bottom: -50px;
+                            left: 50px;
+                            background-color: #fff;
+                            padding: 1rem;
+                            border-radius: 12px 12px 0 0;
+                            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+                            visibility: hidden;
+                            opacity: 0;
+                            transition: visibility 0s, opacity 0.5s linear;
+
+                            img {
+                                width: 150px;
+                                height: 150px;
+                                object-fit: contain;
+                                border-radius: 10px;
+                            }
+                        }
+
+                        &:hover .vAcontImg {
+                            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    .btnActions {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 10px;
+
+                        button {
+                            padding: 8px 12px;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+
+                            &:hover {
+                                background-color: #ddd;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        table {
+            font-size: 16px;
+
+            th, td {
+                padding: 10px;
+            }
+
+            .btnActions button {
+                padding: 6px 10px;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        table {
+            font-size: 14px;
+
+            th, td {
+                padding: 8px;
+            }
+
+            .btnActions {
+                flex-direction: column;
+                gap: 5px;
+
+                button {
+                    padding: 6px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 360px) {
+        table {
+            font-size: 12px;
+
+            th, td {
+                padding: 6px;
+            }
+
+            .btnActions {
+                flex-direction: column;
+                gap: 3px;
+
+                button {
+                    padding: 4px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

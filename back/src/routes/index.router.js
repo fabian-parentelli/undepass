@@ -6,6 +6,7 @@ import ContactRouter from "./contactus.router.js";
 import EventRouter from './event.router.js';
 import SitesRouter from "./sites.router.js";
 import ShiftRouter from "./shifts.router.js";
+import ProductRouter from './products.router.js';
 
 export const userRouter = new UserRouter().getRouter();
 export const citiesRouter = new CityRouter().getRouter();
@@ -15,3 +16,4 @@ export const contactRouter = new ContactRouter().getRouter();
 export const eventRouter = new EventRouter().getRouter();
 export const sitesRouter = new SitesRouter().getRouter();
 export const shiftRouter = new ShiftRouter().getRouter();
+export const productRouter = new ProductRouter().getRouter();

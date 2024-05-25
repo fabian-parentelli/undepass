@@ -37,4 +37,9 @@ export default class EventRepository {
         return result;
     };
 
+    getByUserId = async (userId) => {
+        const result = await eventManager.getByUserId(userId);
+        return result
+    };
+
 };

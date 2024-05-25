@@ -7,7 +7,8 @@ import env from './config/dotEnv.config.js'
 
 import {
     userRouter, citiesRouter, avatarRouter, userFinanRouter, 
-    contactRouter, eventRouter, sitesRouter, shiftRouter
+    contactRouter, eventRouter, sitesRouter, shiftRouter,
+    productRouter
 } from './routes/index.router.js';
 
 const app = express();
@@ -27,5 +28,7 @@ app.use('/api/finan', userFinanRouter);
 app.use('/api/contact', contactRouter);
 app.use('/api/event', eventRouter);
 app.use('/api/site', sitesRouter);
+app.use('/api/shift', shiftRouter);
+app.use('/api/product', productRouter);
 
 app.listen(env.port, () => console.log('Server conected'));

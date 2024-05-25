@@ -11,6 +11,7 @@ import AvatarMenu from './AvatarMenu/AvatarMenu';
 import EventMenu from './EventMenu/EventMenu';
 import SiteMenu from './SiteMenu/SiteMenu';
 import UpdBanner from './EventMenu/UpdBanner/UpdBanner';
+import Marketmenu from './MarketMenu/Marketmenu';
 
 const Profile = () => {
 
@@ -28,6 +29,7 @@ const Profile = () => {
                 <Route path='/updbanner/:eventId' element={<UpdBanner />} />
                 <Route path='/avatarmenu' element={<AvatarMenu user={user.data} />} />
                 <Route path='/sitemenu' element={<SiteMenu user={user.data} />} />
+                <Route path='/marketmenu' element={<Marketmenu />} />
             </Routes>
         </div>
     );

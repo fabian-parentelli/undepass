@@ -42,4 +42,21 @@
             }
         }
     }
+
+    p {
+        margin-top: 1rem;
+    }
+
+    .setEvent {
+        text-decoration: none;
+        color: black;
+        span {
+            color: $colorA;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            &:hover {
+                color: $colorE;
+            }
+        }
+    }
 }

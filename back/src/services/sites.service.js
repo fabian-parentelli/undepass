@@ -1,9 +1,10 @@
-import { siteRepository, shiftRepository } from "../repositories/index.repositories.js";
+import { siteRepository, shiftRepository, eventRepository } from "../repositories/index.repositories.js";
 import { SiteNotFound } from '../utils/custom-exceptions.utils.js';
 import * as utilsFunction from '../utils/functions/services.utils.js';
 import { getProvince, getParties } from "./cities.service.js";
 
 const newSite = async (site) => {
+
     const userIs = await siteRepository.getByUser(site.userId);
     if (userIs) throw new SiteNotFound('No puedes tener mas de un sitio');
     const isTitle = await siteRepository.getByTitle(site.title);
@@ -18,6 +19,14 @@ const newSite = async (site) => {
     if (site.shift.active) {
         const shiftDb = await shiftRepository.newShift({ userId: site.userId });
         site.shift.shiftId = shiftDb._id.toHexString();
+    };
+    const events = await eventRepository.getByUserId(site.userId);
+    if (events) {
+        site.events = [];
+        events.forEach((even) => {
+            const obj = { eventId: even._id, active: true };
+            site.events.push(obj);
+        });
     };
     const result = await siteRepository.newSite(site);
     if (!result) throw new SiteNotFound('No se puede crear el sitio');
@@ -102,4 +111,16 @@ const addVideo = async (id, { videos }) => {
     return { status: 'success' };
 };
 
-export { newSite, postImg, countSites, getByUrl, getByUserId, getAll, update, addVideo };
+const updVewSite = async (body) => {
+    const site = await siteRepository.getById(body.siteId);
+    site.events.forEach((sit) => {
+        if (sit.eventId === body.eventId) {
+            sit.active = !sit.active;
+        };
+    });
+    const result = await siteRepository.update(site);
+    if (!result) throw new SiteNotFound('No se puede actualizar la vista del evento en el sitio');
+    return { status: 'success', result };
+};
+
+export { newSite, postImg, countSites, getByUrl, getByUserId, getAll, update, addVideo, updVewSite };

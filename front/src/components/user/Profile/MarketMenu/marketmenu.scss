@@ -1,0 +1,26 @@
+@import '../../../../app.scss';
+
+.marketmenu {
+    padding: 6px;
+    width: 90%;
+
+    .siteMenuTitle {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        h2 {
+            cursor: pointer;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: rgb(73, 73, 73);
+            }
+        }
+
+        .siteMenuHelp {
+            color: $colorA;
+            text-decoration: none;
+        }
+    }
+}

@@ -1,8 +1,8 @@
-import { useParams } from 'react-router-dom';
-import { getSiteByUrlApi } from '../../../helpers/sites/getSiteByUrl.api.js';
-import { useEffect, useState } from 'react';
 import Load from '../../utils/Load.jsx';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import VewSiteHtml from './VewSiteHtml/VewSiteHtml.jsx';
+import { getSiteByUrlApi } from '../../../helpers/sites/getSiteByUrl.api.js';
 
 const VewSite = () => {
 
@@ -22,7 +22,6 @@ const VewSite = () => {
     return (
         <>
             <VewSiteHtml values={values} />
-            
             <Load loading={loading} />
         </>
     );

@@ -26,7 +26,7 @@ const NewSite = ({ site, setLoading }) => {
             <TitleNewSite site={site} dark={dark} setDark={setDark} />
 
             <div className='newSiteHelpssButton'>
-                <Link className='newSiteHelpssEvents'>Administrar eventos</Link>
+                <Link to={'/profile/sitemenu'} className='newSiteHelpssEvents'>Administrar eventos</Link>
                 <p>-</p>
                 <Link className='newSiteHelpss'>Ayuda</Link>
             </div>
@@ -102,7 +102,7 @@ const NewSite = ({ site, setLoading }) => {
             </div>
 
             <div className='newSiteHelpssButton'>
-                <Link className='newSiteHelpssEvents'>Administrar mercado</Link>
+                <Link to={'/profile/sitemenu'} className='newSiteHelpssEvents'>Administrar mercado</Link>
                 <p>-</p>
                 <Link className='newSiteHelpss'>Ayuda</Link>
             </div>

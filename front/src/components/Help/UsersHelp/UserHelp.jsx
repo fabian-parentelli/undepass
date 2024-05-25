@@ -11,6 +11,7 @@ import EventProfilHelp from './EventProfilHelp/EventProfilHelp';
 import DeleteEventHelp from './DeleteEventHelp/DeleteEvenetHelp';
 import UpdTicketHelp from './UpdTicketHelp/UpdTicketHelp';
 import NewHelpSite from './NewSiteHelp/NewSiteHelp';
+import UpdSiteHelp from './UpdSiteHelp/UpdSiteHelp';
 
 const UserHelp = () => {
 
@@ -43,6 +44,7 @@ const UserHelp = () => {
             <DeleteEventHelp />
             <UpdTicketHelp />
             <NewHelpSite />
+            <UpdSiteHelp />
         </div>
     );
 };

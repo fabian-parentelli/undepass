@@ -1,0 +1,24 @@
+.newProductForm {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: space-between;
+    gap: 6px;
+
+    .divForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        input {
+            height: 30px;
+            border-radius: 3px;
+            border: solid 1px gray;
+            padding-left: 3px;
+            
+            &:hover {
+                border-color: black;
+            }
+        }
+    }
+}

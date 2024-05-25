@@ -17,6 +17,7 @@ import ScrollToTop from '../components/utils/ScrollToTo/ScrollToTop';
 import NewSiteUser from "../components/sites/NewSiteUser/NewSiteUser";
 import VideoHelp from "../components/Help/VideoHelp/VideoHelp";
 import VewSite from "../components/sites/VewSite/VewSite";
+import MarketUser from "../components/market/MarketUser/MarketUser";
 
 const RoutesComp = () => {
 
@@ -44,6 +45,7 @@ const RoutesComp = () => {
                         <>
                             <Route path="/profile/*" element={<Profile />} />
                             <Route path="/newsite" element={<NewSiteUser />} />
+                            <Route path="/newproduct" element={<MarketUser />} />
                         </>
                     }
                     {user.logged && user.data && user.data.role === 'admin' &&

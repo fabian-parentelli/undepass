@@ -12,7 +12,8 @@ export default class SitesRouter extends Router {
         this.get('/site/:url', ['PUBLIC'], passportEnum.NOTHING, sitesController.getByUrl);
         this.get('/:id', ['USER', 'ADMIN'], passportEnum.JWT, sitesController.getByUserId);
         this.get('/', ['PUBLIC'], passportEnum.NOTHING, sitesController.getAll);
-        this.put('/', ['USER', 'ADMIN'], passportEnum.JWT, sitesController.update);
+        this.put('/vewsite', ['USER', 'ADMIN'], passportEnum.JWT, sitesController.updVewSite);
         this.put('/addvideo/:id', ['USER', 'ADMIN'], passportEnum.JWT, sitesController.addVideo);
+        this.put('/', ['USER', 'ADMIN'], passportEnum.JWT, sitesController.update);
     };
 };

@@ -33,4 +33,8 @@ export default class Event {
         return await eventModel.countDocuments({ active: true });
     };
 
+    getByUserId = async (userId) => {
+        return await eventModel.find({ userId: userId }).lean();
+    };
+
 };

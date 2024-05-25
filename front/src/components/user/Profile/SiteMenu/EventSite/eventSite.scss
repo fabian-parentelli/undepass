@@ -1,0 +1,102 @@
+.eventSite {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: 'Arial, sans-serif';
+    color: #333;
+
+    table {
+        width: 100%;
+        border: 1px solid #ddd;
+
+        thead {
+            background-color: #f4f4f4;
+
+            tr {
+                th {
+                    padding: 10px;
+                    text-align: left;
+                    font-weight: bold;
+                    border-bottom: 2px solid #ddd;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                &:nth-child(even) {
+                    background-color: #f9f9f9;
+                }
+
+                &:hover {
+                    background-color: #f1f1f1;
+                }
+
+                td {
+                    padding: 10px;
+                    border-bottom: 1px solid #ddd;
+                    text-align: left;
+                }
+
+                .btnSite {
+                    cursor: pointer;
+
+                    &.active {
+                        color: green;
+                        background-color: #e6ffed;
+
+                        &:hover {
+                            background-color: grey;
+                        }
+                    }
+
+                    &.inactive {
+                        color: red;
+                        background-color: #ffe6e6;
+
+                        &:hover {
+                            background-color: grey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+
+        &::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 10px;
+            width: calc(50% - 20px);
+            padding-right: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,74 @@
+@import '../../../app.scss';
+
+.cardProduct {
+  width: 250px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 4px 20px 3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 4px 20px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 4px 20px 3px rgba(0, 0, 0, 0.75);
+
+  .imgCont {
+    width: 100%;
+    height: 50%;
+    padding: 12px;
+    overflow: hidden;
+    position: relative;
+
+    .carousel__slide {
+      height: 100%;
+    }
+
+    .carousel__item {
+      min-width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        filter: drop-shadow(5px 5px 5px gray);
+      }
+    }
+  }
+
+  .cardProductData {
+    height: 50%;
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    .decr {
+      color: gray;
+      font-size: 12px;
+    }
+
+    .price {
+      color: $colorA;
+      font-size: 1.4rem;
+    }
+
+    .btnCard {
+      width: 250px;
+      border: none;
+      height: 50px;
+      background-color: $colorB;
+      color: #ffff;
+      cursor: pointer;
+      transition: .3s ease-in-out;
+
+      &:hover {
+        background-color: #04aca3;
+      }
+    }
+  }
+}

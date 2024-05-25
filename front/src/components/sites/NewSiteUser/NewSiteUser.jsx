@@ -32,10 +32,8 @@ const NewSiteUser = () => {
 
             {!newSites ?
                 <NewTitle setNewSites={setNewSites} id={user.data._id} />
-                : <NewSite site={site} setLoading={setLoading}
-                />
+                : <NewSite site={site} setLoading={setLoading} />
             }
-
             <Load loading={loading} />
         </div>
     );

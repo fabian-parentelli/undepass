@@ -1,0 +1,54 @@
+@import '../../../app.scss';
+
+.newProduct {
+
+    .newProductTitle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+
+        .newProductHel {
+            text-decoration: none;
+            color: $colorA;
+        }
+    }
+
+    .newProductDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 4rem;
+
+        .newProductDivImg {
+            width: 300px;
+
+        }
+    }
+
+    .btnNewProductBTN {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+
+        .btnNewProduct {
+            width: 150px;
+            height: 30px;
+            border-radius: 4px;
+            border: none;
+            box-shadow: 5px 5px 15px black; 
+            background-color: $colorB;
+            color: #ffff;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            &:hover {
+                background-color: rgb(18, 87, 81);
+            }
+            &:active {
+                box-shadow: none;
+            }
+        }
+    }
+}

@@ -1,5 +1,7 @@
 import './siteMenuData.scss';
 import { updateSiteApi } from '../../../../../helpers/sites/updateSite.api.js';
+import { Link } from 'react-router-dom';
+
 
 const SiteMenuData = ({ values, setValues, setLoading, setVew }) => {
 
@@ -14,6 +16,13 @@ const SiteMenuData = ({ values, setValues, setLoading, setVew }) => {
         setLoading(false);
         setVew('');
     };
+
+    if (!values) {
+        return <div style={{marginTop: '1rem', }}>
+            <p>No hay datos disponibles, dirígete a tu página.</p>
+            <Link to={'/newsite'} style={{textDecoration: 'none', color: '#f45c14'}}>Tu Página</Link>
+        </div>
+    }
 
     return (
         <div className='siteMenuData'>

@@ -16,6 +16,7 @@ import UpdateEventAd from './event/UpdateEventAd/UpdateEventAd';
 import NewSiteDas from './sites/NewSiteDas/NewSiteDas';
 import VewSitesDas from './sites/VewSitesDas/VewSitesDas';
 import VideoTutoriales from './avatar/VideoTutoriales/VideoTutoriales';
+import UpdSiteDas from './sites/UpdSiteDas/UpdSiteDas';
 
 const Dashboard = () => {
 
@@ -57,6 +58,7 @@ const Dashboard = () => {
 
                 <Route path='/newsite' element={<NewSiteDas />} />
                 <Route path='/vewsite' element={<VewSitesDas />} />
+                <Route path='/updsite/:_id' element={<UpdSiteDas />} />
             </Routes>
         </div>
     );

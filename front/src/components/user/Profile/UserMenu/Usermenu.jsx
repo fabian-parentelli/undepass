@@ -6,6 +6,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 import HomeIcon from '@mui/icons-material/Home';
 import LanguageIcon from '@mui/icons-material/Language';
+import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 
 const UserMenu = () => {
 
@@ -35,6 +36,11 @@ const UserMenu = () => {
             <Link to={'/profile/sitemenu'} className='userMen'>
                 <LanguageIcon className='icon' />
                 <p>Sitio</p>
+            </Link>
+            
+            <Link to={'/profile/marketmenu'} className='userMen'>
+                <CardGiftcardIcon className='icon' />
+                <p>Mercado</p>
             </Link>
 
             <Link to={'/profile/whatyouremail'} className='userMen'>
