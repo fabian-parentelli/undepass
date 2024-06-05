@@ -19,11 +19,21 @@ const ShowSitesDas = ({ sites, setSites, setLoading }) => {
                 {sites && sites.docs.map((sit, index) => (
                     <div key={index} className='showSitesDasDiv'>
                         <div className='sitesShowDivImg'>
-                            {sit.img && sit.img[1] && sit.img[1].url ? (
-                                <img src={sit.img[1].url} alt="Logo" />
+                            {sit.img && sit.img.length > 0 ? (
+                                sit.img.some(img => img.name === "logo") ? (
+                                    sit.img.map((img, imgIndex) => {
+                                        if (img.name === "logo") {
+                                            return <img key={imgIndex} src={img.url} alt="Logo" />;
+                                        }
+                                        return null;
+                                    })
+                                ) : (
+                                    <img style={{ backgroundColor: 'black' }} src='/newLog.png' alt="Logo" />
+                                )
                             ) : (
-                                <img className='imgLogo' src='/newLog.png' alt="Logo" />
+                                <img style={{ backgroundColor: 'black' }} src='/newLog.png' alt="Logo" />
                             )}
+
                         </div>
                         <p>{sit.title}</p>
                         <p><strong>Url:</strong> {sit.url}</p>

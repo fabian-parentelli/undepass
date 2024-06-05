@@ -1,0 +1,19 @@
+@import '../../../../../app.scss';
+
+.writeMessSite {
+    width: 100%;
+    display: flex;
+    gap: 2px;
+    color: black;
+    
+    .messageSiteBtn {
+        border-radius: 3px 6px 6px 3px;
+        border: none;
+        cursor: pointer;
+        background-color: rgb(66, 56, 53);
+        transition: .3s;
+        &:hover {
+            background-color: $colorE;
+        }
+    }
+}

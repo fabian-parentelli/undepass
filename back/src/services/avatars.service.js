@@ -41,6 +41,12 @@ const getEvents = async () => {
     return { status: 'success', result };
 };
 
+const getEventByName = async (name) => {
+    const result = await avatarRepository.getEventByName(name);
+    if (!result) throw new AvatarNotFound('No se puede obtener las imagenes');
+    return { status: 'success', result };
+};
+
 const getVideoTutByName = async (name) => {
     const result = await avatarRepository.getVideoTutByName(name);
     if (!result) throw new AvatarNotFound('No se encuentra el video seleccionado');
@@ -68,4 +74,6 @@ const updateActive = async (id) => {
     return { status: 'success' };
 };
 
-export { newVideoTut, newEvent, newAvatar, getEvents, getVideoTut, getVideoTutByName, vewAvatar, updateActive };
+export { newVideoTut, newEvent, newAvatar, getEvents, 
+    getVideoTut, getVideoTutByName, vewAvatar, updateActive, getEventByName 
+};

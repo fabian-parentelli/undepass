@@ -60,8 +60,12 @@ const RegisterHtml = ({ handleSubmit, handleInputChange, setValues }) => {
                             required
                         />
                     </div>
-                    <CityConf setValues={setValues} />
-                    <input className='btn' type="submit"/>
+                    <div className='registerRightDivCity'>
+                        <label style={{color: '#fff'}}>Localidad</label>
+                        <CityConf setValues={setValues} />
+                    </div>
+
+                    <input className='btn' type="submit" />
                 </div>
             </form>
         </div>

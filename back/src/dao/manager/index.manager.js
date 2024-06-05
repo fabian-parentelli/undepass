@@ -6,6 +6,7 @@ import Event from './event.manager.js';
 import Site from './site.manager.js';
 import ShiftAdminManager from './shiftAdmin.manager.js';
 import Product from './product.manager.js';
+import Comment from './comment.manager.js';
 
 export const userManager = new User();
 export const avatarManager = new Avatar();
@@ -15,3 +16,4 @@ export const eventManager = new Event();
 export const siteManager = new Site();
 export const shiftAdminManager = new ShiftAdminManager();
 export const productManager = new Product();
+export const commentManager = new Comment();

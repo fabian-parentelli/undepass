@@ -1,0 +1,30 @@
+.writeOwner {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding: 6px;
+    background-color: #fff;
+    border-radius: 6px;
+
+    .writeOwnerAvatar {
+        width: 50px;
+        border-radius: 50%;
+        border: solid 1px black;
+    }
+
+    .writeOwnerDIv {
+        width: 100%;
+
+        p {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            height: 30px;
+            padding-left: 3px;
+            border: none;
+        }
+    }
+}

@@ -45,6 +45,17 @@ const getEvents = async (req, res) => {
     };
 };
 
+const getEventByName = async (req, res) => {
+    const { name } = req.params;
+    try {
+        const result = await avatarService.getEventByName(name);
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof AvatarNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
 const getVideoTutByName = async (req, res) => {
     const { name } = req.params;
     try {
@@ -87,4 +98,6 @@ const updateActive = async (req, res) => {
     };
 };
 
-export { newVideoTut, newEvent, newAvatar, getEvents, getVideoTut, getVideoTutByName, vewAvatar, updateActive };
+export { newVideoTut, newEvent, newAvatar, getEvents, getVideoTut, 
+    getVideoTutByName, vewAvatar, updateActive, getEventByName 
+};

@@ -8,7 +8,9 @@ export default class SitesRouter extends Router {
     init() {
         this.post('/', ['USER', 'ADMIN'], passportEnum.JWT, sitesController.newSite);
         this.post('/img', ['USER', 'ADMIN'], passportEnum.JWT, multipleUploader, uploadToCloudinary, sitesController.postImg);
-        this.get('/count', ['ADMIN'], passportEnum.JWT, sitesController.countSites);
+        this.post('/favorite', ['USER', 'ADMIN'], passportEnum.JWT, sitesController.addFavorite);
+        this.post('/addlike', ['PUBLIC'], passportEnum.NOTHING, sitesController.addLike);
+        this.get('/count', ['PUBLIC'], passportEnum.NOTHING, sitesController.countSites);
         this.get('/site/:url', ['PUBLIC'], passportEnum.NOTHING, sitesController.getByUrl);
         this.get('/:id', ['USER', 'ADMIN'], passportEnum.JWT, sitesController.getByUserId);
         this.get('/', ['PUBLIC'], passportEnum.NOTHING, sitesController.getAll);

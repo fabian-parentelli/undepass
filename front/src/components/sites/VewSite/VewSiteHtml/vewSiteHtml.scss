@@ -4,6 +4,7 @@
     min-height: 100vh;
     width: 100%;
     padding: 0;
+    padding-bottom: 4rem !important;
 
     .bannerSite {
         display: flex;
@@ -19,6 +20,8 @@
 
         .logo {
             width: 200px;
+            height: 200px;
+            object-fit: contain;
             background-color: #fff;
             padding: 6px;
             border-radius: 50%;
@@ -91,6 +94,8 @@
             gap: 12px;
             padding: 1rem;
             border-radius: 4px;
+            width: 300px;
+            text-align: center;
 
             img {
                 width: 300px;
@@ -134,9 +139,10 @@
             }
             .logo {
                 width: 70px;
+                height: 70px;
                 padding: 2px;
                 left: 10px;
-                bottom: 10%;
+                bottom: 30%;
             }
             h2 {
                 font-size: 2rem;

@@ -1,0 +1,16 @@
+.marketBody {
+    margin-top: 4rem;
+
+    h2 {
+        margin: 4rem auto;
+        text-align: center;
+        font-size: 4rem;
+    }
+
+    .marketBodyProd {
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+}

@@ -12,6 +12,10 @@ export default class Avatar {
         return await imgEventModel.find().lean();
     };
 
+    getEventByName = async (name) => {
+        return await imgEventModel.findOne({ style: name }).lean();
+    };
+
     // Avatares...
 
     newAvatar = async (avatar) => {

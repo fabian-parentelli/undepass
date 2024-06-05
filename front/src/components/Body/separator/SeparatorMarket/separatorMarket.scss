@@ -1,0 +1,37 @@
+@import '../../../../app.scss';
+
+.separatorMarket {
+    width: 100%;
+    min-height: 300px;
+    background-image: linear-gradient(#000000b9, #000000c5,), url('https://res.cloudinary.com/dtjzfz2ex/image/upload/v1717018420/background/qmxd33mhn2imxxqlpazz.jpg');
+    background-size: cover;
+    background-position: left;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+
+    .separatorMarketDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 150px;
+
+        .separatorMarketNumber {
+            font-size: 3rem;
+        }
+
+        .separatorMarketLine {
+            width: 100%;
+            height: 1px;
+            background-color: $colorA;
+        }
+
+        p {
+            font-size: 1.4rem;
+        }
+    }
+}

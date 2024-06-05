@@ -23,6 +23,27 @@ const postImg = async (req, res) => {
     };
 };
 
+const addFavorite = async (req, res) => {
+    try {
+        const result = await siteService.addFavorite({ ...req.body });
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof SiteNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
+const addLike = async (req, res) => {
+    const userIp = req.ip;
+    try {
+        const result = await siteService.addLike({ ...req.body }, userIp);
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof SiteNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
 const countSites = async (req, res) => {
     try {
         const result = await siteService.countSites();
@@ -89,7 +110,7 @@ const addVideo = async (req, res) => {
 
 const updVewSite = async (req, res) => {
     try {
-        const result = await siteService.updVewSite({...req.body});
+        const result = await siteService.updVewSite({ ...req.body });
         if (result) return res.sendSuccess(result);
     } catch (error) {
         if (error instanceof SiteNotFound) return res.sendClientError(error.message);
@@ -97,4 +118,7 @@ const updVewSite = async (req, res) => {
     };
 };
 
-export { newSite, postImg, countSites, getByUrl, getByUserId, getAll, update, addVideo, updVewSite };
+export {
+    newSite, postImg, countSites, getByUrl, addLike,
+    getByUserId, getAll, update, addVideo, updVewSite, addFavorite
+};

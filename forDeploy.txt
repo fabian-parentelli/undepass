@@ -3,3 +3,13 @@
         Cambiar el localHost8082 x el dominio del servidor.
     - services/user // interPass
         Cambiar `http://localhost:5173/password/token=${tokenPass}` al dominio del front.
+
+* front 
+    - Cuando copia el link el usaurio para compartir su página cambiar el localHost por la url
+
+    
+
+
+        Usuario con turnos -- danielabilda@mail.com
+        Menor de edad      -- sirusblack@mail.com
+        

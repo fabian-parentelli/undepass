@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import './cardProduct.scss';
 import Carousel from './Carousel/Carousel';
 
-const CardProduct = ({ key, prod }) => {
+const CardProduct = ({ prod }) => {
 
     return (
         <div className="cardProduct">
@@ -12,7 +13,7 @@ const CardProduct = ({ key, prod }) => {
                 <p>{prod.name}</p>
                 <p className="decr">{prod.description}</p>
                 <p className="price">${prod.price}</p>
-                <button className="btnCard">Agregar</button>
+                <Link to={`product/${prod._id}`}><button className="btnCard">Agregar</button></Link>
             </div>
         </div>
     );

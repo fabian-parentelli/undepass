@@ -1,5 +1,7 @@
 .vewUserProducts {
     display: flex;
     justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
     margin: 1rem 0 8rem 0;
 }

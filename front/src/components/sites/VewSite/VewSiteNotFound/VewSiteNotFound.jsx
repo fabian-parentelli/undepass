@@ -10,8 +10,8 @@ const VewSiteNotFound = ({ values }) => {
     const [isUser, setIsUser] = useState(false);
 
     useEffect(() => {
-        if (values && user && values.userId && user.data._id) {
-            if (values.userId == user.data._id) setIsUser(true);
+        if (values && user && values.userId && user.data?._id) {
+            if (values.userId === user.data._id) setIsUser(true);
         };
     }, [values, user]);
 

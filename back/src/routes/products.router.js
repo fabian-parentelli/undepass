@@ -8,6 +8,9 @@ export default class ProductRouter extends Router {
     init() {
         this.post('/', ['USER', 'ADMIN'], passportEnum.JWT, multipleUploader, uploadToCloudinary, productController.newProduct);
         this.get('/user/:id', ['PUBLIC'], passportEnum.NOTHING, productController.getByUserId);
+        this.get('/count', ['PUBLIC'], passportEnum.NOTHING, productController.getCounter);
+        this.get('/:id', ['PUBLIC'], passportEnum.NOTHING, productController.getById);
+        this.get('/', ['PUBLIC'], passportEnum.NOTHING, productController.getAll);
         this.put('/insite/:id', ['USER', 'ADMIN'], passportEnum.JWT, productController.updInSite);
     };
 };

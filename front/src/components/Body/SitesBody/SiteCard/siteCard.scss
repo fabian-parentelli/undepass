@@ -1,0 +1,51 @@
+@import '../../../../app.scss';
+
+.siteCard {
+    text-decoration: none;
+    color: black;
+    width: 260px;
+    display: flex;
+    gap: 1rem;
+    padding: 3px;
+    transition: .3s ease-in-out;
+    &:hover {
+        box-shadow: 5px 5px 15px;
+    }
+    &:active {
+        box-shadow: none;
+    }
+
+    .sitesShowDivImg {
+        width: 120px;
+        height: 120px;
+        border-radius: 6px;
+        border: solid 1px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .siteCardText {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .title {
+            font-weight: 600;
+        }
+
+        .category {
+            font-size: 15px;
+        }
+
+        .like {
+            display: flex;
+            gap: 6px;
+            color: $colorA;
+        }
+    }
+}

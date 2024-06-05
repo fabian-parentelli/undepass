@@ -18,6 +18,9 @@ import NewSiteUser from "../components/sites/NewSiteUser/NewSiteUser";
 import VideoHelp from "../components/Help/VideoHelp/VideoHelp";
 import VewSite from "../components/sites/VewSite/VewSite";
 import MarketUser from "../components/market/MarketUser/MarketUser";
+import VewByProduct from "../components/market/vewProducts/VewBuyProduct/VewBuyProduct";
+import CartBody from "../components/cart/CartBody/CartBody";
+import VewCart from "../components/cart/VewCart/VewCart";
 
 const RoutesComp = () => {
 
@@ -40,6 +43,8 @@ const RoutesComp = () => {
                     <Route path="/vewevent/:id" element={<VewEvent />} />
                     <Route path="/videohelp/:tutorial" element={<VideoHelp />} />
                     <Route path="/site/:id" element={<VewSite />} />
+                    <Route path="/product/:id" element={<VewByProduct />} />
+                    <Route path="/cart" element={<VewCart />} />
 
                     {user.logged &&
                         <>
@@ -52,6 +57,7 @@ const RoutesComp = () => {
                         <Route path="/dashboard/*" element={<Dashboard />} />
                     }
                 </Routes>
+                <CartBody />
                 <Footer />
 
             </ScrollToTop>

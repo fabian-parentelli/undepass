@@ -49,6 +49,28 @@ const postImg = async (images, imagesUrl, info) => {
     return { status: 'success' };
 };
 
+const addFavorite = async (favorite) => {
+    const site = await siteRepository.getById(favorite.siteId);
+    const index = site.favorites.findIndex((fav) => fav.userId === favorite.id);
+    if (index !== -1) site.favorites.splice(index, 1);
+    else site.favorites.push({ userId: favorite.id });
+    const result = await siteRepository.update(site);
+    if (!result) throw new SiteNotFound('No se puede agregar a favoritos');
+    return { status: 'success', result };
+};
+
+const addLike = async (likes, userIp) => {
+    const site = await siteRepository.getById(likes.siteId);
+    if (!site) throw new SiteNotFound('No se encuentra el sitio');
+    const identifier = likes.userId || userIp;
+    const exists = site.likeCount.some(sit => sit === identifier);
+    if (exists) return { status: 'error', error: 'Ya te gusta este sitio' };
+    else site.likeCount.push(identifier);
+    const result = await siteRepository.update(site);
+    if (!result) throw new SiteNotFound('No se puede actualizar el error');
+    return { status: 'success', result };
+};
+
 const countSites = async () => {
     const result = await siteRepository.count();
     return { status: 'success', result };
@@ -123,4 +145,8 @@ const updVewSite = async (body) => {
     return { status: 'success', result };
 };
 
-export { newSite, postImg, countSites, getByUrl, getByUserId, getAll, update, addVideo, updVewSite };
+export {
+    newSite, postImg, countSites, getByUrl,
+    getByUserId, getAll, update, addVideo, updVewSite,
+    addFavorite, addLike
+};

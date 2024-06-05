@@ -103,3 +103,63 @@
         }
     }
 }
+
+@media (max-width: 767px) {
+    
+    .updSiteHelp {
+        width: 95%;
+        text-align: center;
+    
+        .updTicketHelpCont {
+            width: 100%;
+
+            .updTicketHelpTitle {
+    
+                h5 {
+                    font-size: 3rem;
+                }
+    
+                p {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    
+        .updTicketHelpOne {
+            margin-top: 2rem;
+    
+            div {
+                width: 100%;
+                margin: 2rem 0;
+            }
+    
+            img {
+                width: 250px;
+                box-shadow: 5px 5px 15px;
+            }
+        }
+    
+        .img2 {
+            width: 90%;
+        }
+    
+        .updTicketHelptwo {
+            width: 90%;
+        }
+    
+        .divImgHelp {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 80%;
+            margin: 4rem auto;
+    
+            img {
+                width: 100%;
+                box-shadow: 5px 5px 15px;
+            }
+        }
+    }
+}

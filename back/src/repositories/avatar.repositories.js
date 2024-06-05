@@ -22,6 +22,11 @@ export default class AvatarRepository {
         return result;
     };
     
+    getEventByName = async (name) => {
+        const result = await avatarManager.getEventByName(name);
+        return result;
+    };
+    
     getVideoTutByName = async (name) => {
         const result = await avatarManager.getVideoTutByName(name);
         return result;

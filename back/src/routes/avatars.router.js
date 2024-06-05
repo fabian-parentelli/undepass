@@ -10,6 +10,7 @@ export default class AvatarRouter extends Router {
         this.post('/event', ['ADMIN'], passportEnum.JWT, multipleUploader, uploadToCloudinary, avtarController.newEvent);
         this.post('/', ['ADMIN'], passportEnum.JWT, multipleUploader, uploadToCloudinary, avtarController.newAvatar);
         this.get('/event', ['USER', 'ADMIN'], passportEnum.JWT, avtarController.getEvents);
+        this.get('/event/:name', ['PUBLIC'], passportEnum.NOTHING, avtarController.getEventByName);
         this.get('/videotut/:name', ['PUBLIC'], passportEnum.NOTHING, avtarController.getVideoTutByName);
         this.get('/videotut', ['PUBLIC'], passportEnum.NOTHING, avtarController.getVideoTut);
         this.get('/', ['PUBLIC'], passportEnum.NOTHING, avtarController.vewAvatar);

@@ -1,5 +1,6 @@
 import { productRepository, userRepository } from "../repositories/index.repositories.js";
 import { ProductNotFound } from '../utils/custom-exceptions.utils.js';
+import * as utilsFunction from '../utils/functions/services.utils.js';
 
 const newProduct = async (images, imagesUrl, producut) => {
     producut.img = [];
@@ -25,6 +26,38 @@ const getByUserId = async (id) => {
     return { status: 'success', result };
 };
 
+const getCounter = async () => {
+    const result = await productRepository.getCounter();
+    if (!result) result = 0;
+    return { status: 'success', result };
+};
+
+const getById = async (id) => {
+    const result = await productRepository.getById(id);
+    if (!result) throw new ProductNotFound('No se encuentra el producto');
+    return { status: 'success', result };
+};
+
+let cachedProducts = null;
+
+const getAll = async (limit, page, random) => {
+    if (random === '1') {
+        const { count, startIdx, endIdx } = await utilsFunction.getRandomProductInfo(+limit, +page);
+        const randomProducts = await productRepository.getRandom(count);
+        const paginatedProducts = randomProducts.slice(startIdx, endIdx);
+        cachedProducts = randomProducts;
+        return utilsFunction.buildResponse(paginatedProducts, cachedProducts.length, +limit, +page);
+    };
+    if (random === '2') {
+        const { startIdx, endIdx } = utilsFunction.getPaginatedIndices(+limit, +page);
+        const paginatedProducts = cachedProducts.slice(startIdx, endIdx);
+        return utilsFunction.buildResponse(paginatedProducts, cachedProducts.length, +limit, +page);
+    };
+    const result = await productRepository.getAll(limit, page);
+    if (!result) throw new SiteNotFound('No se encuentran sitios');
+    return { status: 'success', result };
+};
+
 const updInSite = async (id) => {
     const product = await productRepository.getById(id);
     if (!product) throw new ProductNotFound('No se encuebtra el producto');
@@ -34,4 +67,4 @@ const updInSite = async (id) => {
     return { status: 'success', result };
 };
 
-export { newProduct, getByUserId, updInSite };
+export { newProduct, getByUserId, getAll, updInSite, getCounter, getById };

@@ -1,0 +1,46 @@
+@import '../../../../../app.scss';
+
+.vewDataprov {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px rgb(201, 201, 201);
+    width: 300px;
+    height: 350px;
+    padding: 1rem;
+    justify-content: space-between;
+
+    .vewDataprovData {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .vewDataprovBtn {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        button {
+            height: 30px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            font-weight: 600;
+        }
+
+        .btnA {
+            background-color: $colorB;
+            &:hover {
+                background-color: rgb(22, 141, 101);
+            }
+        }    
+        
+        .btnB {
+            background-color: rgb(204, 204, 204);
+            &:hover {
+                background-color: rgb(185, 185, 185);
+            }
+        }
+    }
+}

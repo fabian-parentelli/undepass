@@ -1,0 +1,22 @@
+.subTotal {
+
+    .subTotalDiv {
+        width: 100%;
+        
+        .subTotalP {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                margin-top: 12px;
+                
+            }
+        }
+    }
+
+    .ptext {
+        font-size: 12px;
+        margin-top: 1rem;
+        color: gray;
+    }
+}

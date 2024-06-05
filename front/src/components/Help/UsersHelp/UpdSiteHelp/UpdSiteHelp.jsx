@@ -5,18 +5,19 @@ const UpdSiteHelp = () => {
 
     return (
         <div className='updSiteHelp'>
+            
             <div className='updTicketHelpCont'>
                 <div className='line'></div>
                 <div className='updTicketHelpTitle'>
                     <h5 id='updSiteHelp'>Modificar Sitio</h5>
                     <p>Modificar tu sitio web.</p>
-                    <Link to={'/videohelp/updTicketHelp'} className='registerHelpVideo'>Video tutorial</Link>
+                    <Link to={'/videohelp/updSiteHelp'} className='registerHelpVideo'>Video tutorial</Link>
                 </div>
             </div>
 
             <div className='updTicketHelpOne'>
                 <img src="https://res.cloudinary.com/dtjzfz2ex/image/upload/v1712005328/helps/uznufzenetsl09painau.png" alt="avatardev" />
-                <div class="container">
+                <div className="container">
                     <h2>Pasos para Personalizar tu Página</h2><br /><br />
                     <p><strong>Explora Tu Espacio Personal:</strong> En el menú superior, encontrarás un desplegable llamado "Usuario". Haz clic en él y selecciona "Tu Perfil". ¡Ahí es donde comienza la magia!</p><br /><br />
                     <p><strong>Crea Tu Escenario Ideal:</strong> Dentro de tu panel de administración, navega hacia el ítem "Sitio". Aquí, encontrarás tres emocionantes opciones para dar forma a tu página:</p>

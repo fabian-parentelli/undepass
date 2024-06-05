@@ -12,6 +12,7 @@ import DeleteEventHelp from './DeleteEventHelp/DeleteEvenetHelp';
 import UpdTicketHelp from './UpdTicketHelp/UpdTicketHelp';
 import NewHelpSite from './NewSiteHelp/NewSiteHelp';
 import UpdSiteHelp from './UpdSiteHelp/UpdSiteHelp';
+import UpdCommentHelp from './UpdCommentHelp/UpdCommentHelp';
 
 const UserHelp = () => {
 
@@ -45,6 +46,7 @@ const UserHelp = () => {
             <UpdTicketHelp />
             <NewHelpSite />
             <UpdSiteHelp />
+            <UpdCommentHelp />
         </div>
     );
 };

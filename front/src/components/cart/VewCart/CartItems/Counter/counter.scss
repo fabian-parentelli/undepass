@@ -1,0 +1,20 @@
+@import '../../../../../app.scss';
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgb(221, 221, 221);
+    width: 80px;
+    padding: 6px;
+    border-radius: 12px;
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .icon {
+        color: $colorB;
+        cursor: pointer;
+    }
+}

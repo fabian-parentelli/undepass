@@ -25,7 +25,6 @@ const CityConf = ({ setValues }) => {
 
     return (
         <div className='cityConf'>
-            <p>Localidad</p>
             <div className='cityConfDiv'>
                 <ProvinceConf setSelectedProv={setSelectedProv} />
                 {selectedProv && <TwonConf selectedProv={selectedProv} setSelectedTown={setSelectedTown} />}

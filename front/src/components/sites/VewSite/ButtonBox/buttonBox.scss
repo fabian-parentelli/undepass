@@ -1,0 +1,25 @@
+@import '../../../../app.scss';
+
+.buttonBox {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .buttonBoxDIV {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .buttonBoxBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            background-color: $colorA;
+
+            &:hover {
+                background-color: $colorE;
+            }
+        }
+    }
+}

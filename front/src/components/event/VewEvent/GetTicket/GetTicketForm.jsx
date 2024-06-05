@@ -1,7 +1,49 @@
+import { useState } from "react";
+import SweetAlert from '../../../utils/SweetAlert';
+import { useCartContext } from "../../../../context/CartContext";
+import { useNavigate } from 'react-router-dom';
+
 const GetTicketForm = ({ events }) => {
 
+    const { addToCart } = useCartContext()
+    const [event, setEvent] = useState([]);
+    const [isSweet, setIsSweet] = useState(false);
+    const navigate = useNavigate();
+
+    const handleChange = (e, ticket, price, type) => {
+        const { value } = e.target;
+        setEvent((prevEvent) => {
+            const exists = prevEvent.findIndex(tick => tick.ticketId === ticket);
+            const updatedTickets = [...prevEvent];
+            const obj = {
+                description: type,
+                photo: events.photo,
+                is: 'event',
+                name: events.name,
+                price,
+                quantity: +value,
+                siteId: events._id,
+                _id: ticket
+            };
+            if (exists > -1) {
+                if (value === "") updatedTickets.splice(exists, 1);
+                else updatedTickets[exists] = obj;
+            } else if (value !== "") updatedTickets.push(obj);
+            return updatedTickets;
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsSweet(true);
+        event.forEach(eve => addToCart(eve));
+        setIsSweet(true);
+        setEvent([]);
+        setTimeout(() => { navigate('/') }, 2000);
+    };
+
     return (
-        <form className='tableForm'>
+        <form className='tableForm' onSubmit={handleSubmit}>
             <table>
                 <thead>
                     <tr>
@@ -19,7 +61,8 @@ const GetTicketForm = ({ events }) => {
                                 <th>{tick.price}</th>
                                 <th>
                                     {tick.quantity > 0 ?
-                                        <select name="" className='getTicketSelect'>
+                                        <select name="quantity" className='getTicketSelect'
+                                            onChange={(e) => handleChange(e, tick._id, tick.price, tick.type)}>
                                             <option value=""></option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -40,7 +83,8 @@ const GetTicketForm = ({ events }) => {
                             <th>Entrada libre<br /> <span>Entrada sin cargo</span></th>
                             <th>$ 0</th>
                             <th>
-                                <select name="" className='getTicketSelect'>
+                                <select name="quantity" className='getTicketSelect'
+                                    onChange={(e) => handleChange(e, tick._id, tick.price)}>
                                     <option value=""></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -64,11 +108,12 @@ const GetTicketForm = ({ events }) => {
                     {events.tickets ?
                         (events.ticketInfo.every(ticket => ticket.quantity <= 0) ?
                             'Entradas agotadas' :
-                            `Comprar entradas`
+                            `Agregar al carrito`
                         ) : 'Adquirir Entradas'
                     }
                 </button>
             </div>
+            {isSweet && <SweetAlert onClose={() => setIsSweet(false)} message={'Evento agregado al carrito'} />}
         </form>
     );
 };

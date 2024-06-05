@@ -48,7 +48,14 @@ const siteSchema = new mongoose.Schema({
     shift: {
         active: { type: Boolean, default: false },
         shiftId: { type: String },
-    }
+    },
+    likeCount: [{ type: String, default: [] }],
+    favorites: [
+        {
+            userId: { type: String },
+            active: { type: Boolean, default: true },
+        }
+    ]
 });
 
 siteSchema.plugin(mongoosePaginate);

@@ -102,6 +102,12 @@
                     color: #fff;
                 }
             }
+
+            .registerRightDivCity {
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+            }
         }
 
         .btn {
@@ -114,6 +120,7 @@
             transition: .3s ease-in-out;
             margin-top: 12px;
             color: #fff;
+
             &:hover {
                 background-color: $colorB;
             }
@@ -152,6 +159,7 @@
             .registerRightCont {
                 margin-top: 1px;
                 padding: 6px;
+
                 .registerRightDiv {
                     width: 100%;
                 }

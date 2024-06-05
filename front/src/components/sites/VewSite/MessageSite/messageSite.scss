@@ -1,0 +1,13 @@
+@import '../../../../app.scss';
+
+.messageSite {
+    width: 80%;
+    min-height: 100px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: $colorC;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

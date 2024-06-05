@@ -51,5 +51,6 @@ const data = [
     { label: 'Eliminar entradas', data: 'deleteEventHelp' },
     { label: 'Modificar entradas', data: 'updTicketHelp' },
     { label: 'Crear sitio', data: 'newSiteHelp' },
-    { label: 'Modificar sitio web', data: 'updSiteHelp' }
+    { label: 'Modificar sitio web', data: 'updSiteHelp' },
+    { label: 'Desactivar comentarios de tu sitio', data: 'updCommentHelp' }
 ];

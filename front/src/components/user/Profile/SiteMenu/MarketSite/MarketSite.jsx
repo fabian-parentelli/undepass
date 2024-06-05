@@ -4,6 +4,7 @@ import { updVewProductSiteApi } from '../../../../../helpers/market/updVewProduc
 import { getProductByUserIdApi } from '../../../../../helpers/market/getProductByUserId.api.js';
 
 const MarketSite = ({ user, setLoading }) => {
+    
     const [values, setValues] = useState([]);
 
     useEffect(() => {

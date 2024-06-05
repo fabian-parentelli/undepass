@@ -14,14 +14,14 @@ const VewSite = () => {
         const fetchData = async () => {
             setLoading(true);
             const response = await getSiteByUrlApi(id);
-            if(response.status === 'success') setValues(response.result);
+            if (response.status === 'success') setValues(response.result);
             setLoading(false);
         }; fetchData();
     }, []);
 
     return (
         <>
-            <VewSiteHtml values={values} />
+            <VewSiteHtml values={values} setValues={setValues} setLoading={setLoading} />
             <Load loading={loading} />
         </>
     );

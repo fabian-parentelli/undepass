@@ -24,6 +24,38 @@ const getByUserId = async (req, res) => {
     };
 };
 
+const getCounter = async (req, res) => {
+    try {
+        const result = await productService.getCounter();
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof ProductNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
+const getById = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const result = await productService.getById(id);
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof ProductNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
+const getAll = async (req, res) => {
+    const { limit = 12, page = 1, random } = req.query;
+    try {
+        const result = await productService.getAll(limit, page, random);
+        if (result) return res.sendSuccess(result);
+    } catch (error) {
+        if (error instanceof ProductNotFound) return res.sendClientError(error.message);
+        res.sendServerError(error.message);
+    };
+};
+
 const updInSite = async (req, res) => {
     const { id } = req.params;
     try {
@@ -35,4 +67,4 @@ const updInSite = async (req, res) => {
     };
 };
 
-export { newProduct, getByUserId, updInSite };
+export { newProduct, getByUserId, getAll, updInSite, getCounter, getById };

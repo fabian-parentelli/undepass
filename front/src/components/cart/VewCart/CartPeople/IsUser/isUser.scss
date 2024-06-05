@@ -1,0 +1,30 @@
+@import '../../../../../app.scss';
+
+.isUser {
+    margin-top: 40px;
+    border: 1px solid rgb(219, 219, 219);
+    width: 40%;
+    padding: 6px;
+
+    .btnForm {
+        margin-top: 1rem;
+        width: 150px;
+        height: 30px;
+        border: none;
+        border-radius: 6px;
+        background-color: $colorB;
+        color: #fff;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        
+        &:hover {
+            background-color: rgb(32, 141, 145);
+        }
+    }
+
+    .textMessage {
+        font-size: 12px;
+        color: red;
+        margin-top: 12px;
+    }
+}

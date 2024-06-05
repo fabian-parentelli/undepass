@@ -5,8 +5,10 @@ import VewEventSite from '../VewEventSite/VewEventSite';
 import VideosVew from '../../../utils/VideosVew/VideosVew';
 import VewSiteNotFound from '../VewSiteNotFound/VewSiteNotFound';
 import VewUserProducts from '../../../market/vewProducts/VewUserProducts/VewUserProducts';
+import ButtonBox from '../ButtonBox/ButtonBox';
+import MessageSite from '../MessageSite/MessageSite';
 
-const VewSiteHtml = ({ values }) => {
+const VewSiteHtml = ({ values, setValues, setLoading }) => {
 
     const isValid = values && values.info && values.info.length >= 6 && values.img && values.img.length >= 12;
 
@@ -20,6 +22,7 @@ const VewSiteHtml = ({ values }) => {
                         <div className='imgBanner' style={{ backgroundImage: `url(${values.img[0].url})` }}></div>
                         <img className='logo' src={values.img[1].url} alt="data" />
                         <h2>{values.title}</h2>
+                        <ButtonBox values={values} setValues={setValues} setLoading={setLoading} />
                     </div>
 
                     {values.events && values.events.length > 0 && <VewEventSite siteEvents={values.events} />}
@@ -66,6 +69,8 @@ const VewSiteHtml = ({ values }) => {
                     </div>
 
                     <SocialMedia values={values} />
+
+                    <MessageSite values={values} setLoading={setLoading} />
                 </>
             }
         </div>

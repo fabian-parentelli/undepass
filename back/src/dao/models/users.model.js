@@ -11,7 +11,9 @@ const userSchema = new mongoose.Schema({
     location: {
         city: { type: String },
         municipality: { type: String },
-        province: { type: String }
+        province: { type: String },
+        address: { type: String },
+        postalCode: { type: String },
     },
     avatar: [{ type: String }],
     active: { type: Boolean, default: true },

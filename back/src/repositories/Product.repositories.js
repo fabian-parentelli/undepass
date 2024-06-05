@@ -11,6 +11,11 @@ export default class ProductRepository {
         const result = await productManager.getByUserId(id);
         return result;
     };
+   
+    getCounter = async () => {
+        const result = await productManager.getCounter();
+        return result;
+    };
     
     getById = async (id) => {
         const result = await productManager.getById(id);
@@ -19,6 +24,16 @@ export default class ProductRepository {
     
     update = async (product) => {
         const result = await productManager.update(product);
+        return result;
+    };
+
+    getRandom = async (limit) => {
+        const result = await productManager.getRandom(limit);
+        return result;
+    };
+    
+    getAll = async (limit, page) => {
+        const result = await productManager.getAll(limit, page);
         return result;
     };
 

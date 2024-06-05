@@ -1,6 +1,6 @@
 import './chekPhoto.scss';
-import PreSetEvent from '../../../../utils/PreSetEvent/PreSetEvent';
 import { useEffect, useState } from 'react';
+import PreSetEvent from '../../../../utils/PreSetEvent/PreSetEvent';
 
 const ChekPhoto = ({ values }) => {
 
