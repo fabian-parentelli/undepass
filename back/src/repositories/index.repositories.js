@@ -7,6 +7,7 @@ import SiteRepository from './site.repositories.js';
 import ShiftRepository from './shift.repositories.js';
 import ProductRepository from './Product.repositories.js';
 import CommentRepository from './comment.repositories.js';
+import OrderRepository from './order.repositories.js';
 
 export const userRepository = new UserRepository();
 export const avatarRepository = new AvatarRepository();
@@ -17,3 +18,4 @@ export const siteRepository = new SiteRepository();
 export const shiftRepository = new ShiftRepository();
 export const productRepository = new ProductRepository();
 export const commentRepository = new CommentRepository();
+export const orderRepository = new OrderRepository();

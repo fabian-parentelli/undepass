@@ -20,7 +20,8 @@ const userSchema = new mongoose.Schema({
     phone: { type: String },
     role: { type: String, default: 'user' },
     passId: { type: String },
-    financeData: { type: String }
+    financeData: { type: String },
+    dni: { type: String }
 });
 
 userSchema.plugin(mongoosePaginate);

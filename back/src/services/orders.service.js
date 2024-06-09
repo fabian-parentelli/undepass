@@ -1,30 +1,42 @@
-// import { orderRepository } from "../repositories/index.repositories.js";
-// import { OrderNotFound } from '../utils/custom-exceptions.utils.js';
-// import { sendEmail } from './email.service.js';
+import { orderRepository } from "../repositories/index.repositories.js";
+import * as newOrderUtils from '../utils/orderUtils/newOrderUtils.utils.js';
+import { OrderNotFound } from "../utils/custom-exceptions.utils.js";
 
 const newOrder = async (order) => {
+    const newOrder = [];
+    const notStock = [];
 
-    console.log(order);
-    // Lo primero es que si no es usuario agregarlo a usuarios.
-    // Si es usaurio fijarme si tiene address y postalCode, si no tiene actualizar.
-    // para crear la orden: 
-        // verificar que halla stock de entradas y de productos
-        // quitar la cantidad vendida la base de datos de los eventos y los productos.
-        // Crear la orden.
-        // que en la base de datos diga pago procesando por detras false
+    const { cart, ...userData } = order;
 
-    //----------------------------------------------------------------------------
+    await newOrderUtils.iSUser(order);
+    const processedProducts = await newOrderUtils.processProducts(order.cart, notStock);
+    newOrder.push(...processedProducts);
+    const processedEvents = await newOrderUtils.processEvents(order.cart, notStock);
+    newOrder.push(...processedEvents);
 
-    // En el front que cada usuario que se le halla vendido algo lo vea por plataforma
-    // que le salte una alarma 
-    // que pueda ver en su consola
-    // y en el caso de que sea un producto que pueda enviar un msj al cliente. 
+    const theOrder = { userId: order.userId, cart: newOrder };
+    const result = await orderRepository.newOrder(theOrder);
+    if (!result) throw new OrderNotFound('No se puede generar la orden');
 
-    // ----------------------------------------------------------------------------
+    await newOrderUtils.emailToBuyer(newOrder, userData);
+    await newOrderUtils.orderSeller(result); // Estoy haciendo la base de datos del vendedor...
 
-    // que el que compró pueda ver su compra
-        // estado del pago
-        // Boton de arrepentimiento
+    return { status: 'success', result };
 };
 
 export { newOrder };
+
+//// que en la base de datos diga pago procesando por detras false
+
+//----------------------------------------------------------------------------
+
+// En el front que cada usuario que se le halla vendido algo lo vea por plataforma
+// que le salte una alarma
+// que pueda ver en su consola
+// y en el caso de que sea un producto que pueda enviar un msj al cliente.
+
+// ----------------------------------------------------------------------------
+
+// que el que compró pueda ver su compra
+// estado del pago
+// Boton de arrepentimiento

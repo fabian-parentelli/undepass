@@ -11,7 +11,7 @@ const ThereAreproduct = ({ values, setValues }) => {
 
     return (
         <>
-            {values && !values._id && < CityConf setValues={setValues} />}
+            {values && !values.userId && < CityConf setValues={setValues} />}
 
             {values && values.location && values.location.city &&
                 <>

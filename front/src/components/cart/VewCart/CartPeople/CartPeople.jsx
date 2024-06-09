@@ -3,6 +3,7 @@ import NotUser from "./NotUser/NotUser";
 import { useEffect, useState } from "react";
 import { useCartContext } from "../../../../context/CartContext";
 import { useLoginContext } from "../../../../context/LoginContext";
+import Load from "../../../utils/Load";
 
 const CartPeople = () => {
 
@@ -10,6 +11,7 @@ const CartPeople = () => {
     const { isProduct, cart } = useCartContext();
     const [isUser, setIsUser] = useState(false);
     const [thereAreP, setThereAreP] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => { setThereAreP(isProduct()) }, [cart]);
 
@@ -20,8 +22,9 @@ const CartPeople = () => {
 
     return (
         <>
-            {!isUser && <NotUser thereAreP={thereAreP} cart={cart} />}
-            {isUser && <IsUser thereAreP={thereAreP} user={user.data} cart={cart} />}
+            {!isUser && <NotUser thereAreP={thereAreP} cart={cart} setLoading={setLoading} />}
+            {isUser && <IsUser thereAreP={thereAreP} user={user.data} cart={cart} setLoading={setLoading} />}
+            <Load loading={loading} />
         </>
     );
 };

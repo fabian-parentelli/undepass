@@ -13,8 +13,8 @@ const register = async (user) => {
     const exists = await userRepository.getByEmail(user.email);
     if (exists) throw new UserNotFound('El usuario ya se encuentra registrado');
     user.password = createHash(user.password);
-    user.location.province = await getProvince(user.location.province);
-    user.location.municipality = await getParties(user.location.municipality);
+    if(user.location.province) user.location.province = await getProvince(user.location.province);
+    if(user.location.municipality) user.location.municipality = await getParties(user.location.municipality);
     user.avatar = ['https://res.cloudinary.com/dtjzfz2ex/image/upload/v1711654148/assets/default.png'];
     const result = await userRepository.register(user);
     if (!result) throw new UserNotFound('No se puede registrar al usuario');
